@@ -11,7 +11,7 @@ jobs:
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       with:
-        server-dir: www.areaverifica.altervista.org/GaleazziOnline/
+        server-dir: ./GaleazziOnline/
         server: ftp.areaverifica.altervista.org
         username: areaverifica
         password: Gazzada2021
