@@ -13,10 +13,10 @@
     </div>
     <div class="Contenitore">
         <div class="LoginArea">
-            <span>User<input type="text" id="tb_user"/></span><br>
-            <span>Password<input type="password" id="tb_psw"/></span><br>
-            <input class="GenericButton" type="button" value="Login"/><br>
-            <input class="GenericButton" type="button">Registrati</input><br>
+            <span> <input type="text" id="tb_user" placeholder="Mail"/></span><br>
+            <span> <input type="password" id="tb_psw" placeholder="Password"/></span><br>
+            <div class="Centra"><input class="GenericButton" type="button" value="Login"/></div>
+            <div class="Centra"><input class="GenericButton" type="button" value="Registrati"/> </div>
         </div>
     </div>
      
