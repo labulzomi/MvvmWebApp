@@ -44,6 +44,7 @@ width: 500px; /* Imposta la larghezza desiderata del div */
 .Contenitore
 {background-color: #009D99;
     display: flex;
+    text-align: center;
     justify-content: center; /* Centra orizzontalmente */
     align-items: center; /* Centra verticalmente */
     height: 100vh;
@@ -57,7 +58,12 @@ width: 500px; /* Imposta la larghezza desiderata del div */
     box-sizing: border-box;
     font-size: 18px;
     border: none;
-    border-bottom: 3px solid lightgray
+    border-bottom: 3px solid lightgrey
+  }
+
+  input:focus {
+    outline: none; /* Rimuovi il bordo di evidenziazione predefinito */
+    
   }
   .Centra
   {
