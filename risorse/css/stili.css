@@ -20,3 +20,9 @@
     height: 5px;
     background-color: lightgray;
 }
+
+.LoginArea{
+width: 200px; /* Imposta la larghezza desiderata del div */
+  margin-left: auto;
+  margin-right: auto;
+}

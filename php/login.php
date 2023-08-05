@@ -11,7 +11,7 @@
             <span>LOGIN</span>
         </div>
         <div>
-            <div>
+            <div class="LoginArea">
                 <span>User<input type="text" id="tb_user"/></span><br>
                 <span>Password<input type="password" id="tb_psw"/></span><br>
                 <input type="button">Login</input><br>
