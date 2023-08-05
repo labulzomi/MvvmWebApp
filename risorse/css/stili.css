@@ -26,3 +26,12 @@ width: 200px; /* Imposta la larghezza desiderata del div */
   margin-left: auto;
   margin-right: auto;
 }
+
+.GenericButton
+{
+    background-color: #FF7CCBC7;
+    border-radius: 5px;
+    border-color: white;
+    margin: 20px;
+    font-size: 16px;
+}

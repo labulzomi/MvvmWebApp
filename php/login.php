@@ -10,15 +10,16 @@
         <div>
             <span>LOGIN</span>
         </div>
-        <div>
-            <div class="LoginArea">
-                <span>User<input type="text" id="tb_user"/></span><br>
-                <span>Password<input type="password" id="tb_psw"/></span><br>
-                <input type="button">Login</input><br>
-                <input type="button">Registrati</input><br>
-            </div>
+    </div>
+    <div>
+        <div class="LoginArea">
+            <span>User<input type="text" id="tb_user"/></span><br>
+            <span>Password<input type="password" id="tb_psw"/></span><br>
+            <input class="GenericButton" type="button" value="Login"/><br>
+            <input class="GenericButton" type="button">Registrati</input><br>
         </div>
     </div>
+     
     <div >
     </div>
 
