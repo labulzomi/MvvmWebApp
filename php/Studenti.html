@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+      .sidebar {
+        width: 200px;
+        height: 100vh;
+        position: fixed;
+        background-color: #333;
+        color: #fff;
+        padding: 20px;
+      }
+      .sidebar h2 {
+        cursor: pointer;
+        transition: color 0.3s, background-color 0.3s;
+        padding: 10px;
+        border-radius: 5px;
+      }
+      .sidebar h2:hover {
+        color: #333;
+        background-color: #ddd;
+      }
+      .content {
+        margin-left: 220px;
+        padding: 20px;
+      }
+      .content > div {
+        display: none;
+      }
+      .content > .active {
+        display: block;
+      }
+      #preview {
+        border-radius: 50%; /* Fai in modo che l'immagine appaia come un cerchio */
+        width: 100px; /* Imposta la larghezza dell'immagine a 100px */
+        height: 100px; /* Imposta l'altezza dell'immagine a 100px */
+        object-fit: cover; /* Fai in modo che l'immagine copra l'intero spazio, ritagliandola se necessario */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="sidebar">
+      <h2 id="insert">Inserisci Studente</h2>
+      <h2 id="view">Visualizza Studenti</h2>
+    </div>
+    <div class="content">
+      <div id="insertContent" class="active">
+        <h2>Inserisci Studente</h2>
+        <form
+          action="elabora.php"
+          method="POST"
+          enctype="multipart/form-data"
+          style="display: flex; flex-direction: row; gap: 20px"
+        >
+          <div style="flex: 1">
+            <label for="photo">Foto:</label>
+            <br />
+            <img id="preview" src="" alt="Image preview" />
+            <input
+              type="file"
+              id="photo"
+              name="photo"
+              accept="image/*"
+              onchange="previewFile()"
+            />
+            <br />
+
+            <br />
+            <label for="firstname">Nome:</label><br />
+            <input type="text" id="firstname" name="firstname" required /><br />
+            <label for="lastname">Cognome:</label><br />
+            <input type="text" id="lastname" name="lastname" required /><br />
+          </div>
+
+          <!-- <div style="flex: 1">
+            <label for="photo">Foto:</label><br />
+            <input
+              type="file"
+              id="photo"
+              name="photo"
+              accept="image/*"
+              onchange="previewFile()"
+            /><br />
+            <img
+              id="preview"
+              src=""
+              alt="Image preview"
+              style="max-width: 100%; height: auto"
+            /><br />
+            <label for="firstname">Nome:</label><br />
+            <input type="text" id="firstname" name="firstname" required /><br />
+            <label for="lastname">Cognome:</label><br />
+            <input type="text" id="lastname" name="lastname" required /><br />
+          </div> -->
+          <div style="flex: 1">
+            <label for="grade">Voto:</label><br />
+            <select id="grade" name="grade">
+              <option value="">--Seleziona un voto--</option>
+              <!-- Using JavaScript or a server-side language, you could generate these options in a loop. -->
+              <option value="1">1</option>
+              <option value="1.5">1.5</option>
+              <!-- Add more options up to 10 here. --></select
+            ><br />
+            <label for="date">Data:</label><br />
+            <input type="date" id="date" name="date" /><br />
+          </div>
+          <div style="width: 100%; text-align: center; padding-top: 20px">
+            <input type="submit" value="Salva" />
+          </div>
+        </form>
+      </div>
+
+      <div id="viewContent">
+        <h2>Visualizza Studenti</h2>
+        <!-- Qui il tuo codice per visualizzare gli studenti -->
+      </div>
+    </div>
+
+    <script>
+      document.getElementById("insert").addEventListener("click", function () {
+        document.getElementById("insertContent").classList.add("active");
+        document.getElementById("viewContent").classList.remove("active");
+      });
+
+      document.getElementById("view").addEventListener("click", function () {
+        document.getElementById("viewContent").classList.add("active");
+        document.getElementById("insertContent").classList.remove("active");
+      });
+
+      function previewFile() {
+        const preview = document.querySelector("#preview");
+        const file = document.querySelector("#photo").files[0];
+        const reader = new FileReader();
+
+        reader.addEventListener(
+          "load",
+          function () {
+            // convert image file to base64 string
+            preview.src = reader.result;
+          },
+          false
+        );
+
+        if (file) {
+          reader.readAsDataURL(file);
+        }
+      }
+    </script>
+  </body>
+</html>
