@@ -29,24 +29,25 @@ width: 200px; /* Imposta la larghezza desiderata del div */
 
 .GenericButton
 {
-    background-color: #FF7CCBC7;
+    border-width: 5px;
     border-radius: 5px;
     border-color: white;
     margin: 20px;
     width: 100px;
     padding: 20px;
+    background-color: #7CCBC7;
     font-size: 16px;
 }
 
 .Contenitore
-{
+{background-color: #009D99;
     display: flex;
     justify-content: center; /* Centra orizzontalmente */
     align-items: center; /* Centra verticalmente */
     height: 100vh;
 }
 
-.LoginArea input[type=text][type=password] {
+.LoginArea span>input{
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
