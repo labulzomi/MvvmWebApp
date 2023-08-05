@@ -10,7 +10,13 @@
         <div>
             <span>LOGIN</span>
         </div>
-        <div  >
+        <div>
+            <div>
+                <span>User<input type="text" id="tb_user"/></span><br>
+                <span>Password<input type="password" id="tb_psw"/></span><br>
+                <input type="button">Login</input><br>
+                <input type="button">Registrati</input><br>
+            </div>
         </div>
     </div>
     <div >

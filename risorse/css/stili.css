@@ -15,7 +15,7 @@
 
 }
 
-.TitleBar+div
+.TitleBar>div+div
 {
     height: 5px;
     background-color: lightgray;
