@@ -22,7 +22,7 @@
 }
 
 .LoginArea{
-width: 200px; /* Imposta la larghezza desiderata del div */
+width: 500px; /* Imposta la larghezza desiderata del div */
   margin-left: auto;
   margin-right: auto;
 }
@@ -32,11 +32,13 @@ width: 200px; /* Imposta la larghezza desiderata del div */
     border-width: 5px;
     border-radius: 5px;
     border-color: white;
-    margin: 20px;
-    width: 100px;
+    margin: 10px;
+    width: 80%;
     padding: 20px;
+    font-weight: 600;
+    color: darkblue;
     background-color: #7CCBC7;
-    font-size: 16px;
+    font-size: 18px;
 }
 
 .Contenitore
@@ -48,14 +50,22 @@ width: 200px; /* Imposta la larghezza desiderata del div */
 }
 
 .LoginArea span>input{
-    width: 100%;
-    padding: 12px 20px;
+    width: 40%;
+    padding: 4px 10px;
+    background-color: transparent;
     margin: 8px 0;
     box-sizing: border-box;
+    font-size: 18px;
     border: none;
-    border-bottom: 2px solid gray
+    border-bottom: 3px solid lightgray
   }
   .Centra
   {
     text-align: center;
+  }
+
+
+  ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: lightgray;
+    opacity: 1; /* Firefox */
   }
