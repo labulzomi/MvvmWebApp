@@ -11,9 +11,9 @@ function GestioneResponse(mode,response)
             break;
         case "6"://reg
             if(response=="-1")
-              ShowSnackBar();
+              ShowSnackBar("Dati di registrazione non corretti");
             else
-              ShowSnackBar();//va modificato il testo da visualizzare
+              ShowSnackBar("Registrazione avvenuta con successo");
             break;
     }
 }
@@ -29,9 +29,9 @@ function CheckMail(email)
       return false;
     }
 }
-function ShowSnackBar(msg="")
+function ShowSnackBar(msg="I dati inseriti non sono corretti")
 {
-    $("#snackbar").append(msg);
+    $("#snackbar").text(msg);
     $("#snackbar").addClass("show");
     setTimeout(function()
     { 
@@ -67,12 +67,11 @@ function ChiamataGenerica(formData)
 
 
 //chiamate per login.php
-
+/*
 $(document).ready(function() 
 {
     $("#bt_login").on("click", function() {     
 
-  
       if (!CheckMail($("#tb_user").val())) {
         ShowSnackBar();
       }
@@ -90,7 +89,6 @@ $(document).ready(function()
 
     $("#bt_reg").on("click", function() {     
 
-  
         if (!CheckMail($("#tb_user").val())) {
           ShowSnackBar();
         }
@@ -105,7 +103,7 @@ $(document).ready(function()
           ChiamataGenerica(formData);
         }
       });
-  });
+  });*/
 
 
   

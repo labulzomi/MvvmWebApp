@@ -7,6 +7,18 @@ session_start();
 <html>
   <head>
     <link href='../risorse/css/stili.css' rel='stylesheet'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="../js/action.js"></script>
+    <script>
+//chiamate per login.php
+
+$(document).ready(function() 
+{
+    
+  });
+
+
+    </script>
     <style>
       body {
         font-family: Arial, sans-serif;
