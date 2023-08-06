@@ -39,12 +39,48 @@
         height: 100px; /* Imposta l'altezza dell'immagine a 100px */
         object-fit: cover; /* Fai in modo che l'immagine copra l'intero spazio, ritagliandola se necessario */
       }
+      html,
+      body {
+        height: 100%;
+      }
+
+      .wrap {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .button {
+        width: 140px;
+        height: 45px;
+        font-family: "Roboto", sans-serif;
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 2.5px;
+        font-weight: 500;
+        color: #000;
+        background-color: #fff;
+        border: none;
+        border-radius: 45px;
+        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease 0s;
+        cursor: pointer;
+        outline: none;
+      }
+
+      .button:hover {
+        background-color: #2ee59d;
+        box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+        color: #fff;
+        transform: translateY(-7px);
+      }
     </style>
   </head>
   <body>
     <div class="sidebar">
-      <h2 id="insert">Inserisci Studente</h2>
-      <h2 id="view">Visualizza Studenti</h2>
+      <h2 id="insert">Inserisci Studente OOO</h2>
+      <h2 id="view">Visualizza Studenti PPP</h2>
     </div>
     <div class="content">
       <div id="insertContent" class="active">
@@ -58,7 +94,11 @@
           <div style="flex: 1">
             <label for="photo">Foto:</label>
             <br />
-            <img id="preview" src="../risorse/imgs/se_de_ri.jpg" alt="Image preview" />
+            <img
+              id="preview"
+              src="../risorse/imgs/se_de_ri.jpg"
+              alt="Image preview"
+            />
             <input
               type="file"
               id="photo"
@@ -75,26 +115,6 @@
             <input type="text" id="lastname" name="lastname" required /><br />
           </div>
 
-          <!-- <div style="flex: 1">
-            <label for="photo">Foto:</label><br />
-            <input
-              type="file"
-              id="photo"
-              name="photo"
-              accept="image/*"
-              onchange="previewFile()"
-            /><br />
-            <img
-              id="preview"
-              src=""
-              alt="Image preview"
-              style="max-width: 100%; height: auto"
-            /><br />
-            <label for="firstname">Nome:</label><br />
-            <input type="text" id="firstname" name="firstname" required /><br />
-            <label for="lastname">Cognome:</label><br />
-            <input type="text" id="lastname" name="lastname" required /><br />
-          </div> -->
           <div style="flex: 1">
             <label for="grade">Voto:</label><br />
             <select id="grade" name="grade">
@@ -102,15 +122,20 @@
               <!-- Using JavaScript or a server-side language, you could generate these options in a loop. -->
               <option value="1">1</option>
               <option value="1.5">1.5</option>
-              <!-- Add more options up to 10 here. --></select
-            ><br />
+              <!-- Add more options up to 10 here. -->
+            </select>
+            <br />
             <label for="date">Data:</label><br />
             <input type="date" id="date" name="date" /><br />
           </div>
-          <div style="width: 100%; text-align: center; padding-top: 20px">
+          <!-- <div style="width: 100%; text-align: center; padding-top: 20px">
             <input type="submit" value="Salva" />
-          </div>
+          </div> -->
         </form>
+        <br />
+        <div class="wrap">
+          <button class="button">SALVA</button>
+        </div>
       </div>
 
       <div id="viewContent">
