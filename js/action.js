@@ -29,9 +29,9 @@ function GestioneResponse(mode,response)
 function ListItemTemplate(studente)
 {
   var template= `<li class="user-item">
-  <img src="`+studente.img+`" alt="Foto utente">
-  <span class="user-name">`+studente.nome+`</span>
-  <span class="user-surname">`+studente.cognome+`</span>
+  <img src="`+GetPath(studente.Foto)+`" alt="Foto utente">
+  <span class="user-name">`+studente.Nome+`</span>
+  <span class="user-surname">`+studente.Cognome+`</span>
   <button class="edit-btn" onclick="editUser()">
     <i class="fas fa-edit"></i>
   </button>
@@ -40,6 +40,15 @@ function ListItemTemplate(studente)
   </button>
 </li>`;
 return template;
+}
+
+
+function GetPath(img)
+{
+  if(img==null)
+    return "defaòdfsdfsdflt";
+  else
+  return "http://areaverifica.altervista.org/Galeazzi/img/"+img;
 }
 
 function CheckMail(email)
