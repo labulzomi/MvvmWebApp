@@ -1,5 +1,7 @@
 <?php
 session_start();
+//da inserire blocco se in assenza di autorizzazione
+
 ?>
 <!DOCTYPE html>
 <html>

@@ -1,5 +1,18 @@
 //qui inserire le chiamate js
-
+function GestioneResponse(mode,response)
+{
+    switch(mode)
+    {
+        case 5://login
+            if(response=="0")
+                ShowSnackBar();
+            else
+                location.href = "./Studenti.php";
+            break;
+        case 6://reg
+            break;
+    }
+}
 
 function CheckMail(email)
 {
@@ -33,11 +46,8 @@ function ChiamataGenerica(formData)
       contentType: false, // Necessario per FormData
       success: function(response) 
       {
-      
-        if(response=="0")
-            ShowSnackBar();
-        else
-             location.href = "./Studenti.php"; 
+        GestioneResponse(formData.get("mode"),response);
+         
 
       },
       error: function(xhr, status, error) 
@@ -47,6 +57,10 @@ function ChiamataGenerica(formData)
       }
     });
 }
+
+
+
+
 //chiamate per login.php
 
 $(document).ready(function() 
@@ -68,6 +82,24 @@ $(document).ready(function()
         ChiamataGenerica(formData);
       }
     });
+
+    $("#bt_reg").on("click", function() {     
+
+  
+        if (!CheckMail($("#tb_user").val())) {
+          ShowSnackBar();
+        }
+        else
+        {
+          //procedo alla verifica della disponibilità
+          var utente=new Utente($("#tb_user").val(),$("#tb_psw").val());
+          var formData = new FormData();
+          formData.append("dati",utente.displayInfo());
+          formData.append("mode",6);
+          formData.append("online",1);
+          ChiamataGenerica(formData);
+        }
+      });
   });
 
 
