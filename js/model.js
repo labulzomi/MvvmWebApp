@@ -1,15 +1,15 @@
 class Utente {
     constructor( email,password) {
-      this.password = password;
-      this.email = email;
+      this.Password = password;
+      this.Mail = email;
     }
   
     getPassword() {
-      return this.password;
+      return this.Password;
     }
   
     getEmail() {
-      return this.email;
+      return this.Mail;
     }
   
     displayInfo() {
