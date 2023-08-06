@@ -3,13 +3,17 @@ function GestioneResponse(mode,response)
 {
     switch(mode)
     {
-        case 5://login
+        case "5"://login
             if(response=="0")
                 ShowSnackBar();
             else
                 location.href = "./Studenti.php";
             break;
-        case 6://reg
+        case "6"://reg
+            if(response=="-1")
+              ShowSnackBar();
+            else
+              ShowSnackBar();//va modificato il testo da visualizzare
             break;
     }
 }
@@ -25,8 +29,9 @@ function CheckMail(email)
       return false;
     }
 }
-function ShowSnackBar()
+function ShowSnackBar(msg="")
 {
+    $("#snackbar").append(msg);
     $("#snackbar").addClass("show");
     setTimeout(function()
     { 
