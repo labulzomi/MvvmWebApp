@@ -5,7 +5,9 @@
 <html>
 <head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="../js/model.js"></script>
 <script src="../js/action.js"></script>
+
 <link href='https://fonts.googleapis.com/css?family=Cairo' rel='stylesheet'>
 <link href='../risorse/css/stili.css' rel='stylesheet'>
 </head>
