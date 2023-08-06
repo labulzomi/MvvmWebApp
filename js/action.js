@@ -18,7 +18,7 @@ function ChiamataGenerica(formData)
      
 
     $.ajax({
-      url: "../Galeazzi/elabora.php",
+      url: "../../Galeazzi/elabora.php",
       type: "POST",
       data: formData,
       processData: false, // Necessario per FormData
