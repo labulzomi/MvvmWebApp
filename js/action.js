@@ -52,7 +52,7 @@ $(document).ready(function()
       else
       {
         //procedo alla verifica della login
-        var utente=new Utente($("#tb_user").val(),$("#tb_psw").val())
+        var utente=new Utente($("#tb_user").val(),$("#tb_psw").val());
         var formData = new FormData();
         formData.append("dati",utente.displayInfo());
         ChiamataGenerica(formData);
