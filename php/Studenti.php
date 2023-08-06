@@ -22,6 +22,47 @@ $(document).ready(function()
 
 
     </script>
+
+<style>
+    /* Stili di base per il listitem */
+    .user-item {
+      display: flex;
+      align-items: center;
+      padding: 10px;
+      border-bottom: 1px solid #ccc;
+    }
+
+    /* Stili per l'immagine utente */
+    .user-item img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+
+    /* Stili per il nome e cognome utente */
+    .user-item .user-name,
+    .user-item .user-surname {
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    /* Stili per i bottoni */
+    .user-item button {
+      background-color: #007BFF;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      padding: 5px 10px;
+      margin-left: 10px;
+      cursor: pointer;
+    }
+
+    /* Stili per gli spazi tra elementi */
+    .user-item > *:not(:last-child) {
+      margin-right: 10px;
+    }
+  </style>
     <style>
       body {
         font-family: Arial, sans-serif;
@@ -168,7 +209,9 @@ $(document).ready(function()
       <div id="viewContent">
         <h2>Visualizza Studenti</h2>
         <div id="viewData"></div>
-        <!-- Qui il tuo codice per visualizzare gli studenti -->
+        <ul id="elenco">
+
+        </ul>
       </div>
     </div>
 

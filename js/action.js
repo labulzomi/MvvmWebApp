@@ -16,9 +16,30 @@ function GestioneResponse(mode,response)
               ShowSnackBar("Registrazione avvenuta con successo");
             break;
         case "2"://visualizza
-              $("#viewData").html(response);
+              var dati=JSON.parse(response);
+              dati.forEach(function(studente) 
+              {
+                $("#elenco").append(ListItemTemplate(studente));
+              });
+             
         break;
     }
+}
+
+function ListItemTemplate(studente)
+{
+  var template= `<li class="user-item">
+  <img src="`+studente.img+`" alt="Foto utente">
+  <span class="user-name">`+studente.nome+`</span>
+  <span class="user-surname">`+studente.cognome+`</span>
+  <button class="edit-btn" onclick="editUser()">
+    <i class="fas fa-edit"></i>
+  </button>
+  <button class="delete-btn" onclick="deleteUser()">
+    <i class="fas fa-trash-alt"></i>
+  </button>
+</li>`;
+return template;
 }
 
 function CheckMail(email)
