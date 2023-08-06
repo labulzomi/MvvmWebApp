@@ -12,6 +12,14 @@ function CheckMail(email)
       return false;
     }
 }
+function ShowSnackBar()
+{
+    $("#snackbar").addClass("show");
+    setTimeout(function()
+    { 
+        $("#snackbar").removeClass("show"); 
+    }, 3000);
+}
 
 function ChiamataGenerica(formData)
 {
@@ -26,7 +34,10 @@ function ChiamataGenerica(formData)
       success: function(response) 
       {
         // Gestisci la risposta qui
-        console.log("Risposta:", response);
+       // console.log("Risposta:", response);
+        if(response=="0")
+            ShowSnackBar();
+
       },
       error: function(xhr, status, error) 
       {
@@ -43,11 +54,7 @@ $(document).ready(function()
 
   
       if (!CheckMail($("#tb_user").val())) {
-        $("#snackbar").addClass("show");
-        setTimeout(function()
-        { 
-            $("#snackbar").removeClass("show"); 
-        }, 3000);
+        ShowSnackBar();
       }
       else
       {
@@ -56,6 +63,7 @@ $(document).ready(function()
         var formData = new FormData();
         formData.append("dati",utente.displayInfo());
         formData.append("mode",5);
+        formData.append("online",1);
         ChiamataGenerica(formData);
       }
     });
