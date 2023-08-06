@@ -27,7 +27,7 @@
     </div>
      
    
-
+    <div id="snackbar">I dati inseriti non sono corretti</div>
 </div>
 </body>
 </html>

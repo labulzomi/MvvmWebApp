@@ -20,11 +20,20 @@ $(document).ready(function()
 {
     $("#bt_login").on("click", function() {
        
+
   
-      if (CheckMail()) {
-        $("#result").text("Valid email address.");
-      } else {
-        $("#result").text("Invalid email address.");
-      }
+      if (!CheckMail()) {
+        $("#bt_login").className="show";
+        setTimeout(function(){ $("#bt_login").className = $("#bt_login").className.replace("show", ""); }, 3000);
+      }  
     });
   });
+
+
+  var x = document.getElementById("snackbar");
+
+  // Add the "show" class to DIV
+  x.className = "show";
+
+  // After 3 seconds, remove the show class from DIV
+  
