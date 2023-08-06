@@ -33,10 +33,4 @@ $(document).ready(function()
   });
 
 
-  var x = document.getElementById("snackbar");
-
-  // Add the "show" class to DIV
-  x.className = "show";
-
-  // After 3 seconds, remove the show class from DIV
   
