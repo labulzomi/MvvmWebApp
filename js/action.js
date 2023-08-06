@@ -23,8 +23,11 @@ $(document).ready(function()
 
   
       if (!CheckMail()) {
-        $("#bt_login").className="show";
-        setTimeout(function(){ $("#bt_login").className = $("#bt_login").className.replace("show", ""); }, 3000);
+        $("#bt_login").addClass("show");
+        setTimeout(function()
+        { 
+            $("#bt_login").removeClass("show"); 
+        }, 3000);
       }  
     });
   });
