@@ -22,7 +22,7 @@ $(document).ready(function()
        
 
   
-      if (!CheckMail()) {
+      if (!CheckMail($("#tb_user").val())) {
         $("#snackbar").addClass("show");
         setTimeout(function()
         { 
