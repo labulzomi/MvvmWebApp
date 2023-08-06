@@ -23,10 +23,10 @@ $(document).ready(function()
 
   
       if (!CheckMail()) {
-        $("#bt_login").addClass("show");
+        $("#snackbar").addClass("show");
         setTimeout(function()
         { 
-            $("#bt_login").removeClass("show"); 
+            $("#snackbar").removeClass("show"); 
         }, 3000);
       }  
     });
