@@ -15,6 +15,9 @@ function GestioneResponse(mode,response)
             else
               ShowSnackBar("Registrazione avvenuta con successo");
             break;
+        case "2"://visualizza
+              $("viewData").html(response);
+        break;
     }
 }
 

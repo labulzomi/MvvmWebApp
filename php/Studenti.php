@@ -15,6 +15,10 @@ session_start();
 $(document).ready(function() 
 {
     
+        var formData = new FormData(); 
+        formData.append("mode",2);
+        formData.append("online",1);
+        ChiamataGenerica(formData);
   });
 
 
@@ -164,6 +168,7 @@ $(document).ready(function()
 
       <div id="viewContent">
         <h2>Visualizza Studenti</h2>
+        <div id="viewData"></div>
         <!-- Qui il tuo codice per visualizzare gli studenti -->
       </div>
     </div>
