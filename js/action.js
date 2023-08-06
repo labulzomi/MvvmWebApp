@@ -37,7 +37,7 @@ function ChiamataGenerica(formData)
         if(response=="0")
             ShowSnackBar();
         else
-             location.href = "./Studenti.pho"; 
+             location.href = "./Studenti.php"; 
 
       },
       error: function(xhr, status, error) 
