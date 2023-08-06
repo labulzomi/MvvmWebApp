@@ -88,7 +88,7 @@ session_start();
       </div>
   </div>
     <div class="sidebar">
-      <h2  >Benvenuto <?php echo $_SESSION["user"];var_dump($_SESSION); ?></h2>
+      <h2  >Benvenuto <?php echo $_SESSION["user"]; ?></h2>
       <h2 id="insert">Inserisci Studente OOO</h2>
       <h2 id="view">Visualizza Studenti PPP</h2>
     </div>
