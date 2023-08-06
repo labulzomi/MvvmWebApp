@@ -55,6 +55,7 @@ $(document).ready(function()
         var utente=new Utente($("#tb_user").val(),$("#tb_psw").val());
         var formData = new FormData();
         formData.append("dati",utente.displayInfo());
+        formData.append("mode",5);
         ChiamataGenerica(formData);
       }
     });
