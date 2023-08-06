@@ -33,12 +33,11 @@ function ChiamataGenerica(formData)
       contentType: false, // Necessario per FormData
       success: function(response) 
       {
-        // Gestisci la risposta qui
-       // console.log("Risposta:", response);
+      
         if(response=="0")
             ShowSnackBar();
         else
-             location.href = "./php/Studenti.html";//Location("Studenti.html");
+             location.href = "./Studenti.html"; 
 
       },
       error: function(xhr, status, error) 

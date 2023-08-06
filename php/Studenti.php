@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -81,10 +84,11 @@
   <body>
     <div class="TitleBar">
       <div>
-          <span>LOGIN</span>
+          <span>REGISTRO VALUTAZIONI</span>
       </div>
   </div>
     <div class="sidebar">
+      <h2  >Benvenuto <?php echo $_SESSION["user"]; ?></h2>
       <h2 id="insert">Inserisci Studente OOO</h2>
       <h2 id="view">Visualizza Studenti PPP</h2>
     </div>
