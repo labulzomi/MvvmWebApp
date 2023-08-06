@@ -37,6 +37,8 @@ function ChiamataGenerica(formData)
        // console.log("Risposta:", response);
         if(response=="0")
             ShowSnackBar();
+        else
+            Location("Studenti.html");
 
       },
       error: function(xhr, status, error) 
