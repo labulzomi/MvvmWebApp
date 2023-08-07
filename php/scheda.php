@@ -17,6 +17,11 @@ session_start();
     <div id="contenitore">
 
 
+    <?php 
+    
+    var_dump($_POST["dati"]);
+    ?>
+
     </div>
 
     </body>

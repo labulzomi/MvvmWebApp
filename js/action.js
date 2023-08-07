@@ -45,7 +45,13 @@ return template;
 function editUser(id)
 {
   var t=dati.find((o) => { return o.ID === id});
-  window.location.href="../php/scheda.php?dati="+JSON.stringify(t);
+ // window.location.href="../php/scheda.php?dati="+JSON.stringify(t);
+
+  $.redirect("../php/scheda.php",
+        {
+            dati: JSON.stringify(t) 
+        });
+    
 }
 function deleteUser(id)
 {
@@ -55,7 +61,7 @@ function deleteUser(id)
 function GetPath(img)
 {
   if(img==null)
-    return "http://areaverifica.altervista.org/GaleazziOnline/risorse/imgs/noimage.png";
+    return "http://areaverifica.altervista.org/GaleazziOnline/risorse/imgs/noimage.jpeg";
   else
   return "http://areaverifica.altervista.org/Galeazzi/img/"+img;
 }
