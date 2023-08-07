@@ -35,12 +35,14 @@ $dato=json_decode($_POST["dati"]);
         </style>
     </head>
     <body>
-    <div class="TitleBar">
-      <div>
-          <span>SCHEDA STUDENTE</span>
-          <span><div id="img_logout"></div></span>
-      </div>
-    </div>
+    
+        <div class="TitleBar">        
+            <div>
+            <span>SCHEDA STUDENTE</span>
+            <span><div id="img_logout"></div></span>
+            </div>
+            <div></div>
+        </div>
     <div class="Contenitore">
 
         <div class="grigliaScheda">

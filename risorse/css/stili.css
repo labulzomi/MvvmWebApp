@@ -12,6 +12,8 @@
     color: lightgray;
     letter-spacing: 8px;
     font-family: Cairo;
+    display: flex;
+    justify-content: space-between;
 
 }
 
@@ -29,14 +31,8 @@ width: 500px; /* Imposta la larghezza desiderata del div */
 
 #img_logout
 {
-
-  
     width: 50px;
-    height: 50px;
     background: url("../imgs/ChiudiOn.png") no-repeat;
-    margin: 20px;
- 
- 
 }
 #img_logout:hover 
 {

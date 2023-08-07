@@ -140,11 +140,14 @@ $(document).ready(function()
     </style>
   </head>
   <body>
-    <div class="TitleBar">
-      <div>
-          <span>REGISTRO VALUTAZIONI</span>
-      </div>
-  </div>
+    <div class="TitleBar">        
+        <div>
+            <span>REGISTRO VALUTAZIONI</span>
+            <span><div id="img_logout"></div></span>
+        </div>
+        <div></div>
+    </div>
+    
     <div class="sidebar">
       <h2  >Benvenuto <?php echo $_SESSION["user"]; ?></h2>
       <h2 id="insert">Inserisci Studente OOO</h2>
