@@ -76,11 +76,11 @@ session_start();
                     <?php
                     foreach($val as  json_decode($_POST["dati"])->Valutazioni)
                     {
-                        echo "<li>                       
-                        <span>Voto: $val->Voto</span>
-                        <span>Data: $val->Data</span>
+                        echo '<li>                       
+                        <span>Voto: '.$val->Voto.'</span>
+                        <span>Data: '.$val->Data.'</span>
                         <button class="delete-button">Elimina</button>
-                        </li>";
+                        </li>';
                     }
                     
                     
