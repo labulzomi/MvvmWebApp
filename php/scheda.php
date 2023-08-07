@@ -44,12 +44,12 @@ session_start();
             <div id="img_prof" class="">
                 <img src="
                 <?php 
-                $img=json_decode($_POST["dati"]);
-                var_dump($img);
-                    if($img->Foto==null)
+                $dato=json_decode($_POST["dati"]);
+                
+                    if($dato->Foto==null)
                     echo "http://areaverifica.altervista.org/GaleazziOnline/risorse/imgs/noimage.jpeg";
                 else
-                echo "http://areaverifica.altervista.org/Galeazzi/img/"+$img->Foto;
+                echo "http://areaverifica.altervista.org/Galeazzi/img/"+$dato->Foto;
   
     ?>
                 "/>
@@ -74,7 +74,7 @@ session_start();
             <div id="valutazioni" class="">
                 <ul id="studentList">
                     <?php
-                    foreach($val as  json_decode($_POST["dati"])->Valutazioni)
+                    foreach($val as  $dato->Valutazioni)
                     {
                         echo '<li>                       
                         <span>Voto: '.$val->Voto.'</span>
@@ -92,8 +92,8 @@ session_start();
         </div>
 
     <?php 
-    
-    var_dump($_POST["dati"]);
+    var_dump($dato->Foto);
+   // var_dump($_POST["dati"]);
     ?>
         <div id="statistiche">
                         
