@@ -44,18 +44,37 @@ return template;
 }
 function editUser(id)
 {
+
+  //decido di passare l'intero oggetto ,senza interpellare di nuovo il server
   var t=dati.find((o) => { return o.ID === id});
  // window.location.href="../php/scheda.php?dati="+JSON.stringify(t);
 
-  $.redirect("../php/scheda.php",
-        {
-            dati: JSON.stringify(t) 
-        });
+ GenerazioneFormDinamica(t);
     
 }
 function deleteUser(id)
 {
 
+}
+
+function GenerazioneFormDinamica(oggetto)
+{ 
+  var form = $("<form>")
+.attr("method", "POST")
+.attr("action", "../php/scheda.php") // Cambia con l'URL della nuova pagina
+.css("display", "none"); // Nascondi il form
+
+// Aggiungi i campi dati al form
+ 
+$("<input>")
+  .attr("type", "hidden")
+  .attr("name", "dati")
+  .attr("value", JSON.stringify(t))
+  .appendTo(form);
+ 
+
+// Aggiungi il form alla pagina e sottometti
+form.appendTo("body").submit();
 }
 
 function GetPath(img)
