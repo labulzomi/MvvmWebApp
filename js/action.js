@@ -69,7 +69,7 @@ function GenerazioneFormDinamica(oggetto)
 $("<input>")
   .attr("type", "hidden")
   .attr("name", "dati")
-  .attr("value", JSON.stringify(t))
+  .attr("value", JSON.stringify(oggetto))
   .appendTo(form);
  
 
