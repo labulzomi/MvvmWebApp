@@ -38,6 +38,7 @@ $dato=json_decode($_POST["dati"]);
     <div class="TitleBar">
       <div>
           <span>SCHEDA STUDENTE</span>
+          <span><div id="img_logout"></div></span>
       </div>
     </div>
     <div class="Contenitore">
@@ -51,7 +52,7 @@ $dato=json_decode($_POST["dati"]);
                     if($dato->Foto==null)
                     echo "http://areaverifica.altervista.org/GaleazziOnline/risorse/imgs/noimage.jpeg";
                 else
-                echo "http://areaverifica.altervista.org/Galeazzi/img/"+$dato->Foto;
+                echo "http://areaverifica.altervista.org/Galeazzi/img/".$dato->Foto;
   
     ?>
                 "/>
@@ -94,9 +95,9 @@ $dato=json_decode($_POST["dati"]);
         </div>
 
     <?php 
-    var_dump($dato->Foto);
+    //var_dump($dato->Foto);
 
-    echo "--- ".$dato->Foto;
+    //echo "--- ".$dato->Foto;
    // var_dump($_POST["dati"]);
     ?>
         <div id="statistiche">
