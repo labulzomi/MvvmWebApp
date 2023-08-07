@@ -1,4 +1,5 @@
 //qui inserire le chiamate js
+var dati=null;
 function GestioneResponse(mode,response)
 {
     switch(mode)
@@ -16,7 +17,7 @@ function GestioneResponse(mode,response)
               ShowSnackBar("Registrazione avvenuta con successo");
             break;
         case "2"://visualizza
-              var dati=JSON.parse(response);
+              dati=JSON.parse(response);
               dati.forEach(function(studente) 
               {
                 $("#elenco").append(ListItemTemplate(studente));
@@ -32,21 +33,29 @@ function ListItemTemplate(studente)
   <img src="`+GetPath(studente.Foto)+`" alt="Foto utente">
   <span class="user-name">`+studente.Nome+`</span>
   <span class="user-surname">`+studente.Cognome+`</span>
-  <button class="edit-btn" onclick="editUser()">
-    <i class="fas fa-edit"></i>
+  <button class="edit-btn" onclick="editUser(`+studente.ID+`)">
+   <img src="../risorse/imgs/voti.png">
   </button>
-  <button class="delete-btn" onclick="deleteUser()">
-    <i class="fas fa-trash-alt"></i>
+  <button class="delete-btn" onclick="deleteUser(`+studente.ID+`)">
+  <img src="../risorse/imgs/delete.png">
   </button>
 </li>`;
 return template;
 }
+function editUser(id)
+{
+  var t=dati.find((o) => { return o.ID === id});
+  window.location.href="../php/scheda.php?dati="+JSON.stringify(t);
+}
+function deleteUser(id)
+{
 
+}
 
 function GetPath(img)
 {
   if(img==null)
-    return "defaòdfsdfsdflt";
+    return "http://areaverifica.altervista.org/GaleazziOnline/risorse/imgs/noimage.png";
   else
   return "http://areaverifica.altervista.org/Galeazzi/img/"+img;
 }
