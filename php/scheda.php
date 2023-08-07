@@ -2,6 +2,8 @@
 session_start();
 //inserire verifica accesso
 
+
+$dato=json_decode($_POST["dati"]);
 ?>
 <html>
     <head>
@@ -44,7 +46,7 @@ session_start();
             <div id="img_prof" class="">
                 <img src="
                 <?php 
-                $dato=json_decode($_POST["dati"]);
+                
                 
                     if($dato->Foto==null)
                     echo "http://areaverifica.altervista.org/GaleazziOnline/risorse/imgs/noimage.jpeg";
@@ -74,7 +76,7 @@ session_start();
             <div id="valutazioni" class="">
                 <ul id="studentList">
                     <?php
-                    foreach($val as  $dato->Valutazioni)
+                    foreach($dato->Valutazioni as $val)
                     {
                         echo '<li>                       
                         <span>Voto: '.$val->Voto.'</span>
@@ -93,6 +95,8 @@ session_start();
 
     <?php 
     var_dump($dato->Foto);
+
+    echo "--- ".$dato->Foto;
    // var_dump($_POST["dati"]);
     ?>
         <div id="statistiche">
