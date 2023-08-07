@@ -38,7 +38,7 @@ session_start();
           <span>SCHEDA STUDENTE</span>
       </div>
     </div>
-    <div id="contenitore">
+    <div class="Contenitore">
 
         <div class="grigliaScheda">
             <div id="img_prof" class="">
