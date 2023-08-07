@@ -56,10 +56,11 @@ $(document).ready(function()
 <body>
 <div>
     
-    <div class="TitleBar">
+    <div class="TitleBar">        
         <div>
             <span>LOGIN</span>
         </div>
+        <div></div>
     </div>
     <div class="Contenitore">
         <div class="LoginArea">
