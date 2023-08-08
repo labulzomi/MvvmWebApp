@@ -22,7 +22,9 @@ function GestioneResponse(mode,response)
               {
                 $("#elenco").append(ListItemTemplate(studente));
               });
-             
+        case "4"://delete studente
+         alert(response);
+         location.reload();
         break;
     }
 }
@@ -54,27 +56,32 @@ function editUser(id)
 }
 function deleteUser(id)
 {
-
+  var t=dati.find((o) => { return o.ID === id});
+  var formData = new FormData();
+  formData.append("dati",JSON.stringify(t));
+  formData.append("mode",4);
+  formData.append("online",1);
+  ChiamataGenerica(formData);
 }
 
 function GenerazioneFormDinamica(oggetto)
 { 
   var form = $("<form>")
-.attr("method", "POST")
-.attr("action", "../php/scheda.php") // Cambia con l'URL della nuova pagina
-.css("display", "none"); // Nascondi il form
+  .attr("method", "POST")
+  .attr("action", "../php/scheda.php") // Cambia con l'URL della nuova pagina
+  .css("display", "none"); // Nascondi il form
 
-// Aggiungi i campi dati al form
- 
-$("<input>")
-  .attr("type", "hidden")
-  .attr("name", "dati")
-  .attr("value", JSON.stringify(oggetto))
-  .appendTo(form);
- 
+  // Aggiungi i campi dati al form
+  
+  $("<input>")
+    .attr("type", "hidden")
+    .attr("name", "dati")
+    .attr("value", JSON.stringify(oggetto))
+    .appendTo(form);
+  
 
-// Aggiungi il form alla pagina e sottometti
-form.appendTo("body").submit();
+  // Aggiungi il form alla pagina e sottometti
+  form.appendTo("body").submit();
 }
 
 function GetPath(img)
