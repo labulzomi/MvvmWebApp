@@ -154,13 +154,13 @@ $(document).ready(function()
     <div class="TitleBar">        
         <div>
             <span>REGISTRO VALUTAZIONI</span>
-            <span><div id="img_logout"></div></span>
+            <span><a href="./logout.php"><div id="img_logout"></div></a></span>
         </div>
         <div></div>
     </div>
     
     <div class="sidebar">
-      <h2  >Benvenuto <?php echo $_SESSION["user"]; ?></h2>
+      <h4  >Benvenuto <?php echo $_SESSION["user"]; ?></h2>
       <h2 id="insert">Inserisci Studente OOO</h2>
       <h2 id="view">Visualizza Studenti PPP</h2>
     </div>

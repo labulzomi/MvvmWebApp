@@ -32,6 +32,10 @@ $dato=json_decode($_POST["dati"]);
             padding: 5px 10px;
             cursor: pointer;
             }
+            #img_prof
+            {
+                width:100px;
+            }
         </style>
     </head>
     <body>
@@ -48,8 +52,7 @@ $dato=json_decode($_POST["dati"]);
         <div class="grigliaScheda">
             <div id="img_prof" class="">
                 <img src="
-                <?php 
-                
+                <?php               
                 
                     if($dato->Foto==null)
                     echo "http://areaverifica.altervista.org/GaleazziOnline/risorse/imgs/noimage.jpeg";

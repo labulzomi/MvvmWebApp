@@ -24,7 +24,7 @@ function GestioneResponse(mode,response)
               });
               break;
         case "4"://delete studente
-              alert(response);
+              alert("Studente rimosso");
               location.reload();
          
         break;

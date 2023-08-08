@@ -1,7 +1,11 @@
 /*test*/
 *{margin: 0px;;}
 
-
+.TitleBar a, a:hover, a:focus, a:active 
+{
+  text-decoration: none;
+  color: inherit;
+}
 
 .TitleBar div:first-of-type
 {
@@ -56,11 +60,15 @@ width: 500px; /* Imposta la larghezza desiderata del div */
 
 .Contenitore
 {background-color: #009D99;
-    display: flex;
+    
+    height: 100vh;
+}
+.Login
+{
+  display: flex;
     text-align: center;
     justify-content: center; /* Centra orizzontalmente */
     align-items: center; /* Centra verticalmente */
-    height: 100vh;
 }
 
 .LoginArea span>input{

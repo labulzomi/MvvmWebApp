@@ -62,7 +62,7 @@ $(document).ready(function()
         </div>
         <div></div>
     </div>
-    <div class="Contenitore">
+    <div class="Contenitore Login">
         <div class="LoginArea">
             <span> <input type="text" id="tb_user" placeholder="Mail" value="mail@paologaleazzi.com"/></span><br>
             <span> <input type="password" id="tb_psw" placeholder="Password" value="PaoloPassword"/></span><br>
