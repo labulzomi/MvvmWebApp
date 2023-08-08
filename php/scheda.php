@@ -134,6 +134,26 @@ $dato=json_decode($_POST["dati"]);
 	  </div>
 	 <div> 
 		<ul id="studentList">
+            <?php
+                foreach($dato->Valutazioni as $val)
+                {
+                    echo '<li>
+                    <span><img width="40px" src="../risorse/imgs/voti.png"></span>
+					<span> <select>';
+                    for($i=1;$i<=10;$i=$i+0.5){
+                        $f=$i==$val->Voto?"selected":"";
+                        echo "<option $f value=$i>$i</option>";
+                    }
+                    echo '</select></span>	                       
+                    <span><img width="40px" src="../risorse/imgs/calendar.png"></span>
+                    <span> <input type="date" value='.$val->Data.'/></span>
+                    
+                    <button class="delete-button">Elimina</button>
+                    </li>';
+                }
+                    
+                    
+            ?>
                     <li>                       
                         <span><img width="40px" src="C:\Users\sonlu\Desktop\MvvmWebApp\MvvmWebApp\risorse\imgs\voti.png"></span>
 						<span> <select><option></option></select></span>
