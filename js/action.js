@@ -22,9 +22,11 @@ function GestioneResponse(mode,response)
               {
                 $("#elenco").append(ListItemTemplate(studente));
               });
+              break;
         case "4"://delete studente
-         alert(response);
-         location.reload();
+              alert(response);
+              location.reload();
+         
         break;
     }
 }
