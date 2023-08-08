@@ -28,6 +28,8 @@ $dato=json_decode($_POST["dati"]);
             background-color: transparent;
             color: white;
             border: none;
+            background: url("../risorse/imgs/deleteicon.png") no-repeat center;
+            height:30px;
             border-radius: 5px;
             padding: 5px 10px;
             cursor: pointer;
@@ -109,7 +111,7 @@ $dato=json_decode($_POST["dati"]);
                             <span><img width="30px" src="../risorse/imgs/calendar.png"></span>
                             <span> <input type="date" value="'.$val->Data.'" /></span>
                             
-                            <button class="delete-button"  style="background: url("../risorse/imgs/deleteicon.png") no-repeat center;height:30px"></button>
+                            <button class="delete-button"  style=""></button>
                             </li>';
                         }
                             
