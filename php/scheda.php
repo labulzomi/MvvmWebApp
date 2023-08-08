@@ -32,9 +32,9 @@ $dato=json_decode($_POST["dati"]);
             padding: 5px 10px;
             cursor: pointer;
             }
-            #img_prof
+            #img_prof 
             {
-                width:100px;
+                width:300px;
             }
         </style>
     </head>
@@ -50,8 +50,8 @@ $dato=json_decode($_POST["dati"]);
     <div class="Contenitore">
 
         <div class="grigliaScheda">
-            <div id="img_prof" class="">
-                <img src="
+            <div  class="">
+                <img id="img_prof" src="
                 <?php               
                 
                     if($dato->Foto==null)
@@ -66,20 +66,21 @@ $dato=json_decode($_POST["dati"]);
                 <div>
                     <input type="text" value="
                     <?php     
-    echo json_decode($_POST["dati"])->Nome;
+    echo trim(json_decode($_POST["dati"])->Nome);
     ?>
                     "/>
                 </div>
                 <div>
                 <input type="text" value="
                     <?php     
-    echo json_decode($_POST["dati"])->Cognome;
+    echo trim(json_decode($_POST["dati"])->Cognome);
     ?>
                     "/>
                 </div>
                 
             </div>
             <div id="valutazioni" class="">
+                <h3>Valutazioni</h3>
                 <ul id="studentList">
                     <?php
                     foreach($dato->Valutazioni as $val)
