@@ -37,7 +37,7 @@ function ListItemTemplate(studente)
    <img src="../risorse/imgs/modify.png">
   </button>
   <button class="delete-btn" onclick="deleteUser(`+studente.ID+`)">
-  <img src="../risorse/imgs/delete.png">
+  <img src="../risorse/imgs/deleteicon.png">
   </button>
 </li>`;
 return template;

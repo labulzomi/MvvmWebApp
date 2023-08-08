@@ -41,8 +41,8 @@ $(document).ready(function()
       border-radius: 50%;
       margin-right: 10px;
     }
-    .user-item .edit-btn,
-    .user-item .delete-btn
+    .user-item .edit-btn img,
+    .user-item .delete-btn img
     {
       width: 30px;
       height: 30px;
@@ -59,7 +59,7 @@ $(document).ready(function()
 
     /* Stili per i bottoni */
     .user-item button {
-      background-color: trasparent;
+      background-color: transparent;
        
       border: none;
       border-radius: 5px;
