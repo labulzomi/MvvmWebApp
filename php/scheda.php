@@ -106,10 +106,75 @@ $dato=json_decode($_POST["dati"]);
     //echo "--- ".$dato->Foto;
    // var_dump($_POST["dati"]);
     ?>
+
+<div style="display:flex;justify-content: space-around;text-align:center"> 
+	<fieldset>
+	  <legend>Anagrafica:</legend>
+	  <div>
+	  <img id="img_prof" src="<?php               
+                
+                    if($dato->Foto==null)
+                    echo "http://areaverifica.altervista.org/GaleazziOnline/risorse/imgs/noimage.jpeg";
+                else
+                echo "http://areaverifica.altervista.org/Galeazzi/img/".$dato->Foto;
+  
+    ?>"/>
+	  </div>
+	 <div> <button value="">Cambia Immagine</button></div>
+     <div> <button value="">Rimuovi Immagine</button></div>
+	 <div> <input type="text" value="<?php     
+    echo trim(json_decode($_POST["dati"])->Nome);
+    ?>"/></div>
+	 <div> <input type="text" value="<?php echo trim(json_decode($_POST["dati"])->Cognome);?>"/></div>
+	 </fieldset>
+	<fieldset>
+	  <legend>Valutazioni:</legend>
+	  <div>
+	   <button value=""  >Aggiungi valutazione</button>
+	  </div>
+	 <div> 
+		<ul id="studentList">
+                    <li>                       
+                        <span><img width="40px" src="C:\Users\sonlu\Desktop\MvvmWebApp\MvvmWebApp\risorse\imgs\voti.png"></span>
+						<span> <select><option></option></select></span>
+                        <span><img width="40px" src="C:\Users\sonlu\Desktop\MvvmWebApp\MvvmWebApp\risorse\imgs\calendar.png"></span>
+						<span> <input type="date"/></span>
+                        <button class="delete-button">Elimina</button>
+                        </li>
+					<li>                       
+                        <span><img width="40px" src="C:\Users\sonlu\Desktop\MvvmWebApp\MvvmWebApp\risorse\imgs\voti.png"></span>
+						<span> <select><option></option></select></span>
+                        <span><img width="40px" src="C:\Users\sonlu\Desktop\MvvmWebApp\MvvmWebApp\risorse\imgs\calendar.png"></span>
+						<span> <input type="date"/></span>
+                        <button class="delete-button">Elimina</button>
+                        </li>
+					<li>                       
+                        <span><img width="40px" src="C:\Users\sonlu\Desktop\MvvmWebApp\MvvmWebApp\risorse\imgs\voti.png"></span>
+						<span> <select><option></option></select></span>
+                        <span><img width="40px" src="C:\Users\sonlu\Desktop\MvvmWebApp\MvvmWebApp\risorse\imgs\calendar.png"></span>
+						<span> <input type="date"/></span>
+                        <button class="delete-button">Elimina</button>
+                        </li>
+					<li>                       
+                        <span><img width="40px" src="C:\Users\sonlu\Desktop\MvvmWebApp\MvvmWebApp\risorse\imgs\voti.png"></span>
+						<span> <select><option></option></select></span>
+                        <span><img width="40px" src="C:\Users\sonlu\Desktop\MvvmWebApp\MvvmWebApp\risorse\imgs\calendar.png"></span>
+						<span> <input type="date"/></span>
+                        <button class="delete-button">Elimina</button>
+                        </li>                    
+		</ul></div>
+	  
+ 
+	 </fieldset>
+
+ </div>
         <div id="statistiche">
                         
         </div>
     </div>
+
+
+
     <script>
         // Aggiungi event listener per eliminare un elemento
         document.addEventListener('click', function(e) {
