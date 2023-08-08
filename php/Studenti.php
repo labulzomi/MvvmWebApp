@@ -35,7 +35,7 @@ $(document).ready(function()
     }
 
     /* Stili per l'immagine utente */
-    .user-item img {
+    .user-item>img {
       width: 50px;
       height: 50px;
       border-radius: 50%;
