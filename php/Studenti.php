@@ -28,7 +28,9 @@ $(document).ready(function()
     .user-item {
       display: flex;
       align-items: center;
+      color: white;
       padding: 10px;
+      justify-content: space-around;
       border-bottom: 1px solid #ccc;
     }
 
@@ -39,6 +41,14 @@ $(document).ready(function()
       border-radius: 50%;
       margin-right: 10px;
     }
+    .user-item .edit-btn,
+    .user-item .delete-btn
+    {
+      width: 30px;
+      height: 30px;
+    }
+    
+
 
     /* Stili per il nome e cognome utente */
     .user-item .user-name,
@@ -49,8 +59,8 @@ $(document).ready(function()
 
     /* Stili per i bottoni */
     .user-item button {
-      background-color: #007BFF;
-      color: #fff;
+      background-color: trasparent;
+       
       border: none;
       border-radius: 5px;
       padding: 5px 10px;
@@ -86,6 +96,7 @@ $(document).ready(function()
         background-color: #ddd;
       }
       .content {
+        background-color: #191949;
         margin-left: 220px;
         padding: 20px;
       }
