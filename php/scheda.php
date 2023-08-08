@@ -50,7 +50,7 @@ $dato=json_decode($_POST["dati"]);
                             <span><img width="30px" src="../risorse/imgs/calendar.png"></span>
                             <span> <input type="date" ></span>
                             
-                            <button class="delete-button"><img width="30px" src="../risorse/imgs/deleteicon.png"></button>
+                            <button class="delete-button"  style=""></button>
                             </li>`);
                 });
             });
@@ -61,7 +61,7 @@ $dato=json_decode($_POST["dati"]);
         <div class="TitleBar">        
             <div>
             <span>SCHEDA STUDENTE</span>
-            <span><div id="img_logout"></div></span>
+            <span><a href="./logout.php"><div id="img_logout"></div></a></span>
             </div>
             <div></div>
         </div>
