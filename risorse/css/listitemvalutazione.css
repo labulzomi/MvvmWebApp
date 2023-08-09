@@ -15,7 +15,7 @@ ul {
     background-color: transparent;
     color: white;
     border: none;
-    background: url("../risorse/imgs/deleteicon.png") no-repeat center;
+    background: url("../imgs/deleteicon.png") no-repeat center;
     height:30px;
     border-radius: 5px;
     padding: 5px 10px;
