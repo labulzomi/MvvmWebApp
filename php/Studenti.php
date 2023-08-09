@@ -10,14 +10,14 @@ session_start();
     <link href='../risorse/css/headerbarra.css' rel='stylesheet'>
     <link href='../risorse/css/listitemstudenti.css' rel='stylesheet'>
     <link href='../risorse/css/listitemvalutazioni.css' rel='stylesheet'>
+    <link href='../risorse/css/menulaterale.css' rel='stylesheet'>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="../js/action.js"></script>
     <script>
 
 
 $(document).ready(function() 
-{
-    
+{    
         var formData = new FormData(); 
         formData.append("mode",2);
         ChiamataGenerica(formData);
@@ -30,38 +30,8 @@ $(document).ready(function()
     
   </style>
     <style>
-      body {
-        
-      }
-      .sidebar {
-        width: 200px;
-        height: 100vh;
-        position: fixed;
-        background-color: #333;
-        color: #fff;
-        padding: 20px;
-      }
-      .sidebar h2 {
-        cursor: pointer;
-        transition: color 0.3s, background-color 0.3s;
-        padding: 10px;
-        border-radius: 5px;
-      }
-      .sidebar h2:hover {
-        color: #333;
-        background-color: #ddd;
-      }
-      .content {
-        background-color: #191949;
-        margin-left: 220px;
-        padding: 20px;
-      }
-      .content > div {
-        display: none;
-      }
-      .content > .active {
-        display: block;
-      }
+       
+      
       #preview {
         border-radius: 50%; /* Fai in modo che l'immagine appaia come un cerchio */
         width: 100px; /* Imposta la larghezza dell'immagine a 100px */
@@ -111,57 +81,57 @@ $(document).ready(function()
         </div>
         <div></div>
     </div>
-    
-    <div class="sidebar">
-      <h4  >Benvenuto <?php echo $_SESSION["user"]; ?></h2>
-      <h2 id="insert">Inserisci Studente OOO</h2>
-      <h2 id="view">Visualizza Studenti PPP</h2>
-    </div>
-    <div class="content">
-      <div id="insertContent" class="active">
-        <h2>Inserisci Studente</h2>
-        <div style="display:flex;justify-content: space-around;text-align:center;align-items: center;padding: 20px;"> 
-            <fieldset>
-            <legend>Anagrafica:</legend>
-            <div>
-            <img id="img_prof" src="../risorse/imgs/studente.png"/>
-            </div>
-            <div> <button value="">Carica Immagine</button></div> 
-            <div> <input type="text" value=""/></div>
-            <div> <input type="text" value=""/></div>
-            </fieldset>
-            <fieldset>
-            <legend>Valutazioni:</legend>
-            <div>
-            <button id="bt_add_val" value="" >Aggiungi valutazione</button>
-            </div>
-            <div> 
-                <ul id="studentList">
-                    
-                                            
-                </ul>
-            </div>
-            
-        
-            </fieldset>
+    <div id="areanavigazione">
+      <div class="sidebar">
+        <h4  >Benvenuto <?php echo $_SESSION["user"]; ?></h2>
+        <h2 id="insert">Inserisci Studente OOO</h2>
+        <h2 id="view">Visualizza Studenti PPP</h2>
+      </div>
+      <div class="content">
+        <div id="insertContent" class="active">
+          <h2>Inserisci Studente</h2>
+          <div style="display:flex;justify-content: space-around;text-align:center;align-items: center;padding: 20px;"> 
+              <fieldset>
+              <legend>Anagrafica:</legend>
+              <div>
+              <img id="img_prof" src="../risorse/imgs/studente.png"/>
+              </div>
+              <div> <button value="">Carica Immagine</button></div> 
+              <div> <input type="text" value=""/></div>
+              <div> <input type="text" value=""/></div>
+              </fieldset>
+              <fieldset>
+              <legend>Valutazioni:</legend>
+              <div>
+              <button id="bt_add_val" value="" >Aggiungi valutazione</button>
+              </div>
+              <div> 
+                  <ul id="studentList">
+                      
+                                              
+                  </ul>
+              </div>
+              
+          
+              </fieldset>
 
+          </div>
+
+          
+          <div class="wrap">
+            <button class="button">SALVA</button>
+          </div>
         </div>
 
-        
-        <div class="wrap">
-          <button class="button">SALVA</button>
+        <div id="viewContent">
+          <h2>Visualizza Studenti</h2>
+          <div id="viewData"></div>
+          <ul id="elenco">
+
+          </ul>
         </div>
       </div>
-
-      <div id="viewContent">
-        <h2>Visualizza Studenti</h2>
-        <div id="viewData"></div>
-        <ul id="elenco">
-
-        </ul>
-      </div>
     </div>
-
     <script>
       document.getElementById("insert").addEventListener("click", function () {
         document.getElementById("insertContent").classList.add("active");

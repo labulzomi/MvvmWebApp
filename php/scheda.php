@@ -14,10 +14,7 @@ $dato=json_decode($_POST["dati"]);
         <script src="../js/action.js"></script>
         <style>
             
-            #img_prof 
-            {
-                width:300px;
-            }
+            
         </style>
         <script>
             $(document).ready(function() 

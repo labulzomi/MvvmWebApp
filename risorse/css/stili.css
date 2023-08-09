@@ -1,9 +1,14 @@
-/*test*/
+/*generici*/
 *{margin: 0px;;}
 html,body 
 {
   height: 100%;
   font-family: Arial, sans-serif;
+}
+
+#img_prof 
+{
+    width:300px;
 }
 
 .LoginArea{
