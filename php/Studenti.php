@@ -196,10 +196,8 @@ $(document).ready(function()
                 const reader = new FileReader();
                 reader.onload = function(event) {
                     const img = document.createElement('img');
-                    img.src = event.target.result;
-                    img.style.maxWidth = '300px'; // Regola la dimensione massima dell'immagine visualizzata
-                    imagePreview.innerHTML = '';
-                    imagePreview.appendChild(img);
+                    $("#img_prof").attr("src",event.target.result);
+                
                 };
                 reader.readAsDataURL(file);
             }
