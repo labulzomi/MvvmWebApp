@@ -120,14 +120,14 @@ $(document).ready(function()
               <div>
               <img id="img_prof" src="../risorse/imgs/studente.png"/>
               </div>
-              <div> <button value="" id="bt_load_img" type="file" name="image" accept="image/*">Carica Immagine</button></div> 
-              <div> <input class="InsertText" type="text" value=""/></div>
-              <div> <input class="InsertText" type="text" value=""/></div>
+              <div> <input  id="bt_load_img" type="file" name="image" accept="image/*">Carica Immagine</button></div> 
+              <div> <input class="InsertText" type="text"  /></div>
+              <div> <input class="InsertText" type="text"  /></div>
               </fieldset>
               <fieldset>
               <legend>Valutazioni:</legend>
               <div>
-              <button id="bt_add_val" value="" >Aggiungi valutazione</button>
+              <button id="bt_add_val"   >Aggiungi valutazione</button>
               </div>
               <div> 
                   <ul id="studentList">
