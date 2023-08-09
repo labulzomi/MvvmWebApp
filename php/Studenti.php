@@ -9,7 +9,7 @@ session_start();
     <link href='../risorse/css/stili.css' rel='stylesheet'>
     <link href='../risorse/css/headerbarra.css' rel='stylesheet'>
     <link href='../risorse/css/listitemstudenti.css' rel='stylesheet'>
-    <link href='../risorse/css/listitemvalutazioni.css' rel='stylesheet'>
+    <link href='../risorse/css/listitemvalutazione.css' rel='stylesheet'>
     <link href='../risorse/css/menulaterale.css' rel='stylesheet'>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="../js/action.js"></script>
