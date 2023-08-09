@@ -12,6 +12,8 @@ $dato=json_decode($_POST["dati"]);
         <link href='../risorse/css/listitemvalutazione.css' rel='stylesheet'>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
         <script src="../js/action.js"></script>
+        <script src="../js/utility.js"></script>
+        <script src="../js/template.js"></script>
         <style>
             
             
@@ -37,9 +39,11 @@ $dato=json_decode($_POST["dati"]);
     
         <div class="TitleBar">        
             <div>
-            <span>SCHEDA STUDENTE</span>
-            <span><a href="./logout.php"><div id="img_logout"></div></a></span>
-            <span><a href="./Studenti.php"><div id="img_back"></div></a></span>
+                <span>SCHEDA STUDENTE</span>
+                <div>
+                    <span><a href="./Studenti.php"><div id="img_back"></div></a></span>
+                    <span><a href="./logout.php"><div id="img_logout"></div></a></span>
+                </div>
             </div>
             <div></div>
         </div>

@@ -31,21 +31,7 @@ function GestioneResponse(mode,response)
     }
 }
 
-function ListItemTemplate(studente)
-{
-  var template= `<li class="user-item">
-  <img src="`+GetPath(studente.Foto)+`" alt="Foto utente">
-  <span class="user-name">`+studente.Nome+`</span>
-  <span class="user-surname">`+studente.Cognome+`</span>
-  <button class="edit-btn" onclick="editUser(`+studente.ID+`)">
-   <img src="../risorse/imgs/modify.png">
-  </button>
-  <button class="delete-btn" onclick="deleteUser(`+studente.ID+`)">
-  <img src="../risorse/imgs/deleteicon.png">
-  </button>
-</li>`;
-return template;
-}
+
 function editUser(id)
 {
 
@@ -86,25 +72,9 @@ function GenerazioneFormDinamica(oggetto)
   form.appendTo("body").submit();
 }
 
-function GetPath(img)
-{
-  if(img==null)
-    return "http://areaverifica.altervista.org/GaleazziOnline/risorse/imgs/noimage.jpeg";
-  else
-  return "http://areaverifica.altervista.org/Galeazzi/img/"+img;
-}
 
-function CheckMail(email)
-{
-     
-    var emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
-    if (emailPattern.test(email)) {
-      return true;
-    } else {
-      return false;
-    }
-}
+
 function ShowSnackBar(msg="I dati inseriti non sono corretti")
 {
     $("#snackbar").text(msg);
@@ -141,45 +111,6 @@ function ChiamataGenerica(formData)
 
 
 
-
-//chiamate per login.php
-/*
-$(document).ready(function() 
-{
-    $("#bt_login").on("click", function() {     
-
-      if (!CheckMail($("#tb_user").val())) {
-        ShowSnackBar();
-      }
-      else
-      {
-        //procedo alla verifica della login
-        var utente=new Utente($("#tb_user").val(),$("#tb_psw").val());
-        var formData = new FormData();
-        formData.append("dati",utente.displayInfo());
-        formData.append("mode",5);
-        formData.append("online",1);
-        ChiamataGenerica(formData);
-      }
-    });
-
-    $("#bt_reg").on("click", function() {     
-
-        if (!CheckMail($("#tb_user").val())) {
-          ShowSnackBar();
-        }
-        else
-        {
-          //procedo alla verifica della disponibilità
-          var utente=new Utente($("#tb_user").val(),$("#tb_psw").val());
-          var formData = new FormData();
-          formData.append("dati",utente.displayInfo());
-          formData.append("mode",6);
-          formData.append("online",1);
-          ChiamataGenerica(formData);
-        }
-      });
-  });*/
-
+ 
 
   
