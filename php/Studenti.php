@@ -167,54 +167,33 @@ $(document).ready(function()
     <div class="content">
       <div id="insertContent" class="active">
         <h2>Inserisci Studente</h2>
-        <form
-          action="elabora.php"
-          method="POST"
-          enctype="multipart/form-data"
-          style="display: flex; flex-direction: row; gap: 20px"
-        >
-          <div style="flex: 1">
-            <label for="photo">Foto:</label>
-            <br />
-            <img
-              id="preview"
-              src="../risorse/imgs/se_de_ri.jpg"
-              alt="Image preview"
-            />
-            <input
-              type="file"
-              id="photo"
-              name="photo"
-              accept="image/*"
-              onchange="previewFile()"
-            />
-            <br />
+        <div style="display:flex;justify-content: space-around;text-align:center;align-items: center;padding: 20px;"> 
+            <fieldset>
+            <legend>Anagrafica:</legend>
+            <div>
+            <img id="img_prof" src="../risorse/imgs/studente.png"/>
+            </div>
+            <div> <button value="">Carica Immagine</button></div> 
+            <div> <input type="text" value=""/></div>
+            <div> <input type="text" value=""/></div>
+            </fieldset>
+            <fieldset>
+            <legend>Valutazioni:</legend>
+            <div>
+            <button id="bt_add_val" value="" >Aggiungi valutazione</button>
+            </div>
+            <div> 
+                <ul id="studentList">
+                    
+                                            
+                </ul></div>
+            
+        
+            </fieldset>
 
-            <br />
-            <label for="firstname">Nome:</label><br />
-            <input type="text" id="firstname" name="firstname" required /><br />
-            <label for="lastname">Cognome:</label><br />
-            <input type="text" id="lastname" name="lastname" required /><br />
-          </div>
+        </div>
 
-          <div style="flex: 1">
-            <label for="grade">Voto:</label><br />
-            <select id="grade" name="grade">
-              <option value="">--Seleziona un voto--</option>
-              <!-- Using JavaScript or a server-side language, you could generate these options in a loop. -->
-              <option value="1">1</option>
-              <option value="1.5">1.5</option>
-              <!-- Add more options up to 10 here. -->
-            </select>
-            <br />
-            <label for="date">Data:</label><br />
-            <input type="date" id="date" name="date" /><br />
-          </div>
-          <!-- <div style="width: 100%; text-align: center; padding-top: 20px">
-            <input type="submit" value="Salva" />
-          </div> -->
-        </form>
-        <br />
+        
         <div class="wrap">
           <button class="button">SALVA</button>
         </div>
