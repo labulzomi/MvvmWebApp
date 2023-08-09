@@ -34,3 +34,8 @@
 {
     background: url("../imgs/ChiudiOff.png") no-repeat center;
 }
+#img_back
+{
+    width: 50px;
+    background: url("../imgs/Back_Arrow.svg") no-repeat center;
+}

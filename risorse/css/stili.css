@@ -45,31 +45,34 @@ width: 500px; /* Imposta la larghezza desiderata del div */
     align-items: center; /* Centra verticalmente */
 }
 
-.LoginArea span>input{
-    width: 40%;
-    padding: 4px 10px;
-    background-color: transparent;
-    margin: 8px 0;
-    box-sizing: border-box;
-    font-size: 18px;
-    border: none;
-    border-bottom: 3px solid lightgrey
-  }
+.InsertText
+{
+  width: 40%;
+  padding: 4px 10px;
+  background-color: transparent;
+  margin: 8px 0;
+  box-sizing: border-box;
+  font-size: 18px;
+  border: none;
+  border-bottom: 3px solid lightgrey
+}
 
-  input:focus {
+.InsertText:focus {
     outline: none; /* Rimuovi il bordo di evidenziazione predefinito */
     
   }
+.InsertText::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: lightgray;
+  opacity: 1; /* Firefox */
+}
+
   .Centra
   {
     text-align: center;
   }
 
 
-  ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color: lightgray;
-    opacity: 1; /* Firefox */
-  }
+  
  
 
   .grigliaScheda

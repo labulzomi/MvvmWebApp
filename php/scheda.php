@@ -39,6 +39,7 @@ $dato=json_decode($_POST["dati"]);
             <div>
             <span>SCHEDA STUDENTE</span>
             <span><a href="./logout.php"><div id="img_logout"></div></a></span>
+            <span><a href="./Studenti.php"><div id="img_back"></div></a></span>
             </div>
             <div></div>
         </div>
@@ -62,10 +63,10 @@ $dato=json_decode($_POST["dati"]);
             </div>
             <div> <button value="">Cambia Immagine</button></div>
             <div> <button value="">Rimuovi Immagine</button></div>
-            <div> <input type="text" value="<?php     
+            <div> <input class="InsertText" type="text" value="<?php     
             echo trim(json_decode($_POST["dati"])->Nome);
             ?>"/></div>
-            <div> <input type="text" value="<?php echo trim(json_decode($_POST["dati"])->Cognome);?>"/></div>
+            <div> <input class="InsertText" type="text" value="<?php echo trim(json_decode($_POST["dati"])->Cognome);?>"/></div>
             </fieldset>
             <fieldset>
             <legend>Valutazioni:</legend>

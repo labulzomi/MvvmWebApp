@@ -66,8 +66,8 @@ $(document).ready(function()
     </div>
     <div class="Contenitore Login">
         <div class="LoginArea">
-            <span> <input type="text" id="tb_user" placeholder="Mail" value="mail@paologaleazzi.com"/></span><br>
-            <span> <input type="password" id="tb_psw" placeholder="Password" value="PaoloPassword"/></span><br>
+            <span> <input class="InsertText" type="text" id="tb_user" placeholder="Mail" value="mail@paologaleazzi.com"/></span><br>
+            <span> <input class="InsertText" type="password" id="tb_psw" placeholder="Password" value="PaoloPassword"/></span><br>
             <div class="Centra"><input class="GenericButton" id="bt_login" type="button" value="Login"/></div>
             <div class="Centra"><input class="GenericButton" id="bt_reg" type="button" value="Registrati"/> </div>
         </div>

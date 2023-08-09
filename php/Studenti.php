@@ -97,8 +97,8 @@ $(document).ready(function()
               <img id="img_prof" src="../risorse/imgs/studente.png"/>
               </div>
               <div> <button value="">Carica Immagine</button></div> 
-              <div> <input type="text" value=""/></div>
-              <div> <input type="text" value=""/></div>
+              <div> <input class="InsertText" type="text" value=""/></div>
+              <div> <input class="InsertText" type="text" value=""/></div>
               </fieldset>
               <fieldset>
               <legend>Valutazioni:</legend>
