@@ -7,6 +7,8 @@ session_start();
 <html>
   <head>
     <link href='../risorse/css/stili.css' rel='stylesheet'>
+    <link href='../risorse/css/headerbarra.css' rel='stylesheet'>
+    <link href='../risorse/css/listitemstudenti.css' rel='stylesheet'>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="../js/action.js"></script>
     <script>
@@ -24,58 +26,11 @@ $(document).ready(function()
     </script>
 
 <style>
-    /* Stili di base per il listitem */
-    .user-item {
-      display: flex;
-      align-items: center;
-      color: white;
-      padding: 10px;
-      justify-content: space-around;
-      border-bottom: 1px solid #ccc;
-    }
-
-    /* Stili per l'immagine utente */
-    .user-item>img {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      margin-right: 10px;
-    }
-    .user-item .edit-btn img,
-    .user-item .delete-btn img
-    {
-      width: 30px;
-      height: 30px;
-    }
     
-
-
-    /* Stili per il nome e cognome utente */
-    .user-item .user-name,
-    .user-item .user-surname {
-      font-size: 18px;
-      font-weight: bold;
-    }
-
-    /* Stili per i bottoni */
-    .user-item button {
-      background-color: transparent;
-       
-      border: none;
-      border-radius: 5px;
-      padding: 5px 10px;
-      margin-left: 10px;
-      cursor: pointer;
-    }
-
-    /* Stili per gli spazi tra elementi */
-    .user-item > *:not(:last-child) {
-      margin-right: 10px;
-    }
   </style>
     <style>
       body {
-        font-family: Arial, sans-serif;
+        
       }
       .sidebar {
         width: 200px;
@@ -112,10 +67,7 @@ $(document).ready(function()
         height: 100px; /* Imposta l'altezza dell'immagine a 100px */
         object-fit: cover; /* Fai in modo che l'immagine copra l'intero spazio, ritagliandola se necessario */
       }
-      html,
-      body {
-        height: 100%;
-      }
+      
 
       .wrap {
         height: 100%;
@@ -186,7 +138,8 @@ $(document).ready(function()
                 <ul id="studentList">
                     
                                             
-                </ul></div>
+                </ul>
+            </div>
             
         
             </fieldset>

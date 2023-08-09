@@ -5,6 +5,8 @@ session_start();
 <html>
 <head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<link href='../risorse/css/headerbarra.css' rel='stylesheet'>
+<link href='../risorse/css/snackbarra.css' rel='stylesheet'>
 <script src="../js/model.js"></script>
 <script src="../js/action.js"></script>
 <script>

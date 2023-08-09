@@ -1,0 +1,36 @@
+.TitleBar a, a:hover, a:focus, a:active 
+{
+  text-decoration: none;
+  color: inherit;
+}
+
+.TitleBar div:first-of-type
+{
+    
+    border-radius: 10px 10px 0px 0px;
+    background-color: green;
+    padding: 10px;
+    font-size: 24px;
+    color: lightgray;
+    letter-spacing: 8px;
+    font-family: Cairo;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 30px;
+}
+
+.TitleBar>div+div
+{
+    height: 5px;
+    background-color: lightgray;
+}
+#img_logout
+{
+    width: 50px;
+    background: url("../imgs/ChiudiOn.png") no-repeat center;
+}
+#img_logout:hover 
+{
+    background: url("../imgs/ChiudiOff.png") no-repeat center;
+}

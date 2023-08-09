@@ -8,32 +8,12 @@ $dato=json_decode($_POST["dati"]);
 <html>
     <head>
         <link href='../risorse/css/stili.css' rel='stylesheet'>
+        <link href='../risorse/css/headerbarra.css' rel='stylesheet'>
+        <link href='../risorse/css/listitemvalutazione.css' rel='stylesheet'>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
         <script src="../js/action.js"></script>
         <style>
-            ul {
-            list-style: none;
-            padding: 0;
-            }
-
-            li {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px;
-            border-bottom: 1px solid #ccc;
-            }
-
-            .delete-button {
-            background-color: transparent;
-            color: white;
-            border: none;
-            background: url("../risorse/imgs/deleteicon.png") no-repeat center;
-            height:30px;
-            border-radius: 5px;
-            padding: 5px 10px;
-            cursor: pointer;
-            }
+            
             #img_prof 
             {
                 width:300px;
