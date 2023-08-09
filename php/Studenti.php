@@ -37,7 +37,7 @@ $(document).ready(function()
         });
         $("#bt_load_img").on("click", function() 
         {    
-          const file = imageInput.files[0];
+          const file = $("#bt_load_img").files[0];
             if (file) {
                 const reader = new FileReader();
                 reader.onload = function(event) {
