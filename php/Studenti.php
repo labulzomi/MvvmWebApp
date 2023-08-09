@@ -37,6 +37,16 @@ $(document).ready(function()
         });
         $("#bt_load_img").on("click", function() 
         {    
+          const file = imageInput.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                   
+                    $("#img_prof").attr("src",event.target.result);
+                
+                };
+                reader.readAsDataURL(file);
+            }
              
         });
         $("#bt_salva").on("click", function() 
@@ -187,20 +197,20 @@ $(document).ready(function()
       }
     </script>
     <script>
-        const imageInput = document.getElementById('bt_load_img');
-        const imagePreview = document.getElementById('img_prof');
+       /* const imageInput = document.getElementById('bt_load_img');
+       
 
         imageInput.addEventListener('change', function() {
             const file = imageInput.files[0];
             if (file) {
                 const reader = new FileReader();
                 reader.onload = function(event) {
-                    const img = document.createElement('img');
+                   
                     $("#img_prof").attr("src",event.target.result);
                 
                 };
                 reader.readAsDataURL(file);
-            }
+            }*/
         });
       </script>
   </body>

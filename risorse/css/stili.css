@@ -17,6 +17,10 @@ width: 500px; /* Imposta la larghezza desiderata del div */
   margin-right: auto;
 }
 
+fieldset
+{
+  margin: 10px;
+}
 
 .GenericButton
 {
