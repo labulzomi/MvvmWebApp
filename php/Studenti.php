@@ -18,12 +18,14 @@ session_start();
     <script src="../js/model.js"></script>
     <script>
 
+var statocaricamento=false;
 
 $(document).ready(function() 
 {    
         var formData = new FormData(); 
         formData.append("mode",2);
         ChiamataGenerica(formData);
+        statocaricamento=true;
 
         $("#bt_add_val").on("click", function() 
         {    
@@ -35,6 +37,13 @@ $(document).ready(function()
                     
                     <button class="delete-button"  style=""></button>
                     </li>`);
+        });
+        $("#insert").on("click", function() 
+        {    
+          var formData = new FormData(); 
+          formData.append("mode",2);
+          ChiamataGenerica(formData);
+          statocaricamento=true;
         });
          
         $("#bt_salva").on("click", function() 
@@ -115,7 +124,8 @@ $(document).ready(function()
       }
     </style>
   </head>
-  <body>
+  <body style="height: 100vh;width: 100vw;">
+    <div style="height: 100%;width: 100%;">
     <div class="TitleBar">        
         <div>
             <span>REGISTRO VALUTAZIONI</span>
@@ -138,7 +148,7 @@ $(document).ready(function()
               <div>
               <img id="img_prof" src="../risorse/imgs/studente.png"/>
               </div>
-              <div> <input  id="bt_load_img" type="file" name="image" accept="image/*">Carica Immagine</button></div> 
+              <div> <input  id="bt_load_img" type="file" name="image"  accept="image/*">Carica Immagine</button></div> 
               <div> <input class="InsertText" placeholder="Nome" id="bt_nome" type="text"  /></div>
               <div> <input class="InsertText" placeholder="Cognome" id="bt_cognome" type="text"  /></div>
               </fieldset>
@@ -221,5 +231,7 @@ $(document).ready(function()
             } 
         });
       </script>
+
+      </div>
   </body>
 </html>

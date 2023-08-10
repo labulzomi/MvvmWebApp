@@ -26,6 +26,12 @@ function GestioneResponse(mode,response)
         case "4"://delete studente
               alert("Studente rimosso");
               location.reload();
+        case "1"://insert studente
+            if(!isNaN(response))
+              alert("Studente inserito correttamente");
+            else 
+              alert("Si è verificato un errore "); 
+         
          
         break;
     }
