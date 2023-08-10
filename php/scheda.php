@@ -32,6 +32,7 @@ $dato=json_decode($_POST["dati"]);
                             
                             <button class="delete-button"  style=""></button>
                             </li>`);
+                    $("#gestore_bt").prop( "checked", false );
                 });
 
                 $("#bt_default_img").on("click", function() 
@@ -111,7 +112,7 @@ $dato=json_decode($_POST["dati"]);
                 </div>
             
             </div>
-            <div> 
+            <div style="margin-top:15px;"> 
                 <ul id="studentList">
                     <?php
                         foreach($dato->Valutazioni as $val)
@@ -155,7 +156,8 @@ $dato=json_decode($_POST["dati"]);
 
     <script>
         // Aggiungi event listener per eliminare un elemento
-        document.addEventListener('click', function(e) {
+        document.addEventListener('click', function(e) 
+        {
         if (e.target && e.target.classList.contains('delete-button')) {
             const listItem = e.target.closest('li');
             if (listItem) {
