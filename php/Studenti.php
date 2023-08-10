@@ -15,6 +15,7 @@ session_start();
     <script src="../js/action.js"></script>
     <script src="../js/utility.js"></script>
     <script src="../js/template.js"></script>
+    <script src="../js/model.js"></script>
     <script>
 
 
