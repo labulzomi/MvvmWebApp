@@ -77,6 +77,12 @@ $dato=json_decode($_POST["dati"]);
             <fieldset>
             <legend>Valutazioni:</legend>
             <div>
+                <div>
+                    <input type="checkbox" id="gestore_bt">
+                    <label for="gestore_bt">
+                        <div class="round-button">+</div>
+                    </label>
+                </div>
             <button id="bt_add_val" value=""  >Aggiungi valutazione</button>
             </div>
             <div> 
@@ -110,7 +116,9 @@ $dato=json_decode($_POST["dati"]);
         </div>
     <?php  
     ?>
-
+        <div class="wrap">
+            <button class="button" id="bt_salva">SALVA</button>
+          </div>
 
         <div id="statistiche">
                         

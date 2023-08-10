@@ -10,6 +10,7 @@ ul {
     padding: 10px;
     border-bottom: 1px solid #ccc;
     }
+    li>span{  margin: 0 5px;}
 
     .delete-button {
     background-color: transparent;

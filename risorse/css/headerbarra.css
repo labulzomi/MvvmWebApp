@@ -35,7 +35,8 @@
     background: url("../imgs/ChiudiOff.png") no-repeat center;
 }
 #img_back
-{
+{    
+    background-size: 25px 25px;
     width: 50px;
     background: url("../imgs/arrow.png") no-repeat center;
 }
