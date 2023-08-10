@@ -124,7 +124,7 @@ $(document).ready(function()
       }
     </style>
   </head>
-  <body style="height: 100vh;width: 100vw;">
+  <body >
     <div style="height: 100%;width: 100%;">
     <div class="TitleBar">        
         <div>

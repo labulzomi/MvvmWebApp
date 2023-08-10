@@ -25,13 +25,19 @@ $dato=json_decode($_POST["dati"]);
                 {    
                     $("#studentList").append(`<li>
                             <span><img width="30px" src="../risorse/imgs/voti.png"></span>
-                            <span> <select><option value="1">1</option><option value="1.5">1.5</option><option value="2">2</option><option value="2.5">2.5</option><option value="3">3</option><option value="3.5">3.5</option><option value="4">4</option><option value="4.5">4.5</option><option value="5">5</option><option value="5.5">5.5</option><option value="6">6</option><option value="6.5">6.5</option><option value="7">7</option><option value="7.5">7.5</option><option value="8">8</option><option value="8.5">8.5</option><option value="9">9</option><option value="9.5">9.5</option><option value="10">10</option></select></span>	                       
-                            <span><img width="30px" src="../risorse/imgs/calendar.png"></span>
+                            <span> <select ><option value="" selected disabled hidden>?</option><option value="1">1</option><option value="1.5">1.5</option><option value="2">2</option><option value="2.5">2.5</option><option value="3">3</option><option value="3.5">3.5</option><option value="4">4</option><option value="4.5">4.5</option><option value="5">5</option><option value="5.5">5.5</option><option value="6">6</option><option value="6.5">6.5</option><option value="7">7</option><option value="7.5">7.5</option><option value="8">8</option><option value="8.5">8.5</option><option value="9">9</option><option value="9.5">9.5</option><option value="10">10</option></select></span>	                       
+                             <span><img width="30px" src="../risorse/imgs/calendar.png"></span>
                             <span> <input type="date" ></span>
                             
                             <button class="delete-button"  style=""></button>
                             </li>`);
                 });
+
+                $("#bt_default_img").on("click", function() 
+                {    
+                    $("#img_prof").attr('src',"http://areaverifica.altervista.org/GaleazziOnline/risorse/imgs/noimage.jpeg")
+                });
+
             });
         </script>
     </head>
@@ -56,17 +62,13 @@ $dato=json_decode($_POST["dati"]);
             <fieldset>
             <legend>Anagrafica:</legend>
             <div>
-            <img id="img_prof" src="<?php               
-                        
-                            if($dato->Foto==null)
+            <img id="img_prof" src="<?php if($dato->Foto==null)
                             echo "http://areaverifica.altervista.org/GaleazziOnline/risorse/imgs/noimage.jpeg";
                         else
-                        echo "http://areaverifica.altervista.org/Galeazzi/img/".$dato->Foto;
-        
-            ?>"/>
+                        echo "http://areaverifica.altervista.org/Galeazzi/img/".$dato->Foto;?>"/>
             </div>
-            <div> <button value="">Cambia Immagine</button></div>
-            <div> <button value="">Rimuovi Immagine</button></div>
+            <div> <input type="file" id="bt_load_img" value="">Cambia Immagine</input></div>
+            <div> <button id="bt_default_img" value="">Rimuovi Immagine</button></div>
             <div> <input class="InsertText" type="text" value="<?php     
             echo trim(json_decode($_POST["dati"])->Nome);
             ?>"/></div>
@@ -128,5 +130,18 @@ $dato=json_decode($_POST["dati"]);
         }
         });
     </script>
+    <script>
+         const imageInput = document.getElementById('bt_load_img');
+        imageInput.addEventListener('change', function() {
+            const file = imageInput.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(event) {                   
+                    $("#img_prof").attr("src",event.target.result);                
+                };
+                reader.readAsDataURL(file);
+            } 
+        });
+      </script>
     </body>
 </html>
