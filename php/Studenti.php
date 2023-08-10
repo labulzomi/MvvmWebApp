@@ -51,11 +51,11 @@ $(document).ready(function()
           });
           var n=$("#bt_nome").val();
           var c=$("#bt_cognome").val();
-          var f=$("bt_load_img").attr("src")=="../risorse/imgs/studente.png"?null:$("").attr("src");
+          var f=$("#bt_load_img").val().split('\\').pop()=="../risorse/imgs/studente.png"?null:$("#bt_load_img").val().split('\\').pop();
 
           let s=new Studente(0,n,c,f,ValArray);
 
-          const file = $("bt_load_img")[0].files[0];
+          const file = $("#bt_load_img")[0].files[0];
 
           SalvaStudente(JSON.stringify(st),file);
  
