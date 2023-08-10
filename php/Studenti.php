@@ -57,7 +57,7 @@ $(document).ready(function()
 
           const file = $("#bt_load_img")[0].files[0];
 
-          SalvaStudente(JSON.stringify(st),file);
+          SalvaStudente(JSON.stringify(s),file);
  
              
         });
