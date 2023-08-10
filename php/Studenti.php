@@ -125,9 +125,9 @@ $(document).ready(function()
     </div>
     <div id="areanavigazione">
       <div class="sidebar">
-        <h4  >Benvenuto <?php echo $_SESSION["user"]; ?></h2>
-        <h2 id="insert">Inserisci Studente OOO</h2>
-        <h2 id="view">Visualizza Studenti PPP</h2>
+        <h4  >Benvenuto<br> <?php echo $_SESSION["user"]; ?></h2>
+        <h2 id="insert">Inserisci Studente</h2>
+        <h2 id="view">Visualizza Studenti</h2>
       </div>
       <div class="content">
         <div id="insertContent" class="active">
