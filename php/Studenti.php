@@ -45,7 +45,7 @@ $(document).ready(function()
           $("#studentList li").each(function( index ) 
           {
                 var v=$(this).find("select option:selected")[0].text;
-                var d=$(this).find("input")[0].val();
+                var d=$(this).find("input")[0].value;
                 ValArray.push(new Valutazione(v,d));
           });
           var n=$("#bt_nome").val();
