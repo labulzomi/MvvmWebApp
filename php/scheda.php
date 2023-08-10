@@ -103,13 +103,13 @@ $dato=json_decode($_POST["dati"]);
             <fieldset>
             <legend>Valutazioni:</legend>
             <div>
-                <div>
+                <div style="display: flex;justify-content: center;align-items: center;">
                     <input type="checkbox" id="gestore_bt">
                     <label for="gestore_bt">
-                        <div class="round-button">+</div>
+                        <div id="bt_add_val" class="round-button">+</div>
                     </label>
                 </div>
-            <button id="bt_add_val" value=""  >Aggiungi valutazione</button>
+            
             </div>
             <div> 
                 <ul id="studentList">

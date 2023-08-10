@@ -10,7 +10,7 @@ session_start();
     <link href='../risorse/css/headerbarra.css' rel='stylesheet'>
     <link href='../risorse/css/listitemstudenti.css' rel='stylesheet'>
     <link href='../risorse/css/listitemvalutazione.css' rel='stylesheet'>
-   
+    <link href='../risorse/css/fab.css' rel='stylesheet'>
     <link href='../risorse/css/menulaterale.css' rel='stylesheet'>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="../js/action.js"></script>
@@ -92,37 +92,7 @@ $(document).ready(function()
       }
       
 
-      .wrap {
-        height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .button {
-        width: 140px;
-        height: 45px;
-        font-family: "Roboto", sans-serif;
-        font-size: 11px;
-        text-transform: uppercase;
-        letter-spacing: 2.5px;
-        font-weight: 500;
-        color: #000;
-        background-color: #fff;
-        border: none;
-        border-radius: 45px;
-        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-        transition: all 0.3s ease 0s;
-        cursor: pointer;
-        outline: none;
-      }
-
-      .button:hover {
-        background-color: #2ee59d;
-        box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
-        color: #fff;
-        transform: translateY(-7px);
-      }
+      
     </style>
   </head>
   <body >
