@@ -96,10 +96,9 @@ $dato=json_decode($_POST["dati"]);
             </div>
             <div> <input type="file" id="bt_load_img" value="">Cambia Immagine</input></div>
             <div> <button id="bt_default_img" value="">Rimuovi Immagine</button></div>
-            <div> <input class="InsertText" type="text" value="<?php     
-            echo trim(json_decode($_POST["dati"])->Nome);
-            ?>"/></div>
-            <div> <input class="InsertText" type="text" value="<?php echo trim(json_decode($_POST["dati"])->Cognome);?>"/></div>
+            <div> <input style="display:none;" id="tb_id" type="text" value="<?php echo $dato->ID;?>"/></div>
+            <div> <input class="InsertText" id="tb_nome" type="text" value="<?php echo $dato->Nome;?>"/></div>
+            <div> <input class="InsertText"id="tb_cognome" type="text" value="<?php echo $dato->Cognome;?>"/></div>
             </fieldset>
             <fieldset>
             <legend>Valutazioni:</legend>
@@ -160,8 +159,9 @@ $dato=json_decode($_POST["dati"]);
         {
         if (e.target && e.target.classList.contains('delete-button')) {
             const listItem = e.target.closest('li');
-            if (listItem) {
-            listItem.remove();
+            if (listItem) 
+            {
+              listItem.remove();  //<---la rimozione deve esser finta vanno modificati gli id delle valutazioni esistente, mentr vanno rimossi quelli inutili
             }
         }
         });
