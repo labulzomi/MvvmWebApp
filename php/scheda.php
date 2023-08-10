@@ -10,6 +10,7 @@ $dato=json_decode($_POST["dati"]);
         <link href='../risorse/css/stili.css' rel='stylesheet'>
         <link href='../risorse/css/headerbarra.css' rel='stylesheet'>
         <link href='../risorse/css/listitemvalutazione.css' rel='stylesheet'>
+        <link href='../risorse/css/fab.css' rel='stylesheet'>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
         <script src="../js/action.js"></script>
         <script src="../js/utility.js"></script>
@@ -36,6 +37,31 @@ $dato=json_decode($_POST["dati"]);
                 $("#bt_default_img").on("click", function() 
                 {    
                     $("#img_prof").attr('src',"http://areaverifica.altervista.org/GaleazziOnline/risorse/imgs/noimage.jpeg")
+                });
+
+                $("#bt_salva").on("click", function() 
+                {    
+                    const ValArray = [];
+
+                    
+                    //estraggo tutti le valutazioni
+                   /* $("#studentList li").each(function( index ) 
+                    {
+                            var v=$(this).find("select option:selected")[0].text;
+                            var d=$(this).find("input")[0].value;
+                            ValArray.push(new Valutazione(0,v,d));
+                    });
+                    var n=$("#bt_nome").val();
+                    var c=$("#bt_cognome").val();
+                    var f=$("#bt_load_img").val().split('\\').pop()=="../risorse/imgs/studente.png"?null:$("#bt_load_img").val().split('\\').pop();
+
+                    let s=new Studente(0,n,c,f,ValArray);
+
+                    const file = $("#bt_load_img")[0].files[0];
+
+                    SalvaStudente(JSON.stringify(s),file);*/
+        
+                    
                 });
 
             });

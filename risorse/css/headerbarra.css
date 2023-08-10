@@ -36,7 +36,7 @@
 }
 #img_back
 {    
-    background-size: 25px 25px;
+    background-size: 25px 25px !important;
     width: 50px;
     background: url("../imgs/arrow.png") no-repeat center;
 }
