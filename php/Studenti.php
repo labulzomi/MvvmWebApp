@@ -44,7 +44,7 @@ $(document).ready(function()
           //estraggo tutti le valutazioni
           $("#studentList li").each(function( index ) 
           {
-                var v=$(this).find("select")[0].val();
+                var v=$(this).find("select option:selected")[0].text;
                 var d=$(this).find("input")[0].val();
                 ValArray.push(new Valutazione(v,d));
           });
