@@ -42,7 +42,7 @@ $(document).ready(function()
 
           
           //estraggo tutti le valutazioni
-          $("#studentList li")each(function( index ) 
+          $("#studentList li").each(function( index ) 
           {
                 var v=$(this).find("select")[0].val();
                 var d=$(this).find("input")[0].val();
