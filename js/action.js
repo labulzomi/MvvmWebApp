@@ -52,11 +52,12 @@ function deleteUser(id)
   ChiamataGenerica(formData);
 }
 
-function SalvaStudente()
+function SalvaStudente(st,file)
 {
   
   var formData = new FormData();
   formData.append("dati",st);
+  formData.append('image', file);
   formData.append("mode",1);
   formData.append("online",1);
   ChiamataGenerica(formData);

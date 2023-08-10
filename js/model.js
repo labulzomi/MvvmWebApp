@@ -25,6 +25,13 @@ class Utente {
       this.Foto = f;
       this.Valutazioni = v;
     }
+    constructor( n,c,f,v) {
+      this.Id=0;
+      this.Nome = n;
+      this.Cognome = c;
+      this.Foto = f;
+      this.Valutazioni = v;
+    }
   
     getNome() {
       return this.Nome;
@@ -50,6 +57,11 @@ class Utente {
   class Valutazione {
     constructor(i,v,d) {
       this.Id = i;
+      this.Voto = v;
+      this.Data = d; 
+    }
+    constructor(v,d) {
+      this.Id = 0;
       this.Voto = v;
       this.Data = d; 
     }
