@@ -47,13 +47,13 @@ $(document).ready(function()
           {
                 var v=$(this).find("select option:selected")[0].text;
                 var d=$(this).find("input")[0].value;
-                ValArray.push(new Valutazione(v,d));
+                ValArray.push(new Valutazione(0,v,d));
           });
           var n=$("#bt_nome").val();
           var c=$("#bt_cognome").val();
           var f=$("bt_load_img").attr("src")=="../risorse/imgs/studente.png"?null:$("").attr("src");
 
-          let s=new Studente(n,c,f,ValArray);
+          let s=new Studente(0,n,c,f,ValArray);
 
           const file = $("bt_load_img")[0].files[0];
 
