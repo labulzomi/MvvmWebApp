@@ -5,7 +5,7 @@ session_start();
 ?>
 <!DOCTYPE html>
 <html>
-  <head><?phpp
+  <head><?php
    echo" <link href='../risorse/css/stili.css?".rand(1,1000)."' rel='stylesheet'>
     <link href='../risorse/css/headerbarra.css' rel='stylesheet'>
     <link href='../risorse/css/listitemstudenti.css' rel='stylesheet'>
