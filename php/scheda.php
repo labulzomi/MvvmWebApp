@@ -46,7 +46,7 @@ $dato=json_decode($_POST["dati"]);
 
                     
                     //estraggo tutti le valutazioni
-                   /* $("#studentList li").each(function( index ) 
+                $("#studentList li").each(function( index ) 
                     {
                             var v=$(this).find("select option:selected")[0].text;
                             var d=$(this).find("input")[0].value;
@@ -58,9 +58,9 @@ $dato=json_decode($_POST["dati"]);
 
                     let s=new Studente(0,n,c,f,ValArray);
 
-                    const file = $("#bt_load_img")[0].files[0];
+                    const file = $("#bt_load_img")[0].files[0];*/
 
-                    SalvaStudente(JSON.stringify(s),file);*/
+                   // SalvaStudente(JSON.stringify(s),file);*/
         
                     
                 });
