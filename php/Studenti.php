@@ -117,9 +117,15 @@ $(document).ready(function()
               <fieldset>
               <legend>Valutazioni:</legend>
               <div>
-              <button id="bt_add_val"   >Aggiungi valutazione</button>
-              </div>
-              <div> 
+                <div style="display: flex;justify-content: center;align-items: center;">
+                    <input type="checkbox" id="gestore_bt">
+                    <label for="gestore_bt">
+                        <div id="bt_add_val" class="round-button">+</div>
+                    </label>
+                </div>
+            
+            </div>
+            <div style="margin-top:15px;"> 
                   <ul id="studentList">
                       
                                               
