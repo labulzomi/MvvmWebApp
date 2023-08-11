@@ -7,7 +7,7 @@ session_start();
 <html>
   <head>
     <?php//parte con rand per forzare aggiornamento css
-    echo "<link href='../risorse/css/stili.css?caso=".rand(1,1000)."' rel='stylesheet'>";
+    //echo "<link href='../risorse/css/stili.css?caso=".rand(1,1000)."' rel='stylesheet'>";
 
     /*<link href='../risorse/css/headerbarra.css?".rand(1,1000)."' rel='stylesheet'>
     <link href='../risorse/css/listitemstudenti.css?".rand(1,1000)."' rel='stylesheet'>
@@ -17,7 +17,7 @@ session_start();
 */
    
     ?>
-    <!--<link href='../risorse/css/stili.css' rel='stylesheet'>-->
+     <link href='../risorse/css/stili.css' rel='stylesheet'> 
     <link href='../risorse/css/headerbarra.css' rel='stylesheet'>
     <link href='../risorse/css/listitemstudenti.css' rel='stylesheet'>
     <link href='../risorse/css/listitemvalutazione.css' rel='stylesheet'>
