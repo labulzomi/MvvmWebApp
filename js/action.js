@@ -33,6 +33,22 @@ function GestioneResponse(mode,response)
             else 
               alert("Si è verificato un errore "); 
             break;
+        case "3"://ypdate studente
+            if(response!="-1")
+            {
+              alert("Studente aggiornato correttamente");
+                var s=JSON.parse(response);
+                //devono esser aggiornati i dati restituitcon quelli  presenti
+                //o altrimenti si cambia pagina
+            }
+            else
+            {  
+              alert("Studente NON aggiornato correttamente");
+            }
+        
+              
+             
+            break;
     }
 }
 

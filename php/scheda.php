@@ -37,15 +37,19 @@ $dato=json_decode($_POST["dati"]);
 
                 $("#bt_salva").on("click", function() 
                 {    
+                    var check=true;
                     const ValArray = [];
 
                    /// $('.my-button').prop('disabled', true)
                     //estraggo tutti le valutazioni
-                $("#studentList li").each(function( index ) 
-                    {
+                    $("#studentList li").each(function( index ) 
+                    {                       
                             var v=$(this).find("select option:selected")[0].text;
                             var d=$(this).find("input")[0].value;
-                            ValArray.push(new Valutazione($(this).attr("Id"),v,d));
+                            if(v=="?"||d=="")
+                                check=false;
+                            else
+                                ValArray.push(new Valutazione($(this).attr("Id"),v,d));
                     });
                     var n=$("#tb_nome").val();
                     var c=$("#tb_cognome").val();
@@ -61,7 +65,13 @@ $dato=json_decode($_POST["dati"]);
 
                     const file = $("#bt_load_img")[0].files[0]; 
 
-                    AggiornaStudente(JSON.stringify(s),file);  
+                    if(n==""||c=="")
+                        check=false;
+
+                    if(check)
+                        AggiornaStudente(JSON.stringify(s),file);  
+                    else
+                        alert("si è verificato un problema, dati non corretti");
         
                     
                 });

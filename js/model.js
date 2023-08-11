@@ -65,6 +65,8 @@ class Utente {
     getData() {
       return this.Data;
     }
+
+    
     
   
     displayInfo() {
