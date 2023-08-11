@@ -48,9 +48,16 @@ $dato=json_decode($_POST["dati"]);
                     });
                     var n=$("#tb_nome").val();
                     var c=$("#tb_cognome").val();
-                    var f=$("#bt_load_img").val().split('\\').pop()=="../risorse/imgs/studente.png"?null:$("#bt_load_img").val().split('\\').pop();
+                    var f=$("#img_prof").attr('src').split('\\').pop();
+                    if(f=="noimage.jpeg")
+                        f=null;
+                    else
+                        if($("#bt_load_img").val()=="")
+                            f="invariata";
+                        
 
-                    let s=new Studente(0,n,c,f,ValArray);
+
+                    let s=new Studente($("#tb_id").val(),n,c,f,ValArray);
 
                     const file = $("#bt_load_img")[0].files[0]; 
 
