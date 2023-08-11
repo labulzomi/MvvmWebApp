@@ -50,7 +50,7 @@ $dato=json_decode($_POST["dati"]);
                     var n=$("#tb_nome").val();
                     var c=$("#tb_cognome").val();
                     var f=$("#img_prof").attr('src').split('\\').pop();
-                    if(f=="noimage.jpeg")
+                    if(f.includes("noimage.jpeg"))
                         f=null;
                     else
                         if($("#bt_load_img").val()=="")
