@@ -31,14 +31,15 @@ $dato=json_decode($_POST["dati"]);
 
                 $("#bt_default_img").on("click", function() 
                 {    
-                    $("#img_prof").attr('src',"http://areaverifica.altervista.org/GaleazziOnline/risorse/imgs/noimage.jpeg")
+                    $("#img_prof").attr('src',"http://areaverifica.altervista.org/GaleazziOnline/risorse/imgs/noimage.jpeg");
+                    $("#bt_load_img")[0].files[0]=null;
                 });
 
                 $("#bt_salva").on("click", function() 
                 {    
                     const ValArray = [];
 
-                    
+                   /// $('.my-button').prop('disabled', true)
                     //estraggo tutti le valutazioni
                 $("#studentList li").each(function( index ) 
                     {
@@ -53,15 +54,14 @@ $dato=json_decode($_POST["dati"]);
                         f=null;
                     else
                         if($("#bt_load_img").val()=="")
-                            f="invariata";
-                        
+                            f="invariata";                  
 
 
                     let s=new Studente($("#tb_id").val(),n,c,f,ValArray);
 
                     const file = $("#bt_load_img")[0].files[0]; 
 
-                   // SalvaStudente(JSON.stringify(s),file);*/
+                    AggiornaStudente(JSON.stringify(s),file);  
         
                     
                 });
