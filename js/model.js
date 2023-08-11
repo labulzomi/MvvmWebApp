@@ -19,7 +19,7 @@ class Utente {
 
   class Studente {
     constructor( i,n,c,f,v) {
-      this.Id=i;
+      this.ID=i;
       this.Nome = n;
       this.Cognome = c;
       this.Foto = f;
@@ -49,7 +49,7 @@ class Utente {
 
   class Valutazione {
     constructor(i,v,d) {
-      this.Id = i;
+      this.ID = i;
       this.Voto = v;
       this.Data = d; 
     }
