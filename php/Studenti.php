@@ -5,13 +5,13 @@ session_start();
 ?>
 <!DOCTYPE html>
 <html>
-  <head>
-    <link href='../risorse/css/stili.css' rel='stylesheet'>
+  <head><?phpp
+   echo" <link href='../risorse/css/stili.css?".rand(1,1000)."' rel='stylesheet'>
     <link href='../risorse/css/headerbarra.css' rel='stylesheet'>
     <link href='../risorse/css/listitemstudenti.css' rel='stylesheet'>
     <link href='../risorse/css/listitemvalutazione.css' rel='stylesheet'>
     <link href='../risorse/css/fab.css' rel='stylesheet'>
-    <link href='../risorse/css/menulaterale.css' rel='stylesheet'>
+    <link href='../risorse/css/menulaterale.css' rel='stylesheet'>  ";?>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="../js/action.js"></script>
     <script src="../js/utility.js"></script>
