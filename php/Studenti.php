@@ -62,8 +62,8 @@ $(document).ready(function()
                 var d=$(this).find("input")[0].value;
                 ValArray.push(new Valutazione(0,v,d));
           });
-          var n=$("#bt_nome").val();
-          var c=$("#bt_cognome").val();
+          var n=$("#tb_nome").val();
+          var c=$("#tb_cognome").val();
           var f=$("#bt_load_img").val().split('\\').pop()=="../risorse/imgs/studente.png"?null:$("#bt_load_img").val().split('\\').pop();
 
           let s=new Studente(0,n,c,f,ValArray);
@@ -111,8 +111,8 @@ $(document).ready(function()
               <img id="img_prof" src="../risorse/imgs/studente.png"/>
               </div>
               <div> <input  id="bt_load_img" type="file" name="image"  accept="image/*">Carica Immagine</button></div> 
-              <div> <input class="InsertText" placeholder="Nome" id="bt_nome" type="text"  /></div>
-              <div> <input class="InsertText" placeholder="Cognome" id="bt_cognome" type="text"  /></div>
+              <div> <input class="InsertText" placeholder="Nome" id="tb_nome" type="text"  /></div>
+              <div> <input class="InsertText" placeholder="Cognome" id="tb_cognome" type="text"  /></div>
               </fieldset>
               <fieldset>
               <legend>Valutazioni:</legend>

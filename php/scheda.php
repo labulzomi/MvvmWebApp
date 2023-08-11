@@ -46,8 +46,8 @@ $dato=json_decode($_POST["dati"]);
                             var d=$(this).find("input")[0].value;
                             ValArray.push(new Valutazione($(this).attr("Id"),v,d));
                     });
-                    var n=$("#bt_nome").val();
-                    var c=$("#bt_cognome").val();
+                    var n=$("#tb_nome").val();
+                    var c=$("#tb_cognome").val();
                     var f=$("#bt_load_img").val().split('\\').pop()=="../risorse/imgs/studente.png"?null:$("#bt_load_img").val().split('\\').pop();
 
                     let s=new Studente(0,n,c,f,ValArray);
@@ -63,121 +63,122 @@ $dato=json_decode($_POST["dati"]);
         </script>
     </head>
     <body>
-    
-        <div class="TitleBar">        
-            <div>
-                <span>SCHEDA STUDENTE</span>
+        <div style="height: 100%;width: 100%;">
+            <div class="TitleBar">        
                 <div>
-                    <span><a href="./Studenti.php"><div id="img_back"></div></a></span>
-                    <span><a href="./logout.php"><div id="img_logout"></div></a></span>
+                    <span>SCHEDA STUDENTE</span>
+                    <div>
+                        <span><a href="./Studenti.php"><div id="img_back"></div></a></span>
+                        <span><a href="./logout.php"><div id="img_logout"></div></a></span>
+                    </div>
                 </div>
+                <div></div>
             </div>
-            <div></div>
-        </div>
-    <div class="Contenitore">
+        <div class="Contenitore">
 
-        <div class="grigliaScheda">
-            
-        </div>
-        <div style="display:flex;justify-content: space-around;text-align:center;align-items: center;padding: 20px;"> 
-            <fieldset>
-            <legend>Anagrafica:</legend>
-            <div>
-            <img id="img_prof" src="<?php if($dato->Foto==null)
-                            echo "http://areaverifica.altervista.org/GaleazziOnline/risorse/imgs/noimage.jpeg";
-                        else
-                        echo "http://areaverifica.altervista.org/Galeazzi/img/".$dato->Foto;?>"/>
+            <div class="grigliaScheda">
+                
             </div>
-            <div> <input type="file" id="bt_load_img" value="">Cambia Immagine</input></div>
-            <div> <button id="bt_default_img" value="">Rimuovi Immagine</button></div>
-            <div> <input style="display:none;" id="tb_id" type="text" value="<?php echo $dato->ID;?>"/></div>
-            <div> <input class="InsertText" id="tb_nome" type="text" value="<?php echo $dato->Nome;?>"/></div>
-            <div> <input class="InsertText"id="tb_cognome" type="text" value="<?php echo $dato->Cognome;?>"/></div>
-            </fieldset>
-            <fieldset>
-            <legend>Valutazioni:</legend>
-            <div>
-                <div style="display: flex;justify-content: center;align-items: center;">
-                    <input type="checkbox" id="gestore_bt">
-                    <label for="gestore_bt">
-                        <div id="bt_add_val" class="round-button">+</div>
-                    </label>
+            <div style="display:flex;justify-content: space-around;text-align:center;align-items: center;padding: 20px;"> 
+                <fieldset>
+                <legend>Anagrafica:</legend>
+                <div>
+                <img id="img_prof" src="<?php if($dato->Foto==null)
+                                echo "http://areaverifica.altervista.org/GaleazziOnline/risorse/imgs/noimage.jpeg";
+                            else
+                            echo "http://areaverifica.altervista.org/Galeazzi/img/".$dato->Foto;?>"/>
                 </div>
-            
-            </div>
-            <div style="margin-top:15px;"> 
-                <ul id="studentList">
-                    <?php
-                        foreach($dato->Valutazioni as $val)
-                        {
-                            echo '<li id='.$val->ID.'>
-                            <span><img width="30px" src="../risorse/imgs/voti.png"></span>
-                            <span> <select>';
-                            for($i=1;$i<=10;$i=$i+0.5){
-                                $f=$i==$val->Voto?"selected":"";
-                                echo "<option $f value=$i>$i</option>";
+                <div> <input type="file" id="bt_load_img" value="">Cambia Immagine</input></div>
+                <div> <button id="bt_default_img" value="">Rimuovi Immagine</button></div>
+                <div> <input style="display:none;" id="tb_id" type="text" value="<?php echo $dato->ID;?>"/></div>
+                <div> <input class="InsertText" id="tb_nome" type="text" value="<?php echo $dato->Nome;?>"/></div>
+                <div> <input class="InsertText"id="tb_cognome" type="text" value="<?php echo $dato->Cognome;?>"/></div>
+                </fieldset>
+                <fieldset>
+                <legend>Valutazioni:</legend>
+                <div>
+                    <div style="display: flex;justify-content: center;align-items: center;">
+                        <input type="checkbox" id="gestore_bt">
+                        <label for="gestore_bt">
+                            <div id="bt_add_val" class="round-button">+</div>
+                        </label>
+                    </div>
+                
+                </div>
+                <div style="margin-top:15px;"> 
+                    <ul id="studentList">
+                        <?php
+                            foreach($dato->Valutazioni as $val)
+                            {
+                                echo '<li id='.$val->ID.'>
+                                <span><img width="30px" src="../risorse/imgs/voti.png"></span>
+                                <span> <select>';
+                                for($i=1;$i<=10;$i=$i+0.5){
+                                    $f=$i==$val->Voto?"selected":"";
+                                    echo "<option $f value=$i>$i</option>";
+                                }
+                                echo '</select></span>	                       
+                                <span><img width="30px" src="../risorse/imgs/calendar.png"></span>
+                                <span> <input type="date" value="'.$val->Data.'" /></span>
+                                
+                                <button class="delete-button"  style=""></button>
+                                </li>';
                             }
-                            echo '</select></span>	                       
-                            <span><img width="30px" src="../risorse/imgs/calendar.png"></span>
-                            <span> <input type="date" value="'.$val->Data.'" /></span>
-                            
-                            <button class="delete-button"  style=""></button>
-                            </li>';
-                        }
-                            
-                            
-                    ?>
-                                            
-                </ul></div>
+                                
+                                
+                        ?>
+                                                
+                    </ul></div>
+                
             
-        
-            </fieldset>
+                </fieldset>
 
+            </div>
+        <?php  
+        ?>
+            <div class="wrap">
+                <button class="button" id="bt_salva">SALVA</button>
+            </div>
+
+            <div id="statistiche">
+                            
+            </div>
+            </div> 
         </div>
-    <?php  
-    ?>
-        <div class="wrap">
-            <button class="button" id="bt_salva">SALVA</button>
-          </div>
-
-        <div id="statistiche">
-                        
-        </div>
-    </div>
 
 
 
-    <script>
-        // Aggiungi event listener per eliminare un elemento
-        document.addEventListener('click', function(e) 
-        {
-        if (e.target && e.target.classList.contains('delete-button')) {
-            const listItem = e.target.closest('li');
-            if (listItem) 
+        <script>
+            // Aggiungi event listener per eliminare un elemento
+            document.addEventListener('click', function(e) 
             {
-                if(listItem.id!="0")
+            if (e.target && e.target.classList.contains('delete-button')) {
+                const listItem = e.target.closest('li');
+                if (listItem) 
                 {
-                    listItem.style.display="none";
-                    listItem.listItem.childNodes[3].childNodes[1].value=-1;
+                    if(listItem.id!="0")
+                    {
+                        listItem.style.display="none";
+                        listItem.listItem.childNodes[3].childNodes[1].value=-1;
+                    }
+                    else
+                        listItem.remove();  
                 }
-                else
-                    listItem.remove();  
             }
-        }
-        });
-    </script>
-    <script>
-         const imageInput = document.getElementById('bt_load_img');
-        imageInput.addEventListener('change', function() {
-            const file = imageInput.files[0];
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = function(event) {                   
-                    $("#img_prof").attr("src",event.target.result);                
-                };
-                reader.readAsDataURL(file);
-            } 
-        });
-      </script>
+            });
+        </script>
+        <script>
+            const imageInput = document.getElementById('bt_load_img');
+            imageInput.addEventListener('change', function() {
+                const file = imageInput.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function(event) {                   
+                        $("#img_prof").attr("src",event.target.result);                
+                    };
+                    reader.readAsDataURL(file);
+                } 
+            });
+        </script>
     </body>
 </html>
