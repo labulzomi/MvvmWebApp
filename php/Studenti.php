@@ -7,12 +7,12 @@ session_start();
 <html>
   <head>
     <?php//parte con rand per forzare aggiornamento css
-   $t="<link href='../risorse/css/stili.css?".rand(1,1000)."' rel='stylesheet'>
+   $t=`<link href='../risorse/css/stili.css?".rand(1,1000)."' rel='stylesheet'>
     <link href='../risorse/css/headerbarra.css?".rand(1,1000)."' rel='stylesheet'>
     <link href='../risorse/css/listitemstudenti.css?".rand(1,1000)."' rel='stylesheet'>
     <link href='../risorse/css/listitemvalutazione.css?".rand(1,1000)."' rel='stylesheet'>
     <link href='../risorse/css/fab.css?".rand(1,1000)."' rel='stylesheet'>
-    <link href='../risorse/css/menulaterale.css?".rand(1,1000)."' rel='stylesheet'>  ";
+    <link href='../risorse/css/menulaterale.css?".rand(1,1000)."' rel='stylesheet'> `;
 
     var_dump($t);
     echo $t;
