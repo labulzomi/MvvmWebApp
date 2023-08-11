@@ -51,7 +51,7 @@ $dato=json_decode($_POST["dati"]);
 
                     let s=new Studente(0,n,c,f,ValArray);
 
-                    const file = $("#bt_load_img")[0].files[0];*/
+                    const file = $("#bt_load_img")[0].files[0]; 
 
                    // SalvaStudente(JSON.stringify(s),file);*/
         
