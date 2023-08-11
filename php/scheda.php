@@ -15,6 +15,7 @@ $dato=json_decode($_POST["dati"]);
         <script src="../js/action.js"></script>
         <script src="../js/utility.js"></script>
         <script src="../js/template.js"></script>
+        <script src="../js/model.js"></script>
         <style>
             
             
@@ -43,7 +44,7 @@ $dato=json_decode($_POST["dati"]);
                     {
                             var v=$(this).find("select option:selected")[0].text;
                             var d=$(this).find("input")[0].value;
-                            ValArray.push(new Valutazione(0,v,d));
+                            ValArray.push(new Valutazione($(this).attr("Id"),v,d));
                     });
                     var n=$("#bt_nome").val();
                     var c=$("#bt_cognome").val();
@@ -109,7 +110,7 @@ $dato=json_decode($_POST["dati"]);
                     <?php
                         foreach($dato->Valutazioni as $val)
                         {
-                            echo '<li>
+                            echo '<li id='.$val->ID.'>
                             <span><img width="30px" src="../risorse/imgs/voti.png"></span>
                             <span> <select>';
                             for($i=1;$i<=10;$i=$i+0.5){
@@ -154,7 +155,13 @@ $dato=json_decode($_POST["dati"]);
             const listItem = e.target.closest('li');
             if (listItem) 
             {
-              listItem.remove();  //<---la rimozione deve esser finta vanno modificati gli id delle valutazioni esistente, mentr vanno rimossi quelli inutili
+                if(listItem.id!="0")
+                {
+                    listItem.style.display="none";
+                    listItem.listItem.childNodes[3].childNodes[1].value=-1;
+                }
+                else
+                    listItem.remove();  
             }
         }
         });
