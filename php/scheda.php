@@ -5,11 +5,9 @@ session_start();
 
 $caso=rand(1,1000);
 
-$stili='"../risorse/css/stili.css';
-$url.=$stili.'?caso='.$caso.'"';
-echo $url;
+ 
 
-$html="<link href=$url rel='stylesheet'>
+$stili="<link href='../risorse/css/stili.css?caso=".$caso."' rel='stylesheet'>
 <link href='../risorse/css/headerbarra.css?caso=".$caso."' rel='stylesheet'>
 <link href='../risorse/css/listitemvalutazione.css?caso=".$caso."' rel='stylesheet'>
 <link href='../risorse/css/fab.css?caso=".$caso."' rel='stylesheet'>";
@@ -18,11 +16,9 @@ $dato=json_decode($_POST["dati"]);
 ?>
 <html>
     <head>
-     <!--   <link href='../risorse/css/stili.css' rel='stylesheet'>-->
-        <?php echo $html;?>
-        <!--<link href='../risorse/css/headerbarra.css' rel='stylesheet'>-->
-        <!--<link href='../risorse/css/listitemvalutazione.css' rel='stylesheet'>
-        <link href='../risorse/css/fab.css' rel='stylesheet'>-->
+      
+        <?php echo $stili;?>
+         
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
         <script src="../js/action.js"></script>
         <script src="../js/utility.js"></script>
@@ -107,6 +103,13 @@ $dato=json_decode($_POST["dati"]);
 
                     if(check)
                         //AggiornaStudente(JSON.stringify(s),file);  
+                        var f=$("#img_prof").attr('src').split('\\').pop();
+                        if(f.includes("noimage.jpeg"))
+                            f=null;
+                        else
+                            if($("#bt_load_img").val()=="")
+                                f="invariata";
+                        studente.Foto=f;
                         AggiornaStudente(JSON.stringify(studente),file);  
                     else
                         alert("si è verificato un problema, dati non corretti");
@@ -233,8 +236,8 @@ $dato=json_decode($_POST["dati"]);
                     {
                         for(const item in studente.Valutazioni)
                         {
-                            if(studente.Valutazioni[item].Voto==childNodes[3].childNodes[1].value
-                                &&studente.Valutazioni[item].Voto==childNodes[6].childNodes[1].value)
+                            if(studente.Valutazioni[item].Voto==listItem.childNodes[3].childNodes[1].value
+                                &&studente.Valutazioni[item].Data==listItem.childNodes[7].childNodes[1].value)
                                 {
                                     delete studente.Valutazioni[item];
                                     listItem.remove();
