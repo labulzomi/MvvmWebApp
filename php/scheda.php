@@ -29,6 +29,16 @@ $dato=json_decode($_POST["dati"]);
             
         </style>
         <script>
+            //per l'acquisizione delle modifiche da lista valutazione
+            $(document).on('input', '.get', function() 
+            {
+                var index = $('.valutazione').index($(this).closest('.valutazione'));
+                if($(this).prop('nodeName')=="INPUT")
+                    studente.Valutazioni[index].Data=$(this).val();
+                else
+                    studente.Valutazioni[index].Voto=$(this).val();
+            });
+
 
             let studente=JSON.parse('<?php echo $_POST["dati"];?>');
             let file;
@@ -169,16 +179,16 @@ $dato=json_decode($_POST["dati"]);
                         <?php
                             foreach($dato->Valutazioni as $val)
                             {
-                                echo '<li id='.$val->ID.'>
+                                echo '<li id='.$val->ID.' class="valutazione">
                                 <span><img width="30px" src="../risorse/imgs/voti.png"></span>
-                                <span> <select>';
+                                <span> <select class="get">';
                                 for($i=1;$i<=10;$i=$i+0.5){
                                     $f=$i==$val->Voto?"selected":"";
                                     echo "<option $f value=$i>$i</option>";
                                 }
                                 echo '</select></span>	                       
                                 <span><img width="30px" src="../risorse/imgs/calendar.png"></span>
-                                <span> <input type="date" value="'.$val->Data.'" /></span>
+                                <span> <input class="get" type="date" value="'.$val->Data.'" /></span>
                                 
                                 <button class="delete-button"  style=""></button>
                                 </li>';
