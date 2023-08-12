@@ -41,8 +41,8 @@ function GestioneResponse(mode,response)
 
               $("#studentList li").each(function( index ) 
               {          
-                if($(this).id==0)
-                  $(this).id=studente.Valutazoni[index].ID;             
+                if($(this).attr('id')==0)
+                  $(this).attr('id',studente.Valutazoni[index].ID);             
                        
               });
                 //devono esser aggiornati i dati restituitcon quelli  presenti
