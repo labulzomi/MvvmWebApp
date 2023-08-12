@@ -10,8 +10,9 @@ $url.=$stili.'?caso='.$caso.'"';
 echo $url;
 
 $html="<link href=$url rel='stylesheet'>
-<link href='../risorse/css/headerbarra.css?caso=".$caso."' rel='stylesheet'>";
-
+<link href='../risorse/css/headerbarra.css?caso=".$caso."' rel='stylesheet'>
+<link href='../risorse/css/listitemvalutazione.css?caso=".$caso."' rel='stylesheet'>
+<link href='../risorse/css/fab.css?caso=".$caso."' rel='stylesheet'>";
 
 $dato=json_decode($_POST["dati"]);
 ?>
@@ -19,9 +20,9 @@ $dato=json_decode($_POST["dati"]);
     <head>
      <!--   <link href='../risorse/css/stili.css' rel='stylesheet'>-->
         <?php echo $html;?>
-        <link href='../risorse/css/headerbarra.css' rel='stylesheet'>
-        <link href='../risorse/css/listitemvalutazione.css' rel='stylesheet'>
-        <link href='../risorse/css/fab.css' rel='stylesheet'>
+        <!--<link href='../risorse/css/headerbarra.css' rel='stylesheet'>-->
+        <!--<link href='../risorse/css/listitemvalutazione.css' rel='stylesheet'>
+        <link href='../risorse/css/fab.css' rel='stylesheet'>-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
         <script src="../js/action.js"></script>
         <script src="../js/utility.js"></script>
@@ -33,7 +34,7 @@ $dato=json_decode($_POST["dati"]);
         </style>
         <script>
 
-            let studente=JSON.parse("<?php echo $_POST["dati"];?>");
+            let studente=JSON.parse('<?php echo $_POST["dati"];?>');
             let file;
             $(document).ready(function() 
             {
