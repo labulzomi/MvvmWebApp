@@ -42,7 +42,7 @@ function GestioneResponse(mode,response)
               $("#studentList li").each(function( index ) 
               {          
                 if($(this).attr('id')==0)
-                  $(this).attr('id',studente.Valutazoni[index].ID);             
+                  $(this).attr('id',studente.Valutazioni[index].ID);             
                        
               });
                 //devono esser aggiornati i dati restituitcon quelli  presenti
