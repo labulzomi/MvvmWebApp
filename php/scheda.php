@@ -65,7 +65,7 @@ $dato=json_decode($_POST["dati"]);
                 $("#bt_add_val").on("click", function() 
                 {    
                     $("#studentList").append(ListItemValutazioneTemplate());
-                    studente.Valutazioni.push(new Valutazione(0,0,""));
+                    studente.Valutazioni.push(new Valutazione(0,"",""));
                     $("#gestore_bt").prop( "checked", false );
                 });
 
@@ -241,6 +241,7 @@ $dato=json_decode($_POST["dati"]);
                             if(studente.Valutazioni[item].ID==listItem.id){
                                 studente.Valutazioni[item].Voto=-1; 
                                 listItem.remove();
+                                break;
                             }
                         }
                     }
@@ -248,11 +249,13 @@ $dato=json_decode($_POST["dati"]);
                     {
                         for(const item in studente.Valutazioni)
                         {
-                            if(studente.Valutazioni[item].Voto==listItem.childNodes[3].childNodes[1].value
-                                &&studente.Valutazioni[item].Data==listItem.childNodes[7].childNodes[1].value)
+                            
+                                if(studente.Valutazioni[item].Voto==listItem.childNodes[3].childNodes[1].value
+                                    &&studente.Valutazioni[item].Data==listItem.childNodes[7].childNodes[1].value)
                                 {
                                     delete studente.Valutazioni[item];
                                     listItem.remove();
+                                    break;
                                 }
                         }
                     }
