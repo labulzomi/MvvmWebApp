@@ -1,8 +1,8 @@
 <?php
 session_start();
 //inserire verifica accesso
-$stili='"../risorse/css/stili.css"';
-$url.=$stili."?caso=".rand(1,1000);
+$stili='"../risorse/css/stili.css';
+$url.=$stili.'?caso='.rand(1,1000).'"';
 echo $url;
 
 $html="<link href=$url rel='stylesheet'>";
@@ -28,7 +28,7 @@ $dato=json_decode($_POST["dati"]);
         </style>
         <script>
 
-            let studente=JSON.parse($_POST["dati"]);
+            let studente=JSON.parse(<?php echo $_POST["dati"];?>);
             let file;
             $(document).ready(function() 
             {
