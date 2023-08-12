@@ -38,6 +38,13 @@ function GestioneResponse(mode,response)
             {
               alert("Studente aggiornato correttamente");
               studente=JSON.parse(response);
+
+              $("#studentList li").each(function( index ) 
+              {          
+                if($(this).id==0)
+                  $(this).id=studente.Valutazoni[index].ID;             
+                       
+              });
                 //devono esser aggiornati i dati restituitcon quelli  presenti
                 //o altrimenti si cambia pagina
 
