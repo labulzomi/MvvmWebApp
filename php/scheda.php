@@ -103,7 +103,7 @@ $dato=json_decode($_POST["dati"]);
 
                     if(check)
                         //AggiornaStudente(JSON.stringify(s),file);  
-                        var f=$("#img_prof").attr('src').split('\\').pop();
+                     {   var f=$("#img_prof").attr('src').split('\\').pop();
                         if(f.includes("noimage.jpeg"))
                             f=null;
                         else
@@ -111,6 +111,7 @@ $dato=json_decode($_POST["dati"]);
                                 f="invariata";
                         studente.Foto=f;
                         AggiornaStudente(JSON.stringify(studente),file);  
+                     }
                     else
                         alert("si è verificato un problema, dati non corretti");
         
