@@ -65,6 +65,7 @@ $dato=json_decode($_POST["dati"]);
                 $("#bt_add_val").on("click", function() 
                 {    
                     $("#studentList").append(ListItemValutazioneTemplate());
+                    studente.Valutazioni.push(new Valutazione(0,0,""));
                     $("#gestore_bt").prop( "checked", false );
                 });
 
