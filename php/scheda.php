@@ -88,10 +88,10 @@ $dato=json_decode($_POST["dati"]);
                             var d=$(this).find("input")[0].value;
                             if(v=="?"||d=="")
                                 check=false;
-                            else
-                                ValArray.push(new Valutazione($(this).attr("Id"),v,d));
+                           // else
+                           //     ValArray.push(new Valutazione($(this).attr("Id"),v,d));
                     });
-                    studente.Valutazioni=ValArray;
+                    //studente.Valutazioni=ValArray;
 
 
 
