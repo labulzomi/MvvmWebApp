@@ -40,6 +40,8 @@ function GestioneResponse(mode,response)
                 var s=JSON.parse(response);
                 //devono esser aggiornati i dati restituitcon quelli  presenti
                 //o altrimenti si cambia pagina
+
+                
             }
             else
             {  

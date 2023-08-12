@@ -1,6 +1,11 @@
 <?php
 session_start();
 //inserire verifica accesso
+$stili='../risorse/css/stili.css';
+$url.=$stili."?caso=".rand(1,1000);
+echo $url;
+
+$html="<link href=$url rel='stylesheet'>";
 
 
 $dato=json_decode($_POST["dati"]);
@@ -8,6 +13,7 @@ $dato=json_decode($_POST["dati"]);
 <html>
     <head>
         <link href='../risorse/css/stili.css' rel='stylesheet'>
+        <?php echo $html;?>
         <link href='../risorse/css/headerbarra.css' rel='stylesheet'>
         <link href='../risorse/css/listitemvalutazione.css' rel='stylesheet'>
         <link href='../risorse/css/fab.css' rel='stylesheet'>
@@ -21,8 +27,29 @@ $dato=json_decode($_POST["dati"]);
             
         </style>
         <script>
+
+            let studente=JSON.parse($_POST["dati"]);
+            const file;
             $(document).ready(function() 
             {
+                $('#tb_nome').on('input', function() 
+                {
+                     studente.Nome=$(this).val();
+                });
+                $('#tb_cognome').on('input', function() 
+                {
+                     studente.Cognome=$(this).val();
+                });
+                $("#bt_load_img").change(function()
+                {
+           
+                    file = $("#bt_load_img")[0].files[0]; 
+                });
+
+
+
+
+
                 $("#bt_add_val").on("click", function() 
                 {    
                     $("#studentList").append(ListItemValutazioneTemplate());
@@ -42,7 +69,7 @@ $dato=json_decode($_POST["dati"]);
 
                    /// $('.my-button').prop('disabled', true)
                     //estraggo tutti le valutazioni
-                    $("#studentList li").each(function( index ) 
+                  $("#studentList li").each(function( index ) 
                     {                       
                             var v=$(this).find("select option:selected")[0].text;
                             var d=$(this).find("input")[0].value;
@@ -51,7 +78,11 @@ $dato=json_decode($_POST["dati"]);
                             else
                                 ValArray.push(new Valutazione($(this).attr("Id"),v,d));
                     });
-                    var n=$("#tb_nome").val();
+                    studente.Valutazioni=ValArray;
+
+
+
+                  /*  var n=$("#tb_nome").val();
                     var c=$("#tb_cognome").val();
                     var f=$("#img_prof").attr('src').split('\\').pop();
                     if(f.includes("noimage.jpeg"))
@@ -66,10 +97,11 @@ $dato=json_decode($_POST["dati"]);
                     const file = $("#bt_load_img")[0].files[0]; 
 
                     if(n==""||c=="")
-                        check=false;
+                        check=false;*/
 
                     if(check)
-                        AggiornaStudente(JSON.stringify(s),file);  
+                        //AggiornaStudente(JSON.stringify(s),file);  
+                        AggiornaStudente(JSON.stringify(studente),file);  
                     else
                         alert("si è verificato un problema, dati non corretti");
         
@@ -173,13 +205,36 @@ $dato=json_decode($_POST["dati"]);
                 const listItem = e.target.closest('li');
                 if (listItem) 
                 {
-                    if(listItem.id!="0")
+                  /*  if(listItem.id!="0")
                     {
+                        
                         listItem.style.display="none";
                         listItem.listItem.childNodes[3].childNodes[1].value=-1;
                     }
                     else
-                        listItem.remove();  
+                        listItem.remove();  */
+                    if(listItem.id!="0")
+                    {
+                        for(const item in studente.Valutazioni)
+                        {
+                            if(studente.Valutazioni[item].ID==listItem.id){
+                                studente.Valutazioni[item].Voto=-1; 
+                                listItem.remove();
+                            }
+                        }
+                    }
+                    else
+                    {
+                        for(const item in studente.Valutazioni)
+                        {
+                            if(studente.Valutazioni[item].Voto==childNodes[3].childNodes[1].value
+                                &&studente.Valutazioni[item].Voto==childNodes[6].childNodes[1].value)
+                                {
+                                    delete studente.Valutazioni[item];
+                                    listItem.remove();
+                                }
+                        }
+                    }
                 }
             }
             });
