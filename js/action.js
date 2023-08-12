@@ -36,7 +36,7 @@ function GestioneResponse(mode,response)
         case "3"://ypdate studente
             if(response!="-1")
             {
-              alert("Studente aggiornato correttamente");
+              
               studente=JSON.parse(response);
 
               $("#studentList li").each(function( index ) 
@@ -45,6 +45,7 @@ function GestioneResponse(mode,response)
                   $(this).attr('id',studente.Valutazioni[index].ID);             
                        
               });
+              alert("Studente aggiornato correttamente");
                 //devono esser aggiornati i dati restituitcon quelli  presenti
                 //o altrimenti si cambia pagina
 
