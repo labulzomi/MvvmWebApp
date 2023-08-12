@@ -1,18 +1,23 @@
 <?php
 session_start();
 //inserire verifica accesso
+
+
+$caso=rand(1,1000);
+
 $stili='"../risorse/css/stili.css';
-$url.=$stili.'?caso='.rand(1,1000).'"';
+$url.=$stili.'?caso='.$caso.'"';
 echo $url;
 
-$html="<link href=$url rel='stylesheet'>";
+$html="<link href=$url rel='stylesheet'>
+<link href='../risorse/css/headerbarra.css?caso=".$caso."' rel='stylesheet'>";
 
 
 $dato=json_decode($_POST["dati"]);
 ?>
 <html>
     <head>
-        <link href='../risorse/css/stili.css' rel='stylesheet'>
+     <!--   <link href='../risorse/css/stili.css' rel='stylesheet'>-->
         <?php echo $html;?>
         <link href='../risorse/css/headerbarra.css' rel='stylesheet'>
         <link href='../risorse/css/listitemvalutazione.css' rel='stylesheet'>
@@ -28,7 +33,7 @@ $dato=json_decode($_POST["dati"]);
         </style>
         <script>
 
-            let studente=JSON.parse(<?php echo $_POST["dati"];?>);
+            let studente=JSON.parse("<?php echo $_POST["dati"];?>");
             let file;
             $(document).ready(function() 
             {
