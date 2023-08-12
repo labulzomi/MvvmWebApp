@@ -1,7 +1,7 @@
 <?php
 session_start();
 //inserire verifica accesso
-$stili='../risorse/css/stili.css';
+$stili='"../risorse/css/stili.css"';
 $url.=$stili."?caso=".rand(1,1000);
 echo $url;
 
@@ -29,7 +29,7 @@ $dato=json_decode($_POST["dati"]);
         <script>
 
             let studente=JSON.parse($_POST["dati"]);
-            const file;
+            let file;
             $(document).ready(function() 
             {
                 $('#tb_nome').on('input', function() 
