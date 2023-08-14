@@ -49,15 +49,14 @@ class Utente {
 
   class Valutazione {
     constructor(i,v,d) {
-      this.ID = i;
+      
       this.Voto = v;
       this.Data = d; 
+      this.ID = i;
     }
  
   
-    getId() {
-      return this.Id;
-    }
+    
   
     getVoto() {
       return this.Voto;
@@ -65,7 +64,9 @@ class Utente {
     getData() {
       return this.Data;
     }
-
+    getId() {
+      return this.Id;
+    }
     
     
   
