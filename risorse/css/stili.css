@@ -8,7 +8,10 @@ html,body
 
 #img_prof 
 {
-    width:300px;
+  max-height: 200px;
+  max-width: 300px;
+  min-width: fit-content;
+  min-height: fit-content;
 }
 
 .LoginArea{
@@ -20,6 +23,26 @@ width: 500px; /* Imposta la larghezza desiderata del div */
 fieldset
 {
   margin: 10px;
+  min-width: 300px; 
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+    position: relative;
+    border: 3px solid white;
+    border-radius: 5px;
+    padding: 20px;
+}
+fieldset legend
+{
+  position: absolute;
+    top: -10px;
+    left: 10px;
+    font-weight: 600;
+    background-color: #009D99;
+    color: white;
+    padding: 0 5px;
 }
 
 .GenericButton
