@@ -36,7 +36,7 @@ $dato=json_decode($_POST["dati"]);
                 if($(this).prop('nodeName')=="INPUT")
                     studente.Valutazioni[index].Data=$(this).val();
                 else
-                    studente.Valutazioni[index].Voto=$(this).val();
+                    studente.Valutazioni[index].Voto=+$(this).val();
             });
 
 
