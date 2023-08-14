@@ -12,6 +12,12 @@ html,body
   max-width: 300px;
   min-width: fit-content;
   min-height: fit-content;
+  border: 3px solid white;
+}
+#studentList
+{
+  border: 3px solid #5F7938;
+    border-radius: 10px;
 }
 
 .LoginArea{
@@ -61,7 +67,7 @@ fieldset legend
 
 .Contenitore
 {background-color: #4E7ADB;
-    
+  height: 100%;width: 100%;
 
 }
 .Login
@@ -74,7 +80,7 @@ fieldset legend
 
 .InsertText
 {
-  width: 40%;
+  
   padding: 4px 10px;
   background-color: transparent;
   margin: 8px 0;
