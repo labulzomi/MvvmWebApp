@@ -227,7 +227,7 @@ $dato=json_decode($_POST["dati"]);
                 if (listItem) 
                 {
 
-                    var index = $('.valutazione').index($(this).closest('.valutazione'));
+                    var index = $('.valutazione').index(listItem);
                     if(listItem.id!="0")
                     { 
                         studente.Valutazioni[index].Voto=-1; 
