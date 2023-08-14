@@ -236,6 +236,11 @@ $dato=json_decode($_POST["dati"]);
                     else
                         delete studente.Valutazioni[index];
                     listItem.remove();
+                    studente.Valutazioni.forEach(function(obj) {
+                        obj.index = i;
+                         
+                        i++;
+                    });
                   /*  if(listItem.id!="0")
                     {
                         
