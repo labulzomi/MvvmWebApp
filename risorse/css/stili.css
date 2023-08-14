@@ -9,9 +9,7 @@ html,body
 #img_prof 
 {
   max-height: 200px;
-  max-width: 300px;
-  min-width: fit-content;
-  min-height: fit-content;
+  max-width: 200px; 
   border: 3px solid white;
 }
 #studentList

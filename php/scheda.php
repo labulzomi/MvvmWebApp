@@ -238,49 +238,7 @@ $dato=json_decode($_POST["dati"]);
                         studente.Valutazioni.splice(index,1);
                         listItem.remove();
                     }
-                        //delete studente.Valutazioni[index];
-                    //listItem.remove();
                     
-
-                    /*var i=1;
-                    studente.Valutazioni.forEach(function(obj) {
-                        obj.index = i;
-                         
-                        i++;
-                    });*/
-                  /*  if(listItem.id!="0")
-                    {
-                        
-                        listItem.style.display="none";
-                        listItem.listItem.childNodes[3].childNodes[1].value=-1;
-                    }
-                    else
-                        listItem.remove();  */
-                 /*   if(listItem.id!="0")
-                    {
-                        for(const item in studente.Valutazioni)
-                        {
-                            if(studente.Valutazioni[item].ID==listItem.id){
-                                studente.Valutazioni[item].Voto=-1; 
-                                listItem.remove();
-                                break;
-                            }
-                        }
-                    }
-                    else
-                    {
-                        for(const item in studente.Valutazioni)
-                        {
-                            
-                                if(studente.Valutazioni[item].Voto==listItem.childNodes[3].childNodes[1].value
-                                    &&studente.Valutazioni[item].Data==listItem.childNodes[7].childNodes[1].value)
-                                {
-                                    delete studente.Valutazioni[item];
-                                    listItem.remove();
-                                    break;
-                                }
-                        }
-                    }*/
                 }
             }
             });
