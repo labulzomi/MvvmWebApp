@@ -1,4 +1,4 @@
-ul {
+#studentList {
     list-style: none;
     padding: 0;
     overflow:hidden; overflow-y:scroll;height:250px;

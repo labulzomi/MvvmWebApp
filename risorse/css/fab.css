@@ -28,6 +28,14 @@
     font-size: 48px;
     cursor: pointer;
 }
+.fabcontainer
+{
+  display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
 
 /*--------------------------*/
 .wrap {

@@ -118,7 +118,7 @@ $(document).ready(function()
               <fieldset>
               <legend>Valutazioni:</legend>
               <div>
-                <div style="display: flex;justify-content: center;align-items: center;">
+                <div  class="fabcontainer">
                     <input type="checkbox" id="gestore_bt">
                     <label for="gestore_bt">
                         <div id="bt_add_val" class="round-button">+</div>
