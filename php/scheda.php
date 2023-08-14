@@ -231,12 +231,15 @@ $dato=json_decode($_POST["dati"]);
                     if(listItem.id!="0")
                     { 
                         studente.Valutazioni[index].Voto=-1; 
+                        listItem.style.display="none";
 
                     }
-                    else
+                    else{
                         studente.Valutazioni.splice(index,1);
+                        listItem.remove();
+                    }
                         //delete studente.Valutazioni[index];
-                    listItem.remove();
+                    //listItem.remove();
                     
 
                     /*var i=1;
