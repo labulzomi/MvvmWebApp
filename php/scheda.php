@@ -226,6 +226,16 @@ $dato=json_decode($_POST["dati"]);
                 const listItem = e.target.closest('li');
                 if (listItem) 
                 {
+
+                    var index = $('.valutazione').index($(this).closest('.valutazione'));
+                    if(listItem.id!="0")
+                    { 
+                        studente.Valutazioni[index].Voto=-1; 
+
+                    }
+                    else
+                        delete studente.Valutazioni[index];
+                    listItem.remove();
                   /*  if(listItem.id!="0")
                     {
                         
@@ -234,7 +244,7 @@ $dato=json_decode($_POST["dati"]);
                     }
                     else
                         listItem.remove();  */
-                    if(listItem.id!="0")
+                 /*   if(listItem.id!="0")
                     {
                         for(const item in studente.Valutazioni)
                         {
@@ -258,7 +268,7 @@ $dato=json_decode($_POST["dati"]);
                                     break;
                                 }
                         }
-                    }
+                    }*/
                 }
             }
             });
