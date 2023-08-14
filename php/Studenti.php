@@ -2,27 +2,27 @@
 session_start();
 //da inserire blocco se in assenza di autorizzazione
 
+
+
+
+$stili="<link href='../risorse/css/stili.css?caso=".$caso."' rel='stylesheet'>
+<link href='../risorse/css/headerbarra.css?caso=".$caso."' rel='stylesheet'>
+<link href='../risorse/css/listitemstudenti.css?caso=".$caso."' rel='stylesheet'>
+<link href='../risorse/css/listitemvalutazione.css?caso=".$caso."' rel='stylesheet'>
+<link href='../risorse/css/fab.css?caso=".$caso."' rel='stylesheet'>
+<link href='../risorse/css/menulaterale.css?caso=".$caso."' rel='stylesheet'> ";
 ?>
 <!DOCTYPE html>
 <html>
   <head>
-    <?php//parte con rand per forzare aggiornamento css
-    //echo "<link href='../risorse/css/stili.css?caso=".rand(1,1000)."' rel='stylesheet'>";
-
-    /*<link href='../risorse/css/headerbarra.css?".rand(1,1000)."' rel='stylesheet'>
-    <link href='../risorse/css/listitemstudenti.css?".rand(1,1000)."' rel='stylesheet'>
-    <link href='../risorse/css/listitemvalutazione.css?".rand(1,1000)."' rel='stylesheet'>
-    <link href='../risorse/css/fab.css?".rand(1,1000)."' rel='stylesheet'>
-    <link href='../risorse/css/menulaterale.css?".rand(1,1000)."' rel='stylesheet'>  
-*/
-   
-    ?>
-     <link href='../risorse/css/stili.css' rel='stylesheet'> 
+  <?php echo $stili;?>
+ <!--    <link href='../risorse/css/stili.css' rel='stylesheet'> 
     <link href='../risorse/css/headerbarra.css' rel='stylesheet'>
     <link href='../risorse/css/listitemstudenti.css' rel='stylesheet'>
     <link href='../risorse/css/listitemvalutazione.css' rel='stylesheet'>
     <link href='../risorse/css/fab.css' rel='stylesheet'>
-    <link href='../risorse/css/menulaterale.css' rel='stylesheet'>  
+    <link href='../risorse/css/menulaterale.css' rel='stylesheet'>  -->
+    <link href='https://fonts.googleapis.com/css?family=Cairo' rel='stylesheet'>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="../js/action.js"></script>
     <script src="../js/utility.js"></script>

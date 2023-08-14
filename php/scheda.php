@@ -18,7 +18,7 @@ $dato=json_decode($_POST["dati"]);
     <head>
       
         <?php echo $stili;?>
-         
+        <link href='https://fonts.googleapis.com/css?family=Cairo' rel='stylesheet'>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
         <script src="../js/action.js"></script>
         <script src="../js/utility.js"></script>
