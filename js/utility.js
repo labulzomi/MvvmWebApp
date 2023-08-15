@@ -16,3 +16,6 @@ function CheckMail(email)
       return false;
     }
 }
+$('.menu-icon').click(function() {
+  $('.sidebar').toggleClass('active');
+});
