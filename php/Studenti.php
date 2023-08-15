@@ -35,14 +35,7 @@ $stili="<link href='../risorse/css/stili.css?caso=".$caso."' rel='stylesheet'>
     <script>
 
 var statocaricamento=false;
-$(document).on('input', '.get', function() 
-{
-    var index = $('.valutazione').index($(this).closest('.valutazione'));
-    if($(this).prop('nodeName')=="INPUT")
-        studente.Valutazioni[index].Data=$(this).val();
-    else
-        studente.Valutazioni[index].Voto=+$(this).val();
-});
+
 $(document).ready(function() 
 {    
         let file;
@@ -237,6 +230,16 @@ $(document).ready(function()
                 };
                 reader.readAsDataURL(file);
             } 
+        });
+
+
+        $(document).on('input', '.get', function() 
+        {
+            var index = $('.valutazione').index($(this).closest('.valutazione'));
+            if($(this).prop('nodeName')=="INPUT")
+                studente.Valutazioni[index].Data=$(this).val();
+            else
+                studente.Valutazioni[index].Voto=+$(this).val();
         });
       </script>
 
