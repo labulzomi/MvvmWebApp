@@ -55,6 +55,12 @@ $(document).ready(function()
           }
         });
          
+
+        $('.menu-icon').click(function() 
+        {
+          $('.sidebar').toggleClass('active');
+        });
+
         $("#bt_salva").on("click", function() 
         {    
           const ValArray = [];
