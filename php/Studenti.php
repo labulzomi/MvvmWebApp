@@ -43,10 +43,9 @@ $(document).ready(function()
         ChiamataGenerica(formData);
         statocaricamento=true;
 
-        $("#bt_add_val").on("click", function() 
-        {    
-            $("#studentList").append(ListItemValutazioneTemplate());
-        });
+        AddValutazione();
+
+        
         $("#insert").on("click", function() 
         {    
           //if(!statocaricamento)

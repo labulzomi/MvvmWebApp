@@ -164,6 +164,20 @@ function ChiamataGenerica(formData)
 }
 
 
+function AddValutazione()
+{
+
+  $("#bt_add_val").on("click", function() 
+    {    
+        setTimeout(function(){
+              $("#studentList").append(ListItemValutazioneTemplate());
+            }, 500);
+        
+        studente.Valutazioni.push(new Valutazione(0,0,""));
+        $("#gestore_bt").prop( "checked", false );
+    });
+}
+
 
  
 

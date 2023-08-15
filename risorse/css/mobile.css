@@ -29,6 +29,7 @@
     .menu-icon {
         display: none; /* Nascondi il menu hamburger per default */
         cursor: pointer;
+        color:#C48514;
     }
 
 }

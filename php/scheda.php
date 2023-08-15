@@ -62,12 +62,8 @@ $dato=json_decode($_POST["dati"]);
 
 
 
-                $("#bt_add_val").on("click", function() 
-                {    
-                    $("#studentList").append(ListItemValutazioneTemplate()).delay(1200);
-                    studente.Valutazioni.push(new Valutazione(0,0,""));
-                    $("#gestore_bt").prop( "checked", false );
-                });
+                AddValutazione();
+                
 
                 $("#bt_default_img").on("click", function() 
                 {    
@@ -144,8 +140,8 @@ $dato=json_decode($_POST["dati"]);
                     <input type="file" id="bt_load_img" name="image" accept="image/*" style="display:none;" value=""/> 
                 </div>
                 <div> 
-                    <label>Rimuovi Immagine</label>
-                    <button id="bt_default_img" value=""></button>
+                 
+                    <button id="bt_default_img" class="bt_upload" value="">Rimuovi Immagine</button>
                 </div>
                 <div> <input style="display:none;" id="tb_id" type="text" value="<?php echo $dato->ID;?>"/></div>
                 <div> <input class="InsertText" id="tb_nome" type="text" value="<?php echo $dato->Nome;?>"/></div>
