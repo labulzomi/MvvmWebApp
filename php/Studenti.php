@@ -114,7 +114,11 @@ $(document).ready(function()
               <div>
               <img id="img_prof" src="../risorse/imgs/studente.png"/>
               </div>
-              <div> <input  id="bt_load_img" type="file" name="image"  accept="image/*">Carica Immagine</button></div> 
+              <div> 
+                    <label for="bt_load_img" class="bt_upload">Cambia Immagine</label>
+                    <input type="file" id="bt_load_img" name="image" accept="image/*" style="display:none;" value=""/> 
+                </div>
+           <!--   <div> <input  id="bt_load_img" type="file" name="image"  accept="image/*">Carica Immagine</button></div> -->
               <div> <input class="InsertText" placeholder="Nome" id="tb_nome" type="text"  /></div>
               <div> <input class="InsertText" placeholder="Cognome" id="tb_cognome" type="text"  /></div>
               </fieldset>

@@ -159,8 +159,8 @@ $dato=json_decode($_POST["dati"]);
                             echo "http://areaverifica.altervista.org/Galeazzi/img/".$dato->Foto;?>"/>
                 </div>
                 <div> 
-                    <label for="bt_load_img" class="bt_upload">Select Image</label>
-                    <input type="file" id="bt_load_img" style="visibility:hidden;" value="">Cambia Immagine</input>
+                    <label for="bt_load_img" class="bt_upload">Cambia Immagine</label>
+                    <input type="file" id="bt_load_img" name="image" accept="image/*" style="display:none;" value=""/> 
                 </div>
                 <div> <button id="bt_default_img" value="">Rimuovi Immagine</button></div>
                 <div> <input style="display:none;" id="tb_id" type="text" value="<?php echo $dato->ID;?>"/></div>
