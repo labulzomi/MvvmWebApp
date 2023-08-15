@@ -1,5 +1,6 @@
 /* Stili per il menu mobile */
-@media (max-width: 768px) {
+@media (max-width: 768px) 
+{
     .menu-icon {
         display: block; /* Mostra il menu hamburger sui dispositivi mobili */
     }
@@ -15,9 +16,11 @@
 
      
 }
+@media (min-width: 768px) 
+{
+    .menu-icon {
+        display: none; /* Nascondi il menu hamburger per default */
+        cursor: pointer;
+    }
 
-.menu-icon {
-    display: none; /* Nascondi il menu hamburger per default */
-    cursor: pointer;
 }
-

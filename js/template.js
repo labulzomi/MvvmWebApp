@@ -1,7 +1,7 @@
 function ListItemTemplate(studente)
 {
   var template= `<li class="user-item">
-  <img src="`+GetPath(studente.Foto)+`" onerror="this.onerror=null; this.src='../imgs/noimage.jpeg'" alt="Foto utente">
+  <img src="`+GetPath(studente.Foto)+`" onerror="this.onerror=null; this.src='../risorse/imgs/noimage.jpeg'" alt="Foto utente">
   <span class="user-name">`+studente.Nome+`</span>
   <span class="user-surname">`+studente.Cognome+`</span>
   <button class="edit-btn" onclick="editUser(`+studente.ID+`)">
