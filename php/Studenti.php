@@ -110,7 +110,7 @@ $(document).ready(function()
       <div class="content">
         <div id="insertContent" class="active">
           
-          <div style="display:flex;justify-content: space-around;text-align:center;align-items: center;padding: 20px;"> 
+          <div class="fieldContainer"> 
               <fieldset>
               <legend>Anagrafica:</legend>
               <div>

@@ -59,6 +59,18 @@ fieldset legend
 fieldset>div
 {margin: 10px 0px;}
 
+
+.fieldContainer
+{
+  display:flex;
+  justify-content: 
+  space-around;
+  text-align:center;
+  align-items: center;
+  padding: 20px;
+  
+}
+
 .GenericButton
 {
     border-width: 5px;
@@ -88,9 +100,9 @@ fieldset>div
 
  
 .bt_upload{
-  margin-right: 20px;
+ 
   border: none;
-  background: #084cdf;
+  background: #5F7938;
   padding: 10px 20px;
   border-radius: 10px;
   color: #fff;
@@ -98,9 +110,7 @@ fieldset>div
   transition: background .2s ease-in-out;
 }
 
-.bt_upload{
-  background: #0d45a5;
-}
+ 
 
 .InsertText
 {
@@ -132,8 +142,9 @@ fieldset>div
 
 #bt_default_img
 {
+  height: 50px;
   width: 50px;
-  background: url("../imgs/image-delete.svg") no-repeat center;
+  background: url("../imgs/delete.png") no-repeat center;
   border: 0px;
 }
   

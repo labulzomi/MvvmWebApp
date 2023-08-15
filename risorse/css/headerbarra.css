@@ -36,7 +36,7 @@
 }
 #img_back
 {    
-   
+    width: 30px;
     background: url("../imgs/arrow_on.png") no-repeat center;
 }
 #img_back:hover
