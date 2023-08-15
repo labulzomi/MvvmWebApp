@@ -171,10 +171,27 @@ function AddValutazione()
     {    
         setTimeout(function(){
               $("#studentList").append(ListItemValutazioneTemplate());
-            }, 500);
+            }, 450);
         
         studente.Valutazioni.push(new Valutazione(0,0,""));
         $("#gestore_bt").prop( "checked", false );
+    });
+}
+
+function GestoreAcquisizioneStudente()
+{
+  $('#tb_nome').on('input', function() 
+    {
+          studente.Nome=$(this).val();
+    });
+    $('#tb_cognome').on('input', function() 
+    {
+          studente.Cognome=$(this).val();
+    });
+    $("#bt_load_img").change(function()
+    {
+
+        file = $("#bt_load_img")[0].files[0]; 
     });
 }
 

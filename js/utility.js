@@ -16,3 +16,20 @@ function CheckMail(email)
       return false;
     }
 }
+
+
+function CheckValutazioni(valutazioni)
+{
+  var check=true;
+  valutazioni.each(function( index ) 
+  {                       
+          var v=$(this).find("select option:selected")[0].text;
+          var d=$(this).find("input")[0].value;
+          if(v=="?"||d==""){
+              check=false;
+               
+          }
+          
+  });
+  return check;
+}

@@ -43,9 +43,11 @@ $(document).ready(function()
         ChiamataGenerica(formData);
         statocaricamento=true;
 
+
+        GestoreAcquisizioneStudente();
         AddValutazione();
 
-        
+
         $("#insert").on("click", function() 
         {    
           //if(!statocaricamento)
@@ -68,27 +70,48 @@ $(document).ready(function()
             $('.sidebar').removeClass('attiva');
         });
 
+
+
         $("#bt_salva").on("click", function() 
         {    
           const ValArray = [];
 
           
           //estraggo tutti le valutazioni
-          $("#studentList li").each(function( index ) 
+        /*  $("#studentList li").each(function( index ) 
           {
                 var v=$(this).find("select option:selected")[0].text;
                 var d=$(this).find("input")[0].value;
                 ValArray.push(new Valutazione(0,v,d));
-          });
+          });*/
+
+          var check=CheckValutazioni($("#studentList li"));
+
+/*
           var n=$("#tb_nome").val();
           var c=$("#tb_cognome").val();
           var f=$("#bt_load_img").val().split('\\').pop()=="../risorse/imgs/studente.png"?null:$("#bt_load_img").val().split('\\').pop();
 
           let s=new Studente(0,n,c,f,ValArray);
 
-          const file = $("#bt_load_img")[0].files[0];
+          const file = $("#bt_load_img")[0].files[0];*/
 
-          SalvaStudente(JSON.stringify(s),file);
+         // SalvaStudente(JSON.stringify(s),file);
+
+
+          if(check)                        
+          {   
+            var f=$("#img_prof").attr('src').split('\\').pop();
+            if(f.includes("noimage.jpeg"))
+                f=null;
+            else
+                if($("#bt_load_img").val()=="")
+                    f="invariata";
+            studente.Foto=f;
+            SalvaStudente(JSON.stringify(studente),file);
+          }
+          else
+            alert("si è verificato un problema, dati non corretti");
  
              
         });
@@ -179,6 +202,8 @@ $(document).ready(function()
       document.getElementById("insert").addEventListener("click", function () {
         document.getElementById("insertContent").classList.add("active");
         document.getElementById("viewContent").classList.remove("active");
+        let file;
+        let studente=new Studente(0,"","","",null);
       });
 
       document.getElementById("view").addEventListener("click", function () {

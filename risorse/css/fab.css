@@ -3,7 +3,7 @@
 
 #gestore_bt:checked+label div
 {
-        animation: moveDown 1s ease-in-out; 
+        animation: moveDown 0.4s ease-in-out; 
         
 }
 @keyframes moveDown {

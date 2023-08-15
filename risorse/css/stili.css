@@ -107,6 +107,7 @@ fieldset>div
   border-radius: 10px;
   color: #fff;
   cursor: pointer;
+  font-size: 16px;
   transition: background .2s ease-in-out;
 }
 
@@ -139,14 +140,14 @@ fieldset>div
   {
     text-align: center;
   }
-
+/*
 #bt_default_img
 {
   height: 50px;
   width: 50px;
   background: url("../imgs/delete.png") no-repeat center;
   border: 0px;
-}
+}*/
   
  
 

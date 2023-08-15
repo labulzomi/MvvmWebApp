@@ -44,7 +44,7 @@ $dato=json_decode($_POST["dati"]);
             let file;
             $(document).ready(function() 
             {
-                $('#tb_nome').on('input', function() 
+               /* $('#tb_nome').on('input', function() 
                 {
                      studente.Nome=$(this).val();
                 });
@@ -56,14 +56,14 @@ $dato=json_decode($_POST["dati"]);
                 {
            
                     file = $("#bt_load_img")[0].files[0]; 
-                });
+                });*/
 
-
+                GestoreAcquisizioneStudente();
 
 
 
                 AddValutazione();
-                
+
 
                 $("#bt_default_img").on("click", function() 
                 {    
@@ -78,7 +78,7 @@ $dato=json_decode($_POST["dati"]);
 
                    /// $('.my-button').prop('disabled', true)
                     //estraggo tutti le valutazioni
-                  $("#studentList li").each(function( index ) 
+                  /*$("#studentList li").each(function( index ) 
                     {                       
                             var v=$(this).find("select option:selected")[0].text;
                             var d=$(this).find("input")[0].value;
@@ -86,12 +86,12 @@ $dato=json_decode($_POST["dati"]);
                                 check=false;
                            // else
                            //     ValArray.push(new Valutazione($(this).attr("Id"),v,d));
-                    });
-                  
+                    });*/
+                    var check=CheckValutazioni($("#studentList li"));
 
-                    if(check)
-                        //AggiornaStudente(JSON.stringify(s),file);  
-                     {   var f=$("#img_prof").attr('src').split('\\').pop();
+                    if(check)                        
+                     {   
+                        var f=$("#img_prof").attr('src').split('\\').pop();
                         if(f.includes("noimage.jpeg"))
                             f=null;
                         else
