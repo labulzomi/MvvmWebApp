@@ -38,6 +38,9 @@ var statocaricamento=false;
 
 $(document).ready(function() 
 {    
+        let file;
+        let studente=new Studente(0,"","","",null);
+
         var formData = new FormData(); 
         formData.append("mode",2);
         ChiamataGenerica(formData);
@@ -202,8 +205,7 @@ $(document).ready(function()
       document.getElementById("insert").addEventListener("click", function () {
         document.getElementById("insertContent").classList.add("active");
         document.getElementById("viewContent").classList.remove("active");
-        let file;
-        let studente=new Studente(0,"","","",null);
+        
       });
 
       document.getElementById("view").addEventListener("click", function () {
