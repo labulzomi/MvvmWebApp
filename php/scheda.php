@@ -149,7 +149,7 @@ $dato=json_decode($_POST["dati"]);
             <div class="grigliaScheda">
                 
             </div>
-            <div style="display:flex;justify-content: space-around;text-align:center;align-items: center;padding: 20px;"> 
+            <div class="fieldContainer"> 
                 <fieldset>
                 <legend>Anagrafica:</legend>
                 <div>

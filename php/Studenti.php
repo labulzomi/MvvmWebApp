@@ -61,6 +61,11 @@ $(document).ready(function()
           $('.sidebar').toggleClass('active');
         });
 
+        $('.content div').click(function() 
+        {
+            $('.sidebar').removeClass('active');
+        });
+
         $("#bt_salva").on("click", function() 
         {    
           const ValArray = [];
