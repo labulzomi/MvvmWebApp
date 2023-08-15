@@ -45,12 +45,12 @@ $(document).ready(function()
         });
         $("#insert").on("click", function() 
         {    
-          if(!statocaricamento)
+          //if(!statocaricamento)
           {
-          var formData = new FormData(); 
-          formData.append("mode",2);
-          ChiamataGenerica(formData);
-          statocaricamento=true;
+            var formData = new FormData(); 
+            formData.append("mode",2);
+            ChiamataGenerica(formData);
+            statocaricamento=true;
           }
         });
          

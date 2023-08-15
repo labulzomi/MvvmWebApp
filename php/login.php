@@ -1,12 +1,17 @@
 <?php
 session_start();
 
+$caso=rand(1,1000);
+$stili="<link href='../risorse/css/headerbarra.css?caso=".$caso."' rel='stylesheet'>
+<link href='../risorse/css/snackbar.css?caso=".$caso."' rel='stylesheet'>";
+
 ?>
 <html>
 <head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-<link href='../risorse/css/headerbarra.css' rel='stylesheet'>
-<link href='../risorse/css/snackbar.css' rel='stylesheet'>
+<!--<link href='../risorse/css/headerbarra.css' rel='stylesheet'>
+<link href='../risorse/css/snackbar.css' rel='stylesheet'>-->
+<?php echo $stili;?>
 <script src="../js/model.js"></script>
 <script src="../js/action.js"></script>
 <script src="../js/utility.js"></script>

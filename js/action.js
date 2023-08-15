@@ -18,6 +18,7 @@ function GestioneResponse(mode,response)
             break;
         case "2"://visualizza
               dati=JSON.parse(response);
+              $("#elenco").empty();
               dati.forEach(function(studente) 
               {
                 $("#elenco").append(ListItemTemplate(studente));
