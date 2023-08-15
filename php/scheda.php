@@ -64,7 +64,7 @@ $dato=json_decode($_POST["dati"]);
 
                 $("#bt_add_val").on("click", function() 
                 {    
-                    $("#studentList").append(ListItemValutazioneTemplate());
+                    $("#studentList").append(ListItemValutazioneTemplate()).delay(1200);
                     studente.Valutazioni.push(new Valutazione(0,0,""));
                     $("#gestore_bt").prop( "checked", false );
                 });
@@ -91,26 +91,7 @@ $dato=json_decode($_POST["dati"]);
                            // else
                            //     ValArray.push(new Valutazione($(this).attr("Id"),v,d));
                     });
-                    //studente.Valutazioni=ValArray;
-
-
-
-                  /*  var n=$("#tb_nome").val();
-                    var c=$("#tb_cognome").val();
-                    var f=$("#img_prof").attr('src').split('\\').pop();
-                    if(f.includes("noimage.jpeg"))
-                        f=null;
-                    else
-                        if($("#bt_load_img").val()=="")
-                            f="invariata";                  
-
-
-                    let s=new Studente($("#tb_id").val(),n,c,f,ValArray);
-
-                    const file = $("#bt_load_img")[0].files[0]; 
-
-                    if(n==""||c=="")
-                        check=false;*/
+                  
 
                     if(check)
                         //AggiornaStudente(JSON.stringify(s),file);  

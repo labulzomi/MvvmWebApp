@@ -3,12 +3,15 @@ session_start();
 //da inserire blocco se in assenza di autorizzazione
 
 
+$caso=rand(1,1000);
+
 
 
 $stili="<link href='../risorse/css/stili.css?caso=".$caso."' rel='stylesheet'>
 <link href='../risorse/css/headerbarra.css?caso=".$caso."' rel='stylesheet'>
 <link href='../risorse/css/listitemstudenti.css?caso=".$caso."' rel='stylesheet'>
 <link href='../risorse/css/listitemvalutazione.css?caso=".$caso."' rel='stylesheet'>
+<link href='../risorse/css/mobile.css?caso=".$caso."' rel='stylesheet'> 
 <link href='../risorse/css/fab.css?caso=".$caso."' rel='stylesheet'>
 <link href='../risorse/css/menulaterale.css?caso=".$caso."' rel='stylesheet'> ";
 ?>
