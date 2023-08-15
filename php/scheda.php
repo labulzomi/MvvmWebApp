@@ -162,7 +162,10 @@ $dato=json_decode($_POST["dati"]);
                     <label for="bt_load_img" class="bt_upload">Cambia Immagine</label>
                     <input type="file" id="bt_load_img" name="image" accept="image/*" style="display:none;" value=""/> 
                 </div>
-                <div> <button id="bt_default_img" value="">Rimuovi Immagine</button></div>
+                <div> 
+                    <label>Rimuovi Immagine</label>
+                    <button id="bt_default_img" value=""></button>
+                </div>
                 <div> <input style="display:none;" id="tb_id" type="text" value="<?php echo $dato->ID;?>"/></div>
                 <div> <input class="InsertText" id="tb_nome" type="text" value="<?php echo $dato->Nome;?>"/></div>
                 <div> <input class="InsertText"id="tb_cognome" type="text" value="<?php echo $dato->Cognome;?>"/></div>

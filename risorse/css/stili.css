@@ -111,6 +111,8 @@ fieldset>div
   box-sizing: border-box;
   font-size: 18px;
   border: none;
+  color: white;
+  font-weight: 500;
   border-bottom: 3px solid lightgrey
 }
 
@@ -130,7 +132,8 @@ fieldset>div
 
 #bt_default_img
 {
-  background: url("../imgs/delete.png") no-repeat center;
+  width: 50px;
+  background: url("../imgs/image-delete.svg") no-repeat center;
   border: 0px;
 }
   

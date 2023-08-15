@@ -36,7 +36,11 @@
 }
 #img_back
 {    
-    background-size: 25px 25px !important;
-    width: 50px;
-    background: url("../imgs/arrow.png") no-repeat center;
+   
+    background: url("../imgs/arrow_on.png") no-repeat center;
+}
+#img_back:hover
+{    
+ 
+    background: url("../imgs/arrow_off.png") no-repeat center;
 }
