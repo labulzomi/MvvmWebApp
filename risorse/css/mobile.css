@@ -14,7 +14,7 @@
         flex-wrap: wrap;
     }
 
-    .sidebar.active {
+    .sidebar.attiva {
         display: flex;
         flex-direction: column;
         z-index: 99; 

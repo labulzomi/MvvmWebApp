@@ -58,12 +58,12 @@ $(document).ready(function()
 
         $('.menu-icon').click(function() 
         {
-          $('.sidebar').toggleClass('active');
+          $('.sidebar').toggleClass('attiva');
         });
 
         $('.content div').click(function() 
         {
-            $('.sidebar').removeClass('active');
+            $('.sidebar').removeClass('attiva');
         });
 
         $("#bt_salva").on("click", function() 
