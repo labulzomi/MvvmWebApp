@@ -44,8 +44,8 @@ $(document).ready(function()
         statocaricamento=true;
 
 
-        GestoreAcquisizioneStudente();
-        AddValutazione();
+        GestoreAcquisizioneStudente(studente,file);
+        AddValutazione(studente);
 
 
         $("#insert").on("click", function() 

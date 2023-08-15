@@ -58,11 +58,11 @@ $dato=json_decode($_POST["dati"]);
                     file = $("#bt_load_img")[0].files[0]; 
                 });*/
 
-                GestoreAcquisizioneStudente();
+                GestoreAcquisizioneStudente(studente,file);
 
 
 
-                AddValutazione();
+                AddValutazione(studente);
 
 
                 $("#bt_default_img").on("click", function() 

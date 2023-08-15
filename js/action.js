@@ -164,7 +164,7 @@ function ChiamataGenerica(formData)
 }
 
 
-function AddValutazione()
+function AddValutazione(studente)
 {
 
   $("#bt_add_val").on("click", function() 
@@ -178,7 +178,7 @@ function AddValutazione()
     });
 }
 
-function GestoreAcquisizioneStudente()
+function GestoreAcquisizioneStudente(studente,file)
 {
   $('#tb_nome').on('input', function() 
     {
