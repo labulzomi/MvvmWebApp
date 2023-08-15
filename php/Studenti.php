@@ -45,10 +45,13 @@ $(document).ready(function()
         });
         $("#insert").on("click", function() 
         {    
+          if(!statocaricamento)
+          {
           var formData = new FormData(); 
           formData.append("mode",2);
           ChiamataGenerica(formData);
           statocaricamento=true;
+          }
         });
          
         $("#bt_salva").on("click", function() 
@@ -104,7 +107,7 @@ $(document).ready(function()
       </div>
       <div class="content">
         <div id="insertContent" class="active">
-          <h2>Inserisci Studente</h2>
+          
           <div style="display:flex;justify-content: space-around;text-align:center;align-items: center;padding: 20px;"> 
               <fieldset>
               <legend>Anagrafica:</legend>
@@ -145,7 +148,7 @@ $(document).ready(function()
         </div>
 
         <div id="viewContent">
-          <h2>Visualizza Studenti</h2>
+           
           <div id="viewData"></div>
           <ul id="elenco">
 

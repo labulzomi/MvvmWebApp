@@ -12,6 +12,13 @@ html,body
   max-width: 200px; 
   border: 3px solid white;
 }
+#elenco
+{
+  height: 700px;
+    overflow: hidden;
+    overflow-y: auto;
+}
+
 #studentList
 {width: 310px;
   border: 3px solid #5F7938;
@@ -28,7 +35,7 @@ fieldset
 {
   margin: 10px;
   min-width: 300px; 
-  height: 500px;
+  height: 450px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -49,6 +56,9 @@ fieldset legend
     padding: 0 5px;
 }
 
+fieldset>div
+{margin: 20px 0px;}
+
 .GenericButton
 {
     border-width: 5px;
@@ -58,7 +68,7 @@ fieldset legend
     width: 80%;
     padding: 20px;
     font-weight: 600;
-    color: darkblue;
+    color: lightgray;
     background-color: #5F7938;
     font-size: 18px;
 }

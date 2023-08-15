@@ -1,7 +1,7 @@
 #studentList {
     list-style: none;
     padding: 0;
-    overflow:hidden; overflow-y:scroll;height:250px;
+    overflow:hidden; overflow-y:auto;height:250px;
     }
 
     li {
