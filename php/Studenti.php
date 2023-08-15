@@ -22,6 +22,7 @@ $stili="<link href='../risorse/css/stili.css?caso=".$caso."' rel='stylesheet'>
     <link href='../risorse/css/listitemvalutazione.css' rel='stylesheet'>
     <link href='../risorse/css/fab.css' rel='stylesheet'>
     <link href='../risorse/css/menulaterale.css' rel='stylesheet'>  -->
+    <link href='../risorse/css/mobile.css' rel='stylesheet'> 
     <link href='https://fonts.googleapis.com/css?family=Cairo' rel='stylesheet'>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="../js/action.js"></script>
@@ -96,6 +97,7 @@ $(document).ready(function()
         <div>
             <span>REGISTRO VALUTAZIONI</span>
             <span><a href="./logout.php"><div id="img_logout"></div></a></span>
+             <span class="menu-icon">&#9776;</span>
         </div>
         <div></div>
     </div>

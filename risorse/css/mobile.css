@@ -1,0 +1,18 @@
+/* Stili per il menu mobile */
+@media (max-width: 768px) {
+    .menu-icon {
+        display: block; /* Mostra il menu hamburger sui dispositivi mobili */
+    }
+    
+    .sidebar {
+        display: none; /* Nascondi il menu principale */
+ 
+    }
+
+     
+}
+
+.menu-icon {
+    display: none; /* Nascondi il menu hamburger per default */
+    cursor: pointer;
+}
