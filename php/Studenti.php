@@ -39,7 +39,7 @@ var statocaricamento=false;
 $(document).ready(function() 
 {    
         let file;
-        let studente=new Studente(0,"","","",null);
+        let studente=new Studente(0,"","","",new Array());
 
         var formData = new FormData(); 
         formData.append("mode",2);
