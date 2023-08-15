@@ -61,7 +61,7 @@ $(document).ready(function()
           $('.sidebar').toggleClass('attiva');
         });
 
-        $('.content h2').click(function() 
+        $('.sidebar h2').click(function() 
         {
             $('.sidebar').removeClass('attiva');
         });
