@@ -35,11 +35,11 @@ $stili="<link href='../risorse/css/stili.css?caso=".$caso."' rel='stylesheet'>
     <script>
 
 var statocaricamento=false;
-
+let file;
+let studente=new Studente(0,"","","",new Array());
 $(document).ready(function() 
 {    
-        let file;
-        let studente=new Studente(0,"","","",new Array());
+        
 
         var formData = new FormData(); 
         formData.append("mode",2);
