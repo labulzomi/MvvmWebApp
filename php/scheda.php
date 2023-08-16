@@ -71,6 +71,7 @@ $dato=json_decode($_POST["dati"]);
                 {    
                     $("#img_prof").attr('src',"http://areaverifica.altervista.org/GaleazziOnline/risorse/imgs/noimage.jpeg");
                     $("#bt_load_img")[0].files[0]=null;
+                    studente.Foto=null;
                 });
 
                 $("#bt_salva").on("click", function() 
@@ -94,9 +95,9 @@ $dato=json_decode($_POST["dati"]);
                     if(check)                        
                      {   
                         //var f=$("#img_prof").attr('src').split('\\').pop();
-                        if(f_iniziale.includes("noimage.jpeg"))
+                        /*if(f_iniziale.includes("noimage.jpeg"))
                             studente.Foto=null;
-                        else
+                        else*/
                             if(f_iniziale==studente.Foto)
                                 studente.Foto="invariata";
                         //studente.Foto=f;
