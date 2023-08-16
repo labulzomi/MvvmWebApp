@@ -35,7 +35,7 @@ function CheckValutazioni(valutazioni)
 }
 
 
-function GestoreCambioImmagine(studente)
+function GestoreCambioImmagine(studente,file)
 {
   const imageInput = document.getElementById('bt_load_img');
         imageInput.addEventListener('change', function() {
