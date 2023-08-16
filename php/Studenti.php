@@ -54,7 +54,7 @@ $(document).ready(function()
         AddValutazione(studente);
 
 
-        $("#insert").on("click", function() 
+        $("#view").on("click", function() 
         {    
           
           {
@@ -201,7 +201,7 @@ $(document).ready(function()
        
     </script>
     <script>
-         const imageInput = document.getElementById('bt_load_img');
+       /*  const imageInput = document.getElementById('bt_load_img');
        
 
         imageInput.addEventListener('change', function() {
@@ -215,8 +215,8 @@ $(document).ready(function()
                 };
                 reader.readAsDataURL(file);
             } 
-        });
-
+        });*/
+        GestoreCambioImmagine(studente);
 
         $(document).on('input', '.get', function() 
         {
