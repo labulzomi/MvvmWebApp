@@ -32,7 +32,17 @@ function GestioneResponse(mode,response)
             if(!isNaN(response))
             {
               alert("Studente inserito correttamente");
-              cleanArea(studente);
+              //cleanArea(studente);
+              //reset img
+                $("#img_prof").attr('src',"http://areaverifica.altervista.org/GaleazziOnline/risorse/imgs/noimage.jpeg");
+                $("#bt_load_img")[0].files[0]=null;
+                
+              //reset testi
+                $('#tb_nome').val("");
+                $('#tb_cognome').val("");
+              //reset valutazioni
+              $("#studentList").empty();
+              studente=new Studente(0,"","","",new Array());
             }
             else 
               alert("Si è verificato un errore "); 
