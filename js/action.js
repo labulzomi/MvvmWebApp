@@ -30,7 +30,10 @@ function GestioneResponse(mode,response)
               break;
         case "1"://insert studente
             if(!isNaN(response))
+            {
               alert("Studente inserito correttamente");
+              cleanArea(studente);
+            }
             else 
               alert("Si è verificato un errore "); 
             break;

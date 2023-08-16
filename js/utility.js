@@ -51,3 +51,17 @@ function GestoreCambioImmagine(studente,file)
             } 
         });
 }
+
+function cleanArea(studente)
+{
+  //reset img
+   $("#img_prof").attr('src',"http://areaverifica.altervista.org/GaleazziOnline/risorse/imgs/noimage.jpeg");
+    $("#bt_load_img")[0].files[0]=null;
+    
+//reset testi
+    $('#tb_nome').val("");
+    $('#tb_cognome').val("");
+//reset valutazioni
+  $("#studentList").empty();
+  studente=new Studente(0,"","","",new Array());
+}
