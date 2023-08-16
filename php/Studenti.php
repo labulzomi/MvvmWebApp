@@ -39,6 +39,9 @@ let file;
 let studente=new Studente(0,"","","",new Array());
 $(document).ready(function() 
 {    
+
+  //NON SALVA FOTO E IN SEGUITO AL SALVATAGGIO VANNO RESETTATI I CAMPI E I 
+  //VALORI DELL'OGGETTO STUDENTE E FILE
         
 
         var formData = new FormData(); 
