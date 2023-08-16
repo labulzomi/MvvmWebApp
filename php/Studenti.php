@@ -201,9 +201,7 @@ $(document).ready(function()
        
     </script>
     <script>
-       /*  const imageInput = document.getElementById('bt_load_img');
-       
-
+         const imageInput = document.getElementById('bt_load_img'); 
         imageInput.addEventListener('change', function() {
             const file = imageInput.files[0];
             if (file) {
@@ -215,8 +213,8 @@ $(document).ready(function()
                 };
                 reader.readAsDataURL(file);
             } 
-        });*/
-        GestoreCambioImmagine(studente);
+        }); 
+       // GestoreCambioImmagine(studente);
 
         $(document).on('input', '.get', function() 
         {
