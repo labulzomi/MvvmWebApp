@@ -41,7 +41,7 @@ $dato=json_decode($_POST["dati"]);
 
 
             let studente=JSON.parse('<?php echo $_POST["dati"];?>');
-            let file;
+            const file;
             $(document).ready(function() 
             {
                /* $('#tb_nome').on('input', function() 
@@ -231,13 +231,13 @@ $dato=json_decode($_POST["dati"]);
         <script>
             const imageInput = document.getElementById('bt_load_img');
             imageInput.addEventListener('change', function() {
-                const file = imageInput.files[0];
-                if (file) {
+                const files = imageInput.files[0];
+                if (files) {
                     const reader = new FileReader();
                     reader.onload = function(event) {                   
                         $("#img_prof").attr("src",event.target.result);                
                     };
-                    reader.readAsDataURL(file);
+                    reader.readAsDataURL(files);
                 } 
             });
         </script>
