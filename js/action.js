@@ -36,6 +36,7 @@ function GestioneResponse(mode,response)
               //reset img
                 $("#img_prof").attr('src',"http://areaverifica.altervista.org/GaleazziOnline/risorse/imgs/noimage.jpeg");
                 $("#bt_load_img")[0].files[0]=null;
+                file=null;
                 
               //reset testi
                 $('#tb_nome').val("");
