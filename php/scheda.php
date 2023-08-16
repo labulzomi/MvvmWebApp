@@ -45,7 +45,7 @@ $dato=json_decode($_POST["dati"]);
             let file;
             $(document).ready(function() 
             {
-                f_iniziale=$('#img_prof').attr("src");
+                f_iniziale=$('#img_prof').attr("src").split('\\').pop();
                /* $('#tb_nome').on('input', function() 
                 {
                      studente.Nome=$(this).val();
