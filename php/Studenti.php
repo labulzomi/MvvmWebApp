@@ -203,7 +203,7 @@ $(document).ready(function()
     <script>
          const imageInput = document.getElementById('bt_load_img'); 
         imageInput.addEventListener('change', function() {
-            const file = imageInput.files[0];
+             file = imageInput.files[0];
             if (file) {
                 const reader = new FileReader();
                 reader.onload = function(event) {
