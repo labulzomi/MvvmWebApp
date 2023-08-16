@@ -209,7 +209,7 @@ $(document).ready(function()
                 reader.onload = function(event) {
                    
                     $("#img_prof").attr("src",event.target.result);
-                    studente.Foto= files.name;       
+                    studente.Foto= file.name;       
                 };
                 reader.readAsDataURL(file);
             } 
