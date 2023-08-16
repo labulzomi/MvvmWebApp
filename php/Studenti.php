@@ -25,6 +25,8 @@ $stili="<link href='../risorse/css/stili.css?caso=".$caso."' rel='stylesheet'>
     <link href='../risorse/css/listitemvalutazione.css' rel='stylesheet'>
     <link href='../risorse/css/fab.css' rel='stylesheet'>
     <link href='../risorse/css/menulaterale.css' rel='stylesheet'>  -->
+    
+    <script src="../js/model.js"></script>
      <script>
 var statocaricamento=false;
 let file;
@@ -37,7 +39,6 @@ let studente=new Studente(0,"","","",new Array());
     <script src="../js/action.js"></script>
     <script src="../js/utility.js"></script>
     <script src="../js/template.js"></script>
-    <script src="../js/model.js"></script>
     <script>
 
 
