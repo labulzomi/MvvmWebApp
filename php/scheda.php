@@ -40,10 +40,12 @@ $dato=json_decode($_POST["dati"]);
             });
 
 
+            let f_iniziale;
             let studente=JSON.parse('<?php echo $_POST["dati"];?>');
-            const file;
+            let file;
             $(document).ready(function() 
             {
+                f_iniziale=$('#img_prof').attr("src");
                /* $('#tb_nome').on('input', function() 
                 {
                      studente.Nome=$(this).val();
@@ -91,13 +93,14 @@ $dato=json_decode($_POST["dati"]);
 
                     if(check)                        
                      {   
-                        var f=$("#img_prof").attr('src').split('\\').pop();
-                        if(f.includes("noimage.jpeg"))
-                            f=null;
+                        //var f=$("#img_prof").attr('src').split('\\').pop();
+                        if(f_iniziale.includes("noimage.jpeg"))
+                            studente.Foto=null;
                         else
-                            if($("#bt_load_img").val()=="")
-                                f="invariata";
-                        studente.Foto=f;
+                            if(f_iniziale==studente.Foto)
+                                studente.Foto="invariata";
+                        //studente.Foto=f;
+
                         AggiornaStudente(JSON.stringify(studente),file);  
                      }
                     else
@@ -235,7 +238,8 @@ $dato=json_decode($_POST["dati"]);
                 if (files) {
                     const reader = new FileReader();
                     reader.onload = function(event) {                   
-                        $("#img_prof").attr("src",event.target.result);                
+                        $("#img_prof").attr("src",event.target.result);      
+                        studente.Foto= files.name;         
                     };
                     reader.readAsDataURL(files);
                 } 
