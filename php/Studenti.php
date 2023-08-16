@@ -36,10 +36,10 @@ $stili="<link href='../risorse/css/stili.css?caso=".$caso."' rel='stylesheet'>
 
 var statocaricamento=false;
 let file;
+let f_iniziale;
 let studente=new Studente(0,"","","",new Array());
 $(document).ready(function() 
 {    
-
   //NON SALVA FOTO E IN SEGUITO AL SALVATAGGIO VANNO RESETTATI I CAMPI E I 
   //VALORI DELL'OGGETTO STUDENTE E FILE
         
@@ -56,7 +56,7 @@ $(document).ready(function()
 
         $("#insert").on("click", function() 
         {    
-          //if(!statocaricamento)
+          
           {
             var formData = new FormData(); 
             formData.append("mode",2);
@@ -81,39 +81,21 @@ $(document).ready(function()
         $("#bt_salva").on("click", function() 
         {    
           const ValArray = [];
-
-          
-          //estraggo tutti le valutazioni
-        /*  $("#studentList li").each(function( index ) 
-          {
-                var v=$(this).find("select option:selected")[0].text;
-                var d=$(this).find("input")[0].value;
-                ValArray.push(new Valutazione(0,v,d));
-          });*/
+        
 
           var check=CheckValutazioni($("#studentList li"));
 
-/*
-          var n=$("#tb_nome").val();
-          var c=$("#tb_cognome").val();
-          var f=$("#bt_load_img").val().split('\\').pop()=="../risorse/imgs/studente.png"?null:$("#bt_load_img").val().split('\\').pop();
-
-          let s=new Studente(0,n,c,f,ValArray);
-
-          const file = $("#bt_load_img")[0].files[0];*/
-
-         // SalvaStudente(JSON.stringify(s),file);
 
 
           if(check)                        
           {   
-            var f=$("#img_prof").attr('src').split('\\').pop();
+            /*var f=$("#img_prof").attr('src').split('\\').pop();
             if(f.includes("noimage.jpeg"))
                 f=null;
             else
                 if($("#bt_load_img").val()=="")
                     f="invariata";
-            studente.Foto=f;
+            studente.Foto=f;*/
             SalvaStudente(JSON.stringify(studente),file);
           }
           else
@@ -229,7 +211,7 @@ $(document).ready(function()
                 reader.onload = function(event) {
                    
                     $("#img_prof").attr("src",event.target.result);
-                
+                    studente.Foto= files.name;       
                 };
                 reader.readAsDataURL(file);
             } 

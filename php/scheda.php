@@ -46,14 +46,7 @@ $dato=json_decode($_POST["dati"]);
             $(document).ready(function() 
             {
                 f_iniziale=$("#img_prof").attr("src").split('/').pop();
-               /* $('#tb_nome').on('input', function() 
-                {
-                     studente.Nome=$(this).val();
-                });
-                $('#tb_cognome').on('input', function() 
-                {
-                     studente.Cognome=$(this).val();
-                });*/
+               
                 $("#bt_load_img").change(function()
                 {
            
@@ -61,9 +54,6 @@ $dato=json_decode($_POST["dati"]);
                 });
 
                 GestoreAcquisizioneStudente(studente,file);
-
-
-
                 AddValutazione(studente);
 
 
@@ -76,31 +66,10 @@ $dato=json_decode($_POST["dati"]);
 
                 $("#bt_salva").on("click", function() 
                 {    
-                    var check=true;
-                    const ValArray = [];
-
-                   /// $('.my-button').prop('disabled', true)
-                    //estraggo tutti le valutazioni
-                  /*$("#studentList li").each(function( index ) 
-                    {                       
-                            var v=$(this).find("select option:selected")[0].text;
-                            var d=$(this).find("input")[0].value;
-                            if(v=="?"||d=="")
-                                check=false;
-                           // else
-                           //     ValArray.push(new Valutazione($(this).attr("Id"),v,d));
-                    });*/
-                    var check=CheckValutazioni($("#studentList li"));
-
-                    if(check)                        
+                    if(CheckValutazioni($("#studentList li")))                        
                      {   
-                        //var f=$("#img_prof").attr('src').split('\\').pop();
-                        /*if(f_iniziale.includes("noimage.jpeg"))
-                            studente.Foto=null;
-                        else*/
-                            if(f_iniziale==studente.Foto)
-                                studente.Foto="invariata";
-                        //studente.Foto=f;
+                        if(f_iniziale==studente.Foto)
+                            studente.Foto="invariata";
 
                         AggiornaStudente(JSON.stringify(studente),file);  
                      }
@@ -140,10 +109,10 @@ $dato=json_decode($_POST["dati"]);
                             echo "http://areaverifica.altervista.org/Galeazzi/img/".$dato->Foto;?>"/>
                 </div>
                 <div> 
-                <!--    <label for="bt_load_img" class="bt_upload">Cambia Immagine</label>
-                    <input type="file" id="bt_load_img" name="image" accept="image/*" style="display:none;" value=""/> -->
+                     <label for="bt_load_img" class="bt_upload">Cambia Immagine</label>
+                    <input type="file" id="bt_load_img" name="image" accept="image/*" style="display:none;" value=""/>  
              
-                    <input type="file" id="bt_load_img" name="image" accept="image/*"   value=""/>
+                  
                 </div>
                 <div> 
                  
