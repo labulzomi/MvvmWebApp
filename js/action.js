@@ -37,13 +37,13 @@ function GestioneResponse(mode,response)
                 $("#img_prof").attr('src',"http://areaverifica.altervista.org/GaleazziOnline/risorse/imgs/noimage.jpeg");
                 $("#bt_load_img")[0].files[0]=null;
                 file=null;
-                
+                studente.Foto="";
               //reset testi
-                $('#tb_nome').val("");
-                $('#tb_cognome').val("");
+                $('#tb_nome').val("");studente.Nome="";
+                $('#tb_cognome').val("");studente.Cognome="";
               //reset valutazioni
-              $("#studentList").empty();
-              studente=new Studente(0,"","","",new Array());
+              $("#studentList").empty();studente.Valutazioni=[];
+              //studente=new Studente(0,"","","",new Array());
             }
             else 
               alert("Si è verificato un errore "); 
