@@ -188,11 +188,11 @@ function GestoreAcquisizioneStudente(studente,file)
     {
           studente.Cognome=$(this).val();
     });
-    $("#bt_load_img").change(function()
+  /*  $("#bt_load_img").change(function()
     {
 
         file = $("#bt_load_img")[0].files[0]; 
-    });
+    });*/
 }
 
 

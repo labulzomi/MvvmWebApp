@@ -53,12 +53,12 @@ $dato=json_decode($_POST["dati"]);
                 $('#tb_cognome').on('input', function() 
                 {
                      studente.Cognome=$(this).val();
-                });
+                });*/
                 $("#bt_load_img").change(function()
                 {
            
                     file = $("#bt_load_img")[0].files[0]; 
-                });*/
+                });
 
                 GestoreAcquisizioneStudente(studente,file);
 
