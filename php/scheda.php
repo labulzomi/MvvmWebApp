@@ -1,7 +1,17 @@
 <?php
 session_start();
 //inserire verifica accesso
+if(!CheckSession($_SESSION))
+  header("Location:login.php");
 
+function checkValidPath($path) {
+    $segments = explode('.', $path);
+    $extension = array_pop($segments); // Rimuovi l'ultima parte del percorso
+    if ($extension === "") {
+        return false; // L'estensione è vuota, quindi è invalida
+    }
+    return true; // L'estensione è presente e quindi valida
+}
 
 $caso=rand(1,1000);
 
@@ -103,7 +113,7 @@ $dato=json_decode($_POST["dati"]);
                 <fieldset>
                 <legend>Anagrafica:</legend>
                 <div>
-                <img id="img_prof" src="<?php if($dato->Foto==null)
+                <img id="img_prof" src="<?php if($dato->Foto==null||!checkValidPath($dato->Foto))
                                 echo "http://areaverifica.altervista.org/GaleazziOnline/risorse/imgs/noimage.jpeg";
                             else
                             echo "http://areaverifica.altervista.org/Galeazzi/img/".$dato->Foto;?>"/>

@@ -65,3 +65,12 @@ function cleanArea(studente)
   $("#studentList").empty();
   studente=new Studente(0,"","","",new Array());
 }
+
+function checkValidPath(path)
+{
+  var estensione=path.split('.').pop();
+  if(estensione==null)
+  return false;
+else
+return true;
+}

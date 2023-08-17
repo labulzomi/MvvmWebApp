@@ -1,12 +1,10 @@
 <?php
 session_start();
 //da inserire blocco se in assenza di autorizzazione
-
+if(!CheckSession($_SESSION))
+  header("Location:login.php");
 
 $caso=rand(1,1000);
-
-
-
 $stili="<link href='../risorse/css/stili.css?caso=".$caso."' rel='stylesheet'>
 <link href='../risorse/css/headerbarra.css?caso=".$caso."' rel='stylesheet'>
 <link href='../risorse/css/listitemstudenti.css?caso=".$caso."' rel='stylesheet'>
