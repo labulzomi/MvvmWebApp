@@ -34,7 +34,7 @@ function GestioneResponse(mode,response)
               alert("Studente inserito correttamente");
               //cleanArea(studente);
               //reset img
-                $("#img_prof").attr('src',"http://areaverifica.altervista.org/GaleazziOnline/risorse/imgs/noimage.jpeg");
+                $("#img_prof").attr('src',"../risorse/imgs/studente.png");
                 $("#bt_load_img")[0].files[0]=null;
                 file=null;
                 studente.Foto="";
