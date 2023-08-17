@@ -1,6 +1,6 @@
 <?php
 session_start();
-include "utility.php";
+include "../Galeazzi/utility.php";
 //da inserire blocco se in assenza di autorizzazione
 if(!CheckSession($_SESSION))
   header("Location:login.php");
