@@ -1,5 +1,6 @@
 <?php
 session_start();
+include "utility.php";
 //inserire verifica accesso
 if(!CheckSession($_SESSION))
   header("Location:login.php");
