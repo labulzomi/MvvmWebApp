@@ -1,6 +1,6 @@
 <?php
 session_start();
-include "../Galeazzi/utility.php";
+include "www.areaverifica.altervista.org/Galeazzi/utility.php";
 //da inserire blocco se in assenza di autorizzazione
 if(!CheckSession($_SESSION))
   header("Location:login.php");

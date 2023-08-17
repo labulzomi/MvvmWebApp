@@ -1,6 +1,6 @@
 <?php
 session_start();
-include "../Galeazzi/utility.php";
+include "www.areaverifica.altervista.org/Galeazzi/utility.php";
 //inserire verifica accesso
 if(!CheckSession($_SESSION))
   header("Location:login.php");
