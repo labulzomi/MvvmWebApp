@@ -5,6 +5,8 @@ $caso=rand(1,1000);
 $stili="<link href='../risorse/css/headerbarra.css?caso=".$caso."' rel='stylesheet'>
 <link href='../risorse/css/snackbar.css?caso=".$caso."' rel='stylesheet'>";
 
+
+
 ?>
 <html>
 <head>

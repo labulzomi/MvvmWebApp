@@ -1,6 +1,7 @@
 <?php
 session_start();
 include "../../Galeazzi/utility.php";
+include "statistica.php";
 //inserire verifica accesso
 if(!CheckSession($_SESSION))
   header("Location:login.php");
@@ -24,14 +25,18 @@ $stili="<link href='../risorse/css/stili.css?caso=".$caso."' rel='stylesheet'>
 <link href='../risorse/css/fab.css?caso=".$caso."' rel='stylesheet'>";
 
 $dato=json_decode($_POST["dati"]);
+$stat=new Statistica($dato);
+
 ?>
 <html>
     <head>
       
         <?php echo $stili;?>
         <link href='https://fonts.googleapis.com/css?family=Cairo' rel='stylesheet'>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-        <script src="../js/action.js"></script>
+        <script src="../js/action.js"></script> 
+        <script src="../js/chartutility.js"></script>
         <script src="../js/utility.js"></script>
         <script src="../js/template.js"></script>
         <script src="../js/model.js"></script>
@@ -171,7 +176,7 @@ $dato=json_decode($_POST["dati"]);
                 
             
                 </fieldset>
-
+                
             </div>
         <?php  
         ?>
@@ -180,7 +185,22 @@ $dato=json_decode($_POST["dati"]);
             </div>
 
             <div id="statistiche">
-                            
+                <fieldset>
+                    <legend>Statistiche:</legend>
+                    <div>
+                        <div id="stat_generiche">
+                            <span>Voto Medio</span>
+                            <span class="bollino"><?php echo $stat->getMediaVoto(); ?></span>
+                            <span>Voto Max</span>
+                            <span class="bollino"><?php echo $stat->getMaxVoto(); ?></span>
+                            <span>Voto Min</span>
+                            <span class="bollino"><?php echo $stat->getMinVoto(); ?></span>
+                        </div>
+                        <div id="grafico">
+                            <div id="curve_chart" style="width: 900px; height: 500px"></div>
+                        </div>
+                    </div>
+                </fieldset>    
             </div>
             </div> 
         </div>
