@@ -1,6 +1,6 @@
 <?php
 session_start();
-include "../../Galeazzi/utility.php";
+//include "../../Galeazzi/utility.php";
 include "statistica.php";
 //inserire verifica accesso
 if(!CheckSession($_SESSION))
