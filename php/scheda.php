@@ -198,7 +198,7 @@ $stat=new Statistica($dato);
                             <span class="bollino"><?php echo $stat->getMinVoto(); ?></span>
                         </div>
                         <div id="grafico">
-                            <div id="curve_chart" style="width: 300px; height: 170px"></div>
+                            <div id="curve_chart"  ></div>
                         </div>
                     </div>
                 </fieldset>    
