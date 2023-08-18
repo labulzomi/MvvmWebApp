@@ -1,8 +1,9 @@
 <?php
 session_start();
-//include "../../Galeazzi/utility.php";
+include "utilityweb.php";
 include "statistica.php";
 //inserire verifica accesso
+ 
 if(!CheckSession($_SESSION))
   header("Location:login.php");
 
