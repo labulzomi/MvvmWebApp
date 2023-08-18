@@ -157,3 +157,32 @@ fieldset>div
     justify-content: space-between;
     align-items: center;
   }
+
+  .bollino
+  {
+    background-color: orange;
+    border-radius: 40px;
+    width: 80px;
+    color: white;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #stat_generiche
+  {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .stat_container
+  {
+    
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+  }

@@ -188,7 +188,7 @@ $stat=new Statistica($dato);
             <div id="statistiche">
                 <fieldset>
                     <legend>Statistiche:</legend>
-                    <div>
+                    <div class="stat_container">
                         <div id="stat_generiche">
                             <span>Voto Medio</span>
                             <span class="bollino"><?php echo $stat->getMediaVoto(); ?></span>
@@ -198,7 +198,7 @@ $stat=new Statistica($dato);
                             <span class="bollino"><?php echo $stat->getMinVoto(); ?></span>
                         </div>
                         <div id="grafico">
-                            <div id="curve_chart" style="width: 900px; height: 500px"></div>
+                            <div id="curve_chart" style="width: 300px; height: 170px"></div>
                         </div>
                     </div>
                 </fieldset>    
