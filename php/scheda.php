@@ -246,6 +246,12 @@ $stat=new Statistica($dato);
                     reader.readAsDataURL(files);
                 } 
             });
+
+
+
+
+
+            CreateChart();
         </script>
     </body>
 </html>
