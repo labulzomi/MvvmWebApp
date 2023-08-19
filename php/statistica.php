@@ -150,6 +150,34 @@ class Statistica
         return $dati;
     }
 
+    public function ChartDataSerie()
+    {
+        $elenco=$this->generaSerieMultiple();
+        $numerostud=count($elenco->Valutazioni);
+        $header=array('Data');
+        for ($j=0;$j<$numerostud;$j++) 
+        {
+            array_push($header,$j);
+        }
+        $datiFormattati = array(
+            $header
+        );
+        
+        foreach ($elenco->Date as $i => $data) 
+        {
+            $giorno=array($data);
+
+            for ($j=0;$j<$numerostud;$j++) 
+            {
+                array_push($giorno,$elenco[$J][$i];
+            }
+            $datiFormattati[]=$giorno;
+        }
+        echo json_encode($datiFormattati);
+    }
+
+
+
     public function distribuzioneVoti()
     {
         $dati = array();

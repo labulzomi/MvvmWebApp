@@ -191,7 +191,7 @@ $stat=new Statistica($dato);
                     <div class="stat_container">
                         <div id="stat_generiche">
                             <span>Voto Medio</span>
-                            <span class="bollino"><?php echo $stat->getMediaVoto(); ?></span>
+                            <span class="bollino"><?php echo round($stat->getMediaVoto(),1); ?></span>
                             <span>Voto Max</span>
                             <span class="bollino"><?php echo $stat->getMaxVoto(); ?></span>
                             <span>Voto Min</span>
