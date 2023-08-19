@@ -72,7 +72,7 @@ class Statistica
         if ($this->studente === null) {
             foreach ($this->elenco as $studente) {
                 foreach ($studente->Valutazioni as $valutazione) {
-                    $allDates[] = $valutazione->Data->format('Y-m-d');
+                    $allDates[] = $valutazione->Data;
                 }
             }
         } else {
@@ -85,11 +85,11 @@ class Statistica
                     return $dp->Data == $valutazione->Data;
                 }));
 
-                $allDates[] = $valutazione->Data->format('Y-m-d');
+                $allDates[] = $valutazione->Data;
                 if ($sameDateCount > 1) {
                     for ($j = 1; $j < $sameDateCount; $j++) {
                         $valutazioniOrdinate[$i + $j]->Data->modify('+' . ($j * $jitterAmount) . ' day');
-                        $allDates[] = $valutazioniOrdinate[$i + $j]->Data->format('Y-m-d');
+                        $allDates[] = $valutazioniOrdinate[$i + $j]->Data;
                     }
                     $i += $sameDateCount - 1;
                 }
@@ -108,7 +108,7 @@ class Statistica
                     $valutazione = null;
 
                     foreach ($studente->Valutazioni as $v) {
-                        if ($v->Data->format('Y-m-d') === $data) {
+                        if ($v->Data=== $data) {
                             $valutazione = $v;
                             break;
                         }
@@ -130,7 +130,7 @@ class Statistica
                 $valutazione = null;
 
                 foreach ($valutazioniOrdinate as $v) {
-                    if ($v->Data->format('Y-m-d') === $data) {
+                    if ($v->Data === $data) {
                         $valutazione = $v;
                         break;
                     }
