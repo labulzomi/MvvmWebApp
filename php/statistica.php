@@ -169,7 +169,7 @@ class Statistica
 
             for ($j=0;$j<$numerostud;$j++) 
             {
-                array_push($giorno,$elenco[$J][$i];
+                array_push($giorno,$elenco[$J][$i]);
             }
             $datiFormattati[]=$giorno;
         }
