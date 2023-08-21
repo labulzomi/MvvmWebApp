@@ -3,15 +3,19 @@
 
 class Statistica
 {
-    private $studente = null;
-    private $elenco = array();
+    public $studente = null;
+    public $elenco = array();
 
     public function __construct( $stud = null)
     {
         if($stud===null)        
         {
+		 
             $gd=new GestioneDati();
-            $this->elenco = json_decode($gd->GetDati());}
+			//echo count(json_decode($gd->GetDati()));
+            $this->elenco = json_decode($gd->GetDati());
+			//echo ",,,".count($this->elenco);
+			}
         else
             $this->studente = $stud;
     }
@@ -68,82 +72,102 @@ class Statistica
 
         $allDates = array();
         $jitterAmount = 0.2;
+		 
 
-        if ($this->studente === null) {
+        if ($this->studente === null) 
+		{
             foreach ($this->elenco as $studente) {
                 foreach ($studente->Valutazioni as $valutazione) {
                     $allDates[] = $valutazione->Data;
                 }
             }
-        } else {
-            $valutazioniOrdinate = array_values(array_sort($this->studente->Valutazioni, function($valutazione) {
+			$sortedDates = array_values(array_unique($allDates));	
+			sort($sortedDates);
+        } else 
+		{
+			 
+            $sortedDates = array_values(array_unique(array_sort($this->studente->Valutazioni, function($valutazione) {
                 return $valutazione->Data;
-            }));
-
-            foreach ($valutazioniOrdinate as $i => $valutazione) {
-                $sameDateCount = count(array_filter($valutazioniOrdinate, function($dp) use ($valutazione) {
-                    return $dp->Data == $valutazione->Data;
-                }));
-
-                $allDates[] = $valutazione->Data;
-                if ($sameDateCount > 1) {
-                    for ($j = 1; $j < $sameDateCount; $j++) {
-                        $valutazioniOrdinate[$i + $j]->Data->modify('+' . ($j * $jitterAmount) . ' day');
-                        $allDates[] = $valutazioniOrdinate[$i + $j]->Data;
-                    }
-                    $i += $sameDateCount - 1;
-                }
-            }
+            })));
+		
         }
-
-        $sortedDates = array_values(array_unique($allDates));
+		if($this->studente === null) 
+			$numerostud=count($this->elenco);
+		else
+			$numerostud=1;
+		
+		//echo $numerostud;
+		//var_dump($this->elenco);
+        /*$header=array('Data');
+        foreach ($this->elenco as $studente) 
+		{
+			 
+            array_push($header,$studente->Cognome);
+        }
+        $datiFormattati = array(
+            $header
+        );*/
+		 //var_dump($datiFormattati);
+        
+	
         $valutazioniAllineate = array();
 
-        if ($this->studente === null) {
-            foreach ($this->elenco as $studente) {
-                $valutazioniAllineate[$studente->ID] = array();
+        if ($this->studente === null) 
+		{
+            foreach ($this->elenco as $studente) 
+			{
+                $valutazioniAllineate[$studente->Cognome] = array();
                 $ultimovoto = 1;
 
-                foreach ($sortedDates as $data) {
+                foreach ($sortedDates as $data) 
+				{
                     $valutazione = null;
 
-                    foreach ($studente->Valutazioni as $v) {
-                        if ($v->Data=== $data) {
-                            $valutazione = $v;
-                            break;
+                    foreach ($studente->Valutazioni as $v) 
+					{
+                        if ($v->Data=== $data) 
+						{
+                            $valutazione = $v->Voto;
+                            
                         }
                     }
 
-                    if ($valutazione !== null) {
-                        $ultimovoto = $valutazione->Voto;
-                        $valutazioniAllineate[$studente->ID][] = $valutazione->Voto;
+                    if ($valutazione !== null) 
+					{
+                        $ultimovoto = $valutazione;
+                        $valutazioniAllineate[$studente->Cognome][] = $ultimovoto;
                     } else {
-                        $valutazioniAllineate[$studente->ID][] = $ultimovoto;
+                        $valutazioniAllineate[$studente->Cognome][] = $ultimovoto;
                     }
                 }
             }
-        } else {
-            $valutazioniAllineate[$this->studente->ID] = array();
+        } 
+		else {
+            $valutazioniAllineate[$this->studente->Cognome] = array();
             $ultimovoto = 1;
 
-            foreach ($sortedDates as $data) {
+            foreach ($sortedDates as $data) 
+			{
                 $valutazione = null;
 
-                foreach ($valutazioniOrdinate as $v) {
-                    if ($v->Data === $data) {
-                        $valutazione = $v;
-                        break;
+                foreach ($this->studente->Valutazioni as $v) 
+				{
+                    if ($v->Data === $data) 
+					{
+                        $valutazione = $v->Voto;
+                       
                     }
                 }
 
                 if ($valutazione !== null) {
-                    $ultimovoto = $valutazione->Voto;
-                    $valutazioniAllineate[$this->studente->ID][] = $valutazione->Voto;
+                    $ultimovoto = $valutazione;
+                    $valutazioniAllineate[$this->studente->Cognome][] = $valutazione;
                 } else {
-                    $valutazioniAllineate[$this->studente->ID][] = $ultimovoto;
+                    $valutazioniAllineate[$this->studente->Cognome][] = $ultimovoto;
                 }
             }
         }
+		//var_dump($valutazioniAllineate);
 
         $dati->Date = $sortedDates;
         $dati->Valutazioni = $valutazioniAllineate;
@@ -153,7 +177,27 @@ class Statistica
     public function ChartDataSerie()
     {
         $elenco=$this->generaSerieMultiple();
-        $numerostud=count($elenco->Valutazioni);
+		
+		$header=array('Data');
+		if($this->studente===null)
+		{
+			foreach ($this->elenco as $studente) 
+			{
+				 
+				array_push($header,$studente->Cognome);
+			}
+		}
+		else
+			array_push($header,$this->studente->Cognome);
+		
+        $datiFormattati = array(
+            $header
+        );
+		//var_dump($elenco->Valutazioni);
+		
+		
+		
+       /* $numerostud=count($elenco->Valutazioni);
         $header=array('Data');
         for ($j=0;$j<$numerostud;$j++) 
         {
@@ -161,22 +205,50 @@ class Statistica
         }
         $datiFormattati = array(
             $header
-        );
-        
-        foreach ($elenco->Date as $i => $data) 
-        {
-            $giorno=array($data);
+        );*/
+		var_dump($datiFormattati);
+       echo"<br><br><br>";
+		if($this->studente===null)
+		{		
+			foreach ($elenco->Date as $i => $data) 
+			{
+				$giorno=array($data);
 
-            for ($j=0;$j<$numerostud;$j++) 
-            {
-                var_dump($elenco[$j][$i]);
-                //array_push($giorno,$elenco[$J][$i]->Voto);
-            }
-            $datiFormattati[]=$giorno;
-            break;
-        }
-        //echo json_encode($datiFormattati);
+				for ($j=0;$j<$numerostud;$j++) 
+				{
+					$giorno[]=$elenco->Valutazioni[$j];
+				}
+				$datiFormattati[]=$giorno;
+			   
+			}
+		}
+		else
+		{
+			foreach ($this->studente->Valutazioni as $v)
+			{
+				$giorno[]=$v;
+			}
+			$datiFormattati[]=$giorno;
+		}
+		var_dump($datiFormattati);
+       echo"<br><br><br>";
+	   print_r($datiFormattati);
+	   
+	   $df="";
+	   for ($i=0;$i<count($datiFormattati);$i++) 
+		{
+			$df.="[";
+			 for ($j=0;$j<count($datiFormattati[$i]);$i++) 
+			{
+				 $df.=is_numeric($datiFormattati[$i][$j])?$datiFormattati[$i][$j]:("'".$datiFormattati[$i][$j]."',");
+			}
+			$df.="],<br>";
+		}
+		 echo"<br><br><br>";
+		 echo $df;
     }
+	
+
 
 
 
