@@ -172,7 +172,7 @@ class Statistica
 
         $dati->Date = $sortedDates;
         $dati->Valutazioni = $valutazioniAllineate;
-        var_dump($dati->Valutazioni);
+       
         return $dati;
     }
 
@@ -215,6 +215,7 @@ class Statistica
 				$giorno[]=$v;
 			}
 			$datiFormattati2[]=$giorno;
+            var_dump($datiFormattati2);
 		}
 		//var_dump($datiFormattati);
        //echo"<br>dfsfs<br><br>";
