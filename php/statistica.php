@@ -172,6 +172,7 @@ class Statistica
 
         $dati->Date = $sortedDates;
         $dati->Valutazioni = $valutazioniAllineate;
+        var_dump($dati->Valutazioni);
         return $dati;
     }
 
