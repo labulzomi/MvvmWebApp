@@ -84,12 +84,12 @@ class Statistica
 			$sortedDates = array_values(array_unique($allDates));	
 			sort($sortedDates);
         } else 
-		{
-			 
-            $sortedDates = array_values(array_unique(array_sort($this->studente->Valutazioni, function($valutazione) {
+		{			 
+            /*$sortedDates = array_values(array_unique(array_sort($this->studente->Valutazioni, function($valutazione) {
                 return $valutazione->Data;
-            })));
-		
+            })));*/
+            $sortedDates = array_values(array_unique($valutazione->Data));	
+            sort($sortedDates);
         }
 		if($this->studente === null) 
 			$numerostud=count($this->elenco);
