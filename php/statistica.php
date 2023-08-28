@@ -85,10 +85,11 @@ class Statistica
 			sort($sortedDates);
         } else 
 		{			 
-            /*$sortedDates = array_values(array_unique(array_sort($this->studente->Valutazioni, function($valutazione) {
-                return $valutazione->Data;
-            })));*/
-            $sortedDates = array_values(array_unique($valutazione->Data));	
+            foreach ($this->studente->Valutazioni as $valutazione) {
+                $allDates[] = $valutazione->Data;
+            }
+            $sortedDates = array_values(array_unique($allDates));	
+           
             sort($sortedDates);
         }
 		if($this->studente === null) 
