@@ -215,7 +215,7 @@ class Statistica
 				$giorno[]=$v;
 			}
 			$datiFormattati2[]=$giorno;
-            var_dump($datiFormattati2);
+            //var_dump($datiFormattati2);
 		}
 		//var_dump($datiFormattati);
        //echo"<br>dfsfs<br><br>";
@@ -228,7 +228,7 @@ class Statistica
 			$df.="[";
 			 
 		 	 for ($j=0;$j<count($datiFormattati2[$i]);$j++) 
-			{
+			{ echo "qio".$datiFormattati2[$i][$j]."-";
 				if($j==count($datiFormattati2[$i])-1)
 					$df.=is_numeric($datiFormattati2[$i][$j])?($datiFormattati2[$i][$j]):("new Date(".explode("-",$datiFormattati2[$i][$j])[0].",".explode("-",$datiFormattati2[$i][$j])[1].",".explode("-",$datiFormattati2[$i][$j])[2].")");
 				else
