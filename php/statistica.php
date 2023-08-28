@@ -210,11 +210,15 @@ class Statistica
 		}
 		else
 		{
-			foreach ($elenco->Valutazioni as $v)
+            foreach ($elenco->Date as $i => $data) 
 			{
-				$giorno[]=$v;
-			}
-			$datiFormattati2=$giorno;
+				$giorno=array($data);
+                foreach ($elenco->Valutazioni as $v)
+                {
+                    $giorno[]=$v;
+                }
+                $datiFormattati2[]=$giorno;
+            }
             //var_dump($datiFormattati2);
 		}
 		//var_dump($datiFormattati);
