@@ -193,59 +193,53 @@ class Statistica
         $datiFormattati = array(
             $header
         );
-		//var_dump($elenco->Valutazioni);
-		
-		
-		
-       /* $numerostud=count($elenco->Valutazioni);
-        $header=array('Data');
-        for ($j=0;$j<$numerostud;$j++) 
-        {
-            array_push($header,$j);
-        }
-        $datiFormattati = array(
-            $header
-        );*/
-		var_dump($datiFormattati);
-       echo"<br><br><br>";
+	
+	   
 		if($this->studente===null)
 		{		
 			foreach ($elenco->Date as $i => $data) 
 			{
 				$giorno=array($data);
 
-				for ($j=0;$j<$numerostud;$j++) 
-				{
-					$giorno[]=$elenco->Valutazioni[$j];
-				}
-				$datiFormattati[]=$giorno;
-			   
+			   foreach ($elenco->Valutazioni as $nome=>$studente) 			
+					$giorno[]=$studente[$i];
+				$datiFormattati2[]=$giorno;			   
 			}
 		}
 		else
 		{
-			foreach ($this->studente->Valutazioni as $v)
+			foreach ($elenco->Valutazioni as $v)
 			{
 				$giorno[]=$v;
 			}
-			$datiFormattati[]=$giorno;
+			$datiFormattati2[]=$giorno;
 		}
-		var_dump($datiFormattati);
-       echo"<br><br><br>";
-	   print_r($datiFormattati);
-	   
+		//var_dump($datiFormattati);
+       //echo"<br>dfsfs<br><br>";
+	   //print_r($datiFormattati);
+	   //var_dump($datiFormattati);
+					
 	   $df="";
-	   for ($i=0;$i<count($datiFormattati);$i++) 
+	   for ($i=0;$i<count($datiFormattati2);$i++) 
 		{
 			$df.="[";
-			 for ($j=0;$j<count($datiFormattati[$i]);$i++) 
+			 
+		 	 for ($j=0;$j<count($datiFormattati2[$i]);$j++) 
 			{
-				 $df.=is_numeric($datiFormattati[$i][$j])?$datiFormattati[$i][$j]:("'".$datiFormattati[$i][$j]."',");
-			}
-			$df.="],<br>";
+				if($j==count($datiFormattati2[$i])-1)
+					$df.=is_numeric($datiFormattati2[$i][$j])?($datiFormattati2[$i][$j]):("new Date(".explode("-",$datiFormattati2[$i][$j])[0].",".explode("-",$datiFormattati2[$i][$j])[1].",".explode("-",$datiFormattati2[$i][$j])[2].")");
+				else
+				 $df.=is_numeric($datiFormattati2[$i][$j])?($datiFormattati2[$i][$j].","):("new Date(".explode("-",$datiFormattati2[$i][$j])[0].",".explode("-",$datiFormattati2[$i][$j])[1].",".explode("-",$datiFormattati2[$i][$j])[2])."),";
+			} 
+			 
+			 if($i==count($datiFormattati2)-1)
+				 $df.="]";
+			 else
+				 $df.="],";
 		}
-		 echo"<br><br><br>";
-		 echo $df;
+		 
+ 
+		 $this->jsChart($header,$df);
     }
 	
 
@@ -276,4 +270,46 @@ class Statistica
 
         return $dati;
     }
+	
+	
+	
+	public function jsChart($header,$df)
+	{
+		echo "
+		google.charts.load('current', {packages: ['corechart', 'line']});
+		google.charts.setOnLoadCallback(drawCurveTypes);
+
+		function drawCurveTypes() 
+		{
+		 
+		  var data = new google.visualization.DataTable();";
+		  foreach($header as $i=>$h)
+			if($i==0)
+			echo "data.addColumn('date', '".$h."');";	
+				else
+			echo "data.addColumn('number', '".$h."');";	
+
+		echo"
+		  data.addRows([";
+		
+		echo $df;
+		  echo "]);
+
+		  var options = {
+			hAxis: {
+			  title: 'Time'
+			},
+			vAxis: {
+			  title: 'Popularity'
+			},
+			series: {
+			  1: {curveType: 'function'}
+			}
+		  };
+
+		  var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+		  chart.draw(data, options);
+		}
+		";
+	}
 }
