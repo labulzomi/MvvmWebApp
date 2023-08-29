@@ -84,6 +84,7 @@ fieldset>div
     background-color: #5F7938;
     font-size: 18px;
 }
+#statistiche{background-color: #4E7ADB;}
 
 .Contenitore
 {background-color: #4E7ADB;
@@ -172,6 +173,8 @@ fieldset>div
 
   #stat_generiche
   {
+    margin: 20px;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -191,3 +194,7 @@ fieldset>div
     align-items: center;
 
   }
+
+  #grafico{
+    margin: 20px;
+}
