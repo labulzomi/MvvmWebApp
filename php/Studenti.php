@@ -15,6 +15,9 @@ $stili="<link href='../risorse/css/stili.css?caso=".$caso."' rel='stylesheet'>
 <link href='../risorse/css/mobile.css?caso=".$caso."' rel='stylesheet'> 
 <link href='../risorse/css/fab.css?caso=".$caso."' rel='stylesheet'>
 <link href='../risorse/css/menulaterale.css?caso=".$caso."' rel='stylesheet'> ";
+
+
+$stat=new Statistica();
 ?>
 <!DOCTYPE html>
 <html>
@@ -45,7 +48,7 @@ let studente=new Studente(0,"","","",new Array());
 
 $(document).ready(function() 
 {    
-  //NON SALVA FOTO E IN SEGUITO AL SALVATAGGIO VANNO RESETTATI I CAMPI E I 
+    //VANNO RESETTATI I CAMPI E I 
   //VALORI DELL'OGGETTO STUDENTE E FILE
         
 
@@ -135,6 +138,7 @@ $(document).ready(function()
         <h4  >Benvenuto<br> <?php echo $_SESSION["user"]; ?></h2>
         <h2 id="insert">Inserisci Studente</h2>
         <h2 id="view">Visualizza Studenti</h2>
+        <h2 id="stats">Statistiche</h2>
       </div>
       <div class="content">
         <div id="insertContent" class="active">
@@ -164,7 +168,7 @@ $(document).ready(function()
                 </div>
             
             </div>
-            <div style="margin-top:15px;"> 
+            <div class="valutazioniContainer"  > 
                   <ul id="studentList">
                       
                                               
@@ -189,18 +193,52 @@ $(document).ready(function()
 
           </ul>
         </div>
+        <div id="statContent" class="fieldContainer">
+          <div id="statgenerali">
+            <fieldset>
+              <legend>Dati Generali</legend>
+                <span>Voto Medio</span>
+                <span class="bollino"><?php echo round($stat->getMediaVoto(),1); ?></span>
+                <span>Voto Max</span>
+                <span class="bollino"><?php echo $stat->getMaxVoto(); ?></span>
+                <span>Voto Min</span>
+                <span class="bollino"><?php echo $stat->getMinVoto(); ?></span>
+            </fieldset> 
+          </div>
+          <div>
+            <div id="graph1">
+              <fieldset>
+              <legend>Andamento studenti</legend>
+            </fieldset> 
+            </div>
+            <div id="graph2">
+                <fieldset>
+                <legend>Distribuzione voti</legend>
+              </fieldset> 
+            </div>
+            
+          </div>
+          
+          
+        </div>
       </div>
     </div>
     <script>
       document.getElementById("insert").addEventListener("click", function () {
         document.getElementById("insertContent").classList.add("active");
         document.getElementById("viewContent").classList.remove("active");
-        
+        document.getElementById("statContent").classList.remove("active");
+      });
+      document.getElementById("stats").addEventListener("click", function () {
+        document.getElementById("statContent").classList.add("active");
+        document.getElementById("viewContent").classList.remove("active");
+        document.getElementById("insertContent").classList.remove("active");
       });
 
       document.getElementById("view").addEventListener("click", function () {
         document.getElementById("viewContent").classList.add("active");
         document.getElementById("insertContent").classList.remove("active");
+        document.getElementById("statContent").classList.remove("active");
       });
 
        

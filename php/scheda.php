@@ -150,7 +150,7 @@ $stat=new Statistica($dato);
                     </div>
                 
                 </div>
-                <div style="margin-top:15px;"> 
+                <div class="valutazioniContainer"> 
                     <ul id="studentList">
                         <?php
                             foreach($dato->Valutazioni as $val)
