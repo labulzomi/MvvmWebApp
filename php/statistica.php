@@ -315,16 +315,21 @@ class Statistica
 		echo $df;
 		  echo "]);
 
-		  var options = {
+		  var options = 
+          {
+            width: 700,
+            height: 400,
+            title: 'Andamento Valutazioni',
 			hAxis: {
-			  title: 'Time'
+			  title: 'Periodo'
 			},
 			vAxis: {
-			  title: 'Popularity'
+			  title: 'Voto'
 			},
 			series: {
 			  1: {curveType: 'function'}
-			}
+			},
+            legend: { position: 'bottom' }
 		  };
 
 		  var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
