@@ -64,7 +64,11 @@ class Statistica
             return count($studente->Valutazioni);
         }, $this->elenco)) : count($this->studente->Valutazioni);
     }
-
+	function confrontoPerData($a, $b) 
+	{
+		//echo $a->Data."-".$b->Data."<br>";
+		return strcmp($a->Data, $b->Data);
+	}
     public function generaSerieMultiple()
     {
         $valutazioniOrdinate = array();
@@ -91,6 +95,9 @@ class Statistica
             $sortedDates = array_values(array_unique($allDates));	
            
             sort($sortedDates);
+			
+			//echo $numerostud;
+		 //var_dump($sortedDates);
         }
 		if($this->studente === null) 
 			$numerostud=count($this->elenco);
@@ -144,7 +151,14 @@ class Statistica
             }
         } 
 		else {
-            $valutazioniAllineate[$this->studente->Cognome] = array();
+			$valutazioniAllineate=$this->studente->Valutazioni;
+			//var_dump($valutazioniAllineate);
+			usort($valutazioniAllineate, array($this,'confrontoPerData'));
+			//var_dump($valutazioniAllineate);
+			
+			
+			//var_dump($valutazioniAllineate);
+            /*$valutazioniAllineate[$this->studente->Cognome] = array();
             $ultimovoto = 1;
 
             foreach ($sortedDates as $data) 
@@ -166,10 +180,10 @@ class Statistica
                 } else {
                     $valutazioniAllineate[$this->studente->Cognome][] = $ultimovoto;
                 }
-            }
+            }*/
         }
-		//var_dump($valutazioniAllineate);
-
+	 
+//echo "<br><br>";
         $dati->Date = $sortedDates;
         $dati->Valutazioni = $valutazioniAllineate;
        
@@ -210,16 +224,13 @@ class Statistica
 		}
 		else
 		{
-            foreach ($elenco->Date as $i => $data) 
+            foreach ($elenco->Valutazioni as $i => $v) 
 			{
-				$giorno=array($data);
-                foreach ($elenco->Valutazioni as $v)
-                {
-                    $giorno[]=$v;
-                }
+				$giorno=array($v->Data,$v->Voto);
+                
                 $datiFormattati2[]=$giorno;
             }
-            //var_dump($datiFormattati2);
+           // var_dump($datiFormattati2);
 		}
 		//var_dump($datiFormattati);
        //echo"<br>dfsfs<br><br>";
@@ -236,9 +247,9 @@ class Statistica
                 var_dump($datiFormattati2[$i]);
                 echo "<br>-";*/
 				if($j==count($datiFormattati2[$i])-1)
-					$df.=is_numeric($datiFormattati2[$i][$j])?($datiFormattati2[$i][$j]):("new Date(".explode("-",$datiFormattati2[$i][$j])[0].",".explode("-",$datiFormattati2[$i][$j])[1].",".explode("-",$datiFormattati2[$i][$j])[2].")");
+					$df.=is_numeric($datiFormattati2[$i][$j])?($datiFormattati2[$i][$j]):("new Date(".explode("-",$datiFormattati2[$i][$j])[0].",".(explode("-",$datiFormattati2[$i][$j])[1]-1).",".explode("-",$datiFormattati2[$i][$j])[2].")");
 				else
-				 $df.=is_numeric($datiFormattati2[$i][$j])?($datiFormattati2[$i][$j].","):("new Date(".explode("-",$datiFormattati2[$i][$j])[0].",".explode("-",$datiFormattati2[$i][$j])[1].",".explode("-",$datiFormattati2[$i][$j])[2])."),";
+				 $df.=is_numeric($datiFormattati2[$i][$j])?($datiFormattati2[$i][$j].","):("new Date(".explode("-",$datiFormattati2[$i][$j])[0].",".(explode("-",$datiFormattati2[$i][$j])[1]-1).",".explode("-",$datiFormattati2[$i][$j])[2])."),";
 			} 
 			 
 			 if($i==count($datiFormattati2)-1)
