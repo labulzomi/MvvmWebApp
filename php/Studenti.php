@@ -3,7 +3,7 @@ session_start();
 //include "../../Galeazzi/utility.php";
 
 include "utilityweb.php";
-//da inserire blocco se in assenza di autorizzazione
+include "statistica.php"; 
 if(!CheckSession($_SESSION))
   header("Location:login.php");
 
