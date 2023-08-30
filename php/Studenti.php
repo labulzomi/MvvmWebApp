@@ -30,6 +30,7 @@ $stat=new Statistica();
     <link href='../risorse/css/fab.css' rel='stylesheet'>
     <link href='../risorse/css/menulaterale.css' rel='stylesheet'>  -->
     
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script src="../js/model.js"></script>
      <script>
 var statocaricamento=false;
