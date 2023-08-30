@@ -209,6 +209,7 @@ $(document).ready(function()
             <div id="graph1">
               <fieldset>
               <legend>Andamento studenti</legend>
+              <div id="chart_div"  ></div>
             </fieldset> 
             </div>
             <div id="graph2">
@@ -267,6 +268,7 @@ $(document).ready(function()
             else
                 studente.Valutazioni[index].Voto=+$(this).val();
         });
+        <?php echo $stat->ChartDataSerie();?>
       </script>
 
       </div>
