@@ -322,10 +322,14 @@ class Statistica
             title: 'Andamento Valutazioni',
 			hAxis: {
 			  title: 'Periodo'
-			},
-			vAxis: {
-			  title: 'Voto'
-			},
+			},			 
+            vAxis: {
+                title: 'Voto',
+                viewWindow: {
+                    min: 1,
+                    max: 10
+                }
+            },
 			series: {
 			  1: {curveType: 'function'}
 			},
