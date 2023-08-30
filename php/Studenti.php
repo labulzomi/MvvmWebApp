@@ -194,33 +194,34 @@ $(document).ready(function()
 
           </ul>
         </div>
-        <div id="statContent" class="fieldContainer">
-          <div id="statgenerali">
-            <fieldset>
-              <legend>Dati Generali</legend>
-                <span>Voto Medio</span>
-                <span class="bollino"><?php echo round($stat->getMediaVoto(),1); ?></span>
-                <span>Voto Max</span>
-                <span class="bollino"><?php echo $stat->getMaxVoto(); ?></span>
-                <span>Voto Min</span>
-                <span class="bollino"><?php echo $stat->getMinVoto(); ?></span>
-            </fieldset> 
-          </div>
-          <div>
-            <div id="graph1">
+        <div id="statContent" >
+          <div class="fieldContainer">
+            <div id="statgenerali">
               <fieldset>
-              <legend>Andamento studenti</legend>
-              <div id="chart_div"  ></div>
-            </fieldset> 
-            </div>
-            <div id="graph2">
-                <fieldset>
-                <legend>Distribuzione voti</legend>
+                <legend>Dati Generali</legend>
+                  <span>Voto Medio</span>
+                  <span class="bollino"><?php echo round($stat->getMediaVoto(),1); ?></span>
+                  <span>Voto Max</span>
+                  <span class="bollino"><?php echo $stat->getMaxVoto(); ?></span>
+                  <span>Voto Min</span>
+                  <span class="bollino"><?php echo $stat->getMinVoto(); ?></span>
               </fieldset> 
             </div>
-            
+            <div>
+              <div id="graph1">
+                <fieldset>
+                <legend>Andamento studenti</legend>
+                <div id="chart_div"  ></div>
+              </fieldset> 
+              </div>
+              <div id="graph2">
+                  <fieldset>
+                  <legend>Distribuzione voti</legend>
+                </fieldset> 
+              </div>
+              
+            </div>
           </div>
-          
           
         </div>
       </div>
