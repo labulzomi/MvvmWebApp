@@ -217,6 +217,7 @@ $(document).ready(function()
               <div id="graph2">
                   <fieldset>
                   <legend>Distribuzione voti</legend>
+                  <div id="piechart"  ></div>
                 </fieldset> 
               </div>
               
